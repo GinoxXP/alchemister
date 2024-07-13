@@ -5,4 +5,7 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes: []
-  m_configObjects: {}
+  m_configObjects:
+    Unity.XR.PICO.LivePreview.Settings: {fileID: 11400000, guid: 0c25a0089cd83644a9c3676483b7447c, type: 2}
+    Unity.XR.PXR.Settings: {fileID: 11400000, guid: 665d197ef8f602c4c9bc1ad1c78ef0f2, type: 2}
+    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 772e9c6b44ccca848af9e65837390029, type: 2}
