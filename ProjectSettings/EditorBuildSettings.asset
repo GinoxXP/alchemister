@@ -4,7 +4,10 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Samples/XR Interaction Toolkit/2.4.1/Starter Assets/DemoScene.unity
+    guid: 319dafa5c80f29f428dc1e0d03f04177
   m_configObjects:
     Unity.XR.PICO.LivePreview.Settings: {fileID: 11400000, guid: 0c25a0089cd83644a9c3676483b7447c, type: 2}
     Unity.XR.PXR.Settings: {fileID: 11400000, guid: 665d197ef8f602c4c9bc1ad1c78ef0f2, type: 2}
