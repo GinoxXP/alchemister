@@ -1,0 +1,50 @@
+using Ginox.BlackCauldron.Alchemy.Service;
+using Ginox.BlackCauldron.Alchemy.ViewModel;
+using Ginox.BlackCauldron.Alchemy.Model;
+using Ginox.BlackCauldron.Alchemy.Model.Potions;
+using Ginox.BlackCauldron.Alchemy.Model.Ingredients;
+using Zenject;
+using Ginox.BlackCauldron.Alchemy.ViewModel.Ingredients;
+
+public class AlchemyInstaller : MonoInstaller
+{
+    public override void InstallBindings()
+    {
+        InstallIngredients();
+        InstallPotions();
+
+        Container.Bind<CauldronViewModel>().AsTransient();
+        Container.Bind<BrewingService>().AsSingle();
+
+    }
+
+    public override void Start()
+    {
+        base.Start();
+
+        var brewingService = Container.Resolve<BrewingService>();
+
+        var ash = Container.Resolve<Ash>();
+        var salt = Container.Resolve<Salt>();
+
+        brewingService.RegisterRecipe(
+            new Recipe(new BeginerPotion())
+            .RegisterIngredient(ash)
+            .RegisterIngredient(salt)
+        );
+    }
+
+    private void InstallIngredients()
+    {
+        Container.Bind<Ash>().AsTransient();
+        Container.Bind<Salt>().AsTransient();
+
+        Container.Bind<AshViewModel>().AsTransient();
+        Container.Bind<SaltViewModel>().AsTransient();
+    }
+
+    private void InstallPotions()
+    {
+        Container.Bind<BeginerPotion>().AsTransient();
+    }
+}
