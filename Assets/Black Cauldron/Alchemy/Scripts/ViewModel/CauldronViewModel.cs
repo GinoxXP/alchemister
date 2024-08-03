@@ -13,8 +13,9 @@ namespace Ginox.BlackCauldron.Alchemy.ViewModel
         }
 
         public void PutIn(AIngredient ingredient)
-        {
-            brewingService.Brew(ingredient);
-        }
+            => brewingService.Brew(ingredient);
+
+        public APotion Finish()
+            => brewingService.FinishBrew();
     }
 }

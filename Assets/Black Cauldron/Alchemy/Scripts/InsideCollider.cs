@@ -1,4 +1,5 @@
 using Ginox.BlackCauldron.Alchemy.View;
+using System.Linq;
 using UnityEngine;
 
 namespace Ginox.BlackCauldron.Alchemy
@@ -14,12 +15,10 @@ namespace Ginox.BlackCauldron.Alchemy
 
         private void OnTriggerEnter(Collider other)
         {
-            var ingredient = other.GetComponentInParent<AIngredientView>();
+            var scoopable = other.GetComponentsInParent<MonoBehaviour>().OfType<IScoopCauldron>().FirstOrDefault();
 
-            if (ingredient != null)
-            {
-                cauldron.PutIn(ingredient.ViewModel.Model);
-            }
+            if (scoopable != null)
+                scoopable.Scoop(cauldron);
         }
     }
 }

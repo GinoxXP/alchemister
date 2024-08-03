@@ -15,6 +15,7 @@ public class AlchemyInstaller : MonoInstaller
 
         Container.Bind<CauldronViewModel>().AsTransient();
         Container.Bind<BrewingService>().AsSingle();
+        Container.Bind<BottleViewModel>().AsTransient();
 
     }
 

@@ -17,5 +17,8 @@ namespace Ginox.BlackCauldron.Alchemy.View
 
         public void PutIn(AIngredient ingredient)
             => cauldronViewModel.PutIn(ingredient);
+
+        public APotion Finish()
+            => cauldronViewModel.Finish();
     }
 }

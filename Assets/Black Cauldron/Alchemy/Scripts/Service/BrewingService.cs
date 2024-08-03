@@ -33,18 +33,22 @@ namespace Ginox.BlackCauldron.Alchemy.Service
             if (!isAcceptedRecipe)
             {
                 /// TODO: Restart brewing process
+                ingredient.Destroy();
+
                 return;
             }
+
+            ingredient.Destroy();
 
             recipeIterator++;
         }
 
-        public void FinishBrew()
+        public APotion FinishBrew()
         {
             Recipe compleatedRecipe = null;
             foreach (var recipe in suitableRecipes)
             {
-                if (recipe.Ingredients.Count == recipeIterator - 1)
+                if (recipe.Ingredients.Count == recipeIterator)
                 {
                     compleatedRecipe = recipe;
                     break;
@@ -53,7 +57,7 @@ namespace Ginox.BlackCauldron.Alchemy.Service
 
             if (compleatedRecipe != null)
             {
-                /// TODO: Give potion
+                return compleatedRecipe.Potion;
             }
             else
             {
@@ -61,6 +65,7 @@ namespace Ginox.BlackCauldron.Alchemy.Service
             }
 
             recipeIterator = 0;
+            return null;
         }
 
         private void StartNewBrew()
