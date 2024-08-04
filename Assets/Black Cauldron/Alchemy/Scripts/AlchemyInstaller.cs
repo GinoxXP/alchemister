@@ -5,9 +5,13 @@ using Ginox.BlackCauldron.Alchemy.Model.Potions;
 using Ginox.BlackCauldron.Alchemy.Model.Ingredients;
 using Zenject;
 using Ginox.BlackCauldron.Alchemy.ViewModel.Ingredients;
+using UnityEngine;
 
 public class AlchemyInstaller : MonoInstaller
 {
+    [SerializeField]
+    private Material beginerPotionMaterial;
+
     public override void InstallBindings()
     {
         InstallIngredients();
@@ -29,7 +33,7 @@ public class AlchemyInstaller : MonoInstaller
         var salt = Container.Resolve<Salt>();
 
         brewingService.RegisterRecipe(
-            new Recipe(new BeginerPotion())
+            new Recipe(Container.Resolve<BeginerPotion>())
             .RegisterIngredient(ash)
             .RegisterIngredient(salt)
         );
@@ -46,6 +50,6 @@ public class AlchemyInstaller : MonoInstaller
 
     private void InstallPotions()
     {
-        Container.Bind<BeginerPotion>().AsTransient();
+        Container.Bind<BeginerPotion>().FromMethod(x => new BeginerPotion(beginerPotionMaterial)).AsTransient();
     }
 }

@@ -77,3 +77,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acb1523444767bb499578f8bfd058f30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  beginerPotionMaterial: {fileID: 2100000, guid: 809232c6e2011254f8583ad2f85853d3, type: 2}
