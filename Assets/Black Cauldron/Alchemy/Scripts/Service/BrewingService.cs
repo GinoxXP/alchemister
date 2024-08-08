@@ -45,6 +45,22 @@ namespace Ginox.BlackCauldron.Alchemy.Service
 
         public APotion FinishBrew()
         {
+            var potion = CheckPotion();
+            if (potion == null)
+            {
+                /// TODO: Restart brewing process
+            }
+            else
+            {
+                return potion;
+            }
+
+            recipeIterator = 0;
+            return null;
+        }
+
+        public APotion CheckPotion()
+        {
             Recipe compleatedRecipe = null;
             foreach (var recipe in suitableRecipes)
             {
@@ -59,12 +75,7 @@ namespace Ginox.BlackCauldron.Alchemy.Service
             {
                 return compleatedRecipe.Potion;
             }
-            else
-            {
-                /// TODO: Restart brewing process
-            }
 
-            recipeIterator = 0;
             return null;
         }
 

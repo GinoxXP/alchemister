@@ -17,5 +17,8 @@ namespace Ginox.BlackCauldron.Alchemy.ViewModel
 
         public APotion Finish()
             => brewingService.FinishBrew();
+
+        public APotion CheckPotion()
+            => brewingService.CheckPotion();
     }
 }
