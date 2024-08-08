@@ -88,7 +88,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3190053606135083172, guid: cb8ac4849c665a048af31aafa083d6e9, type: 3}
       propertyPath: m_Name
-      value: Candle Variant 1
+      value: Candle 2
       objectReference: {fileID: 0}
     - target: {fileID: 5611357758538197425, guid: cb8ac4849c665a048af31aafa083d6e9, type: 3}
       propertyPath: m_LocalPosition.x
