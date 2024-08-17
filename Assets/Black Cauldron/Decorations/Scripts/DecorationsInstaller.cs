@@ -1,5 +1,4 @@
-using Ginox.BlackCauldron.Decorations.ViewModels;
-using Ginox.BlackCauldron.Decorations.Views;
+using Ginox.BlackCauldron.Decorations.ViewModels.Books;
 using Zenject;
 
 namespace Ginox.BlackCauldron.Decorations
@@ -8,8 +7,7 @@ namespace Ginox.BlackCauldron.Decorations
     {
         public override void InstallBindings()
         {
-            Container.Bind<BookViewModel>().AsTransient();
-            Container.Bind<BookView>().AsTransient();
+            Container.Bind<BeginerBookViewModel>().AsTransient();
         }
     }
 }

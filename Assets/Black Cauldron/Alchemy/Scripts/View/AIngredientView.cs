@@ -10,7 +10,7 @@ namespace Ginox.BlackCauldron.Alchemy.View
         protected void Init(AIngredientViewModel viewModel)
         {
             ViewModel = viewModel;
-            viewModel.Destroyed += OnDestroyed;
+            ViewModel.Destroyed += OnDestroyed;
         }
 
         public void Scoop(CauldronView cauldronView)

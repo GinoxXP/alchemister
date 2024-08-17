@@ -1,33 +1,29 @@
-using Ginox.BlackCauldron.Decorations.ViewModels;
+using Ginox.BlackCauldron.Decorations.ViewModels.Books;
 using TMPro;
 using UnityEngine;
-using Zenject;
 
 namespace Ginox.BlackCauldron.Decorations.Views
 {
-    public class BookView : MonoBehaviour
+    public class ABookView : MonoBehaviour
     {
         [SerializeField]
         private TMP_Text leftContent;
         [SerializeField]
         private TMP_Text rightContent;
 
-        private BookViewModel viewModel;
+        private ABookViewModel viewModel;
 
-        [Inject]
-        private void Init(BookViewModel viewModel)
+        protected void Init(ABookViewModel viewModel)
         {
             this.viewModel = viewModel;
         }
 
         public void OnNextPage()
         {
-            Destroy(gameObject);
         }
 
         public void OnPreviousPage()
         {
-            Destroy(gameObject);
         }
     }
 }

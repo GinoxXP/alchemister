@@ -24,8 +24,6 @@ public class AlchemyInstaller : MonoInstaller
 
     public override void Start()
     {
-        base.Start();
-
         var brewingService = Container.Resolve<BrewingService>();
 
         var ash = Container.Resolve<Ash>();
