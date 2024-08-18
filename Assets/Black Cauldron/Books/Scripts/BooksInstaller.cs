@@ -1,9 +1,9 @@
-using Ginox.BlackCauldron.Decorations.ViewModels.Books;
+using Ginox.BlackCauldron.Books.ViewModels.Books;
 using Zenject;
 
-namespace Ginox.BlackCauldron.Decorations
+namespace Ginox.BlackCauldron.Books
 {
-    public class DecorationsInstaller : MonoInstaller
+    public class BooksInstaller : MonoInstaller
     {
         public override void InstallBindings()
         {

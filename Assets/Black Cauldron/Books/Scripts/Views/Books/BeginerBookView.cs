@@ -1,7 +1,7 @@
-﻿using Ginox.BlackCauldron.Decorations.ViewModels.Books;
+﻿using Ginox.BlackCauldron.Books.ViewModels.Books;
 using Zenject;
 
-namespace Ginox.BlackCauldron.Decorations.Views.Books
+namespace Ginox.BlackCauldron.Books.Views.Books
 {
     public class BeginerBookView : ABookView
     {

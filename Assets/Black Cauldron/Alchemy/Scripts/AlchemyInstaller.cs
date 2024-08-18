@@ -14,26 +14,13 @@ public class AlchemyInstaller : MonoInstaller
 
     public override void InstallBindings()
     {
-        InstallIngredients();
-        InstallPotions();
 
         Container.Bind<CauldronViewModel>().AsTransient();
         Container.Bind<BrewingService>().AsSingle();
         Container.Bind<BottleViewModel>().AsTransient();
-    }
 
-    public override void Start()
-    {
-        var brewingService = Container.Resolve<BrewingService>();
-
-        var ash = Container.Resolve<Ash>();
-        var salt = Container.Resolve<Salt>();
-
-        brewingService.RegisterRecipe(
-            new Recipe(Container.Resolve<BeginerPotion>())
-            .RegisterIngredient(ash)
-            .RegisterIngredient(salt)
-        );
+        InstallIngredients();
+        InstallPotions();
     }
 
     private void InstallIngredients()
@@ -47,6 +34,17 @@ public class AlchemyInstaller : MonoInstaller
 
     private void InstallPotions()
     {
+        var brewingService = Container.Resolve<BrewingService>();
+
+        var ash = Container.Resolve<Ash>();
+        var salt = Container.Resolve<Salt>();
+
         Container.Bind<BeginerPotion>().FromMethod(x => new BeginerPotion(beginerPotionMaterial)).AsTransient();
+
+        var beginerPotionRecipe = new Recipe(Container.Resolve<BeginerPotion>())
+            .RegisterIngredient(ash)
+            .RegisterIngredient(salt);
+
+        brewingService.RegisterRecipe(beginerPotionRecipe);
     }
 }

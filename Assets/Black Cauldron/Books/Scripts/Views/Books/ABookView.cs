@@ -1,8 +1,8 @@
-using Ginox.BlackCauldron.Decorations.ViewModels.Books;
+using Ginox.BlackCauldron.Books.ViewModels.Books;
 using TMPro;
 using UnityEngine;
 
-namespace Ginox.BlackCauldron.Decorations.Views
+namespace Ginox.BlackCauldron.Books.Views
 {
     public class ABookView : MonoBehaviour
     {
