@@ -13,17 +13,35 @@ namespace Ginox.BlackCauldron.Books.Views
 
         private ABookViewModel viewModel;
 
+        private int page;
+
         protected void Init(ABookViewModel viewModel)
         {
             this.viewModel = viewModel;
         }
 
+        private void Start()
+        {
+            RenderPage();
+        }
+
         public void OnNextPage()
         {
+            page++;
+            RenderPage();
         }
 
         public void OnPreviousPage()
         {
+            page--;
+            RenderPage();
+        }
+
+        private void RenderPage()
+        {
+            var recipe = viewModel.Recipes[page];
+            leftContent.text = recipe.Potion.ToString();
+            recipe.Ingredients.ForEach(x => rightContent.text += $"{x}\n");
         }
     }
 }

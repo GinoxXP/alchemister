@@ -6,8 +6,6 @@ namespace Ginox.BlackCauldron.Alchemy.Model
     {
         public Material Material { get; private set; }
 
-        public Recipe Recipe { get; set; }
-
         public APotion(Material material)
         {
             Material = material;

@@ -1,5 +1,6 @@
 using Ginox.BlackCauldron.Alchemy.Model;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Ginox.BlackCauldron.Alchemy.Service
 {
@@ -12,6 +13,9 @@ namespace Ginox.BlackCauldron.Alchemy.Service
 
         public void RegisterRecipe(Recipe recipe)
             => Recipes.Add(recipe);
+
+        public Recipe GetRecipe(APotion potion)
+            => Recipes.FirstOrDefault(x => x.Potion.ToString() == potion.ToString());
 
 
         public void Brew(AIngredient ingredient)
