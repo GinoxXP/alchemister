@@ -1,6 +1,10 @@
 using Ginox.BlackCauldron.Books.ViewModels.Books;
+using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Localization;
+using UnityEngine.Localization.Settings;
 
 namespace Ginox.BlackCauldron.Books.Views
 {
@@ -22,6 +26,21 @@ namespace Ginox.BlackCauldron.Books.Views
 
         private void Start()
         {
+            LocalizationSettings.Instance.OnSelectedLocaleChanged += OnSelectedLocaleChanged;
+            RenderPage();
+        }
+
+        private void OnDestroy()
+        {
+            LocalizationSettings.Instance.OnSelectedLocaleChanged -= OnSelectedLocaleChanged;
+        }
+
+        private void Update()
+        {
+            RenderPage();
+        }
+        private void OnSelectedLocaleChanged(Locale obj)
+        {
             RenderPage();
         }
 
@@ -41,7 +60,20 @@ namespace Ginox.BlackCauldron.Books.Views
         {
             var recipe = viewModel.Recipes[page];
             leftContent.text = recipe.Potion.ToString();
-            recipe.Ingredients.ForEach(x => rightContent.text += $"{x}\n");
+
+            var ingredientsKeyNames = recipe.Ingredients.Select(x => x.NameKey).ToList();
+
+            var ingredientsNames = new List<string>();
+            ingredientsKeyNames.ForEach(x =>
+            {
+                var localizedName = new LocalizedString("Alchemy", x);
+                ingredientsNames.Add(localizedName.GetLocalizedString());
+            });
+
+            var potionRecpe = string.Empty;
+            potionRecpe = string.Join(", ", ingredientsNames);
+
+            rightContent.text = potionRecpe;
         }
     }
 }
