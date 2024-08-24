@@ -14,6 +14,8 @@ namespace Ginox.BlackCauldron.Books.Views
         private TMP_Text leftContent;
         [SerializeField]
         private TMP_Text rightContent;
+        [SerializeField]
+        private TMP_Text pageIndex;
 
         private ABookViewModel viewModel;
 
@@ -59,7 +61,10 @@ namespace Ginox.BlackCauldron.Books.Views
         private void RenderPage()
         {
             var recipe = viewModel.Recipes[page];
-            leftContent.text = recipe.Potion.ToString();
+            var potionNameKey = recipe.Potion.NameKey;
+
+            var potionLocalizedName = new LocalizedString("Alchemy", potionNameKey);
+            leftContent.text = potionLocalizedName.GetLocalizedString();
 
             var ingredientsKeyNames = recipe.Ingredients.Select(x => x.NameKey).ToList();
 
@@ -74,6 +79,8 @@ namespace Ginox.BlackCauldron.Books.Views
             potionRecpe = string.Join(", ", ingredientsNames);
 
             rightContent.text = potionRecpe;
+
+            pageIndex.text = $"{page + 1}";
         }
     }
 }

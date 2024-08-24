@@ -7,5 +7,7 @@ namespace Ginox.BlackCauldron.Alchemy.Model.Potions
         public BeginerPotion(Material material) : base(material)
         {
         }
+
+        public override string NameKey => "potions.beginerPotion";
     }
 }
