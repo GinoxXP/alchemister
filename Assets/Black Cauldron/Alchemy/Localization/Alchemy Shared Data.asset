@@ -27,6 +27,26 @@ MonoBehaviour:
     m_Key: potions.beginerPotion
     m_Metadata:
       m_Items: []
+  - m_Id: 4707715217330176
+    m_Key: ingredients.bayLeafs
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4708218521227264
+    m_Key: ingredients.licoriceRoot
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4708557215469568
+    m_Key: ingredients.pineCone
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4708684973969408
+    m_Key: ingredients.cattail
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4712008636928000
+    m_Key: ingredients.flyAgaric
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
