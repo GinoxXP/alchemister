@@ -18,13 +18,19 @@ MonoBehaviour:
   m_GUID: d3b16795530411d4ea79417b14ec5a95
   m_SerializeEntries:
   - m_GUID: a2695cf791e47f449955ae56201ed570
-    m_Address: Alchemy_en
+    m_Address: Ingredients_en
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-en
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 4959559bc6e726745b8bc654d8104664
     m_Address: Book_en
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 29465d12f1769344a95d4cf59cfa96df
+    m_Address: Potions_en
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-en

@@ -2,6 +2,6 @@
 {
     public class LicoriceRoot : AIngredient
     {
-        public override string NameKey => "ingredients.licoriceRoot";
+        public override string NameKey => nameof(LicoriceRoot);
     }
 }

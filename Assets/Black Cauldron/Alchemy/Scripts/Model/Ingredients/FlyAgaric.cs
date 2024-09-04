@@ -2,6 +2,6 @@
 {
     public class FlyAgaric : AIngredient
     {
-        public override string NameKey => "ingredients.flyAgaric";
+        public override string NameKey => nameof(FlyAgaric);
     }
 }

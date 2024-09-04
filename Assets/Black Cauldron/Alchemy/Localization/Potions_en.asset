@@ -10,44 +10,40 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
-  m_Name: Alchemy_en
+  m_Name: Potions_en
   m_EditorClassIdentifier: 
   m_LocaleId:
     m_Code: en
-  m_SharedData: {fileID: 11400000, guid: d0113603222691c4b8af6c27516498b0, type: 2}
+  m_SharedData: {fileID: 11400000, guid: 024ba68222b90c946a7a4ad801fbdf38, type: 2}
   m_Metadata:
     m_Items: []
   m_TableData:
-  - m_Id: 47512784896
-    m_Localized: Salt
+  - m_Id: 309497401344
+    m_Localized: Blue useless potion
     m_Metadata:
       m_Items: []
-  - m_Id: 145261039616
-    m_Localized: Ash
+  - m_Id: 470546092032
+    m_Localized: Cyan strange potion
     m_Metadata:
       m_Items: []
-  - m_Id: 205113757696
-    m_Localized: Beginer's potion
+  - m_Id: 647826739200
+    m_Localized: Green sweet potion
     m_Metadata:
       m_Items: []
-  - m_Id: 4707715217330176
-    m_Localized: Bay leafs
+  - m_Id: 868510044160
+    m_Localized: Orange salty potion
     m_Metadata:
       m_Items: []
-  - m_Id: 4708218521227264
-    m_Localized: Licorice root
+  - m_Id: 1081140285440
+    m_Localized: Pink mystery potion
     m_Metadata:
       m_Items: []
-  - m_Id: 4708557215469568
-    m_Localized: Pine cone
+  - m_Id: 1252171419648
+    m_Localized: RedCommonPotion
     m_Metadata:
       m_Items: []
-  - m_Id: 4708684973969408
-    m_Localized: Cattail cob
-    m_Metadata:
-      m_Items: []
-  - m_Id: 4712008636928000
-    m_Localized: Fly agaric
+  - m_Id: 1372933820416
+    m_Localized: Yellow foul-smelling potion
     m_Metadata:
       m_Items: []
   references:

@@ -12,10 +12,23 @@ namespace Ginox.BlackCauldron.Books
             Container.Bind<BeginerBookViewModel>().AsSingle();
 
             var brewingService = Container.Resolve<BrewingService>();
-            var beginerPotionRecipe = brewingService.GetRecipe(Container.Resolve<BeginerPotion>());
+
+            var blueUselessPotion = brewingService.GetRecipe(Container.Resolve<BlueUselessPotion>());
+            var cyanStrangePotion = brewingService.GetRecipe(Container.Resolve<CyanStrangePotion>());
+            var greenSweetPotion = brewingService.GetRecipe(Container.Resolve<GreenSweetPotion>());
+            var orangeSaltyPotion = brewingService.GetRecipe(Container.Resolve<OrangeSaltyPotion>());
+            var pinkMysteryPotion = brewingService.GetRecipe(Container.Resolve<PinkMysteryPotion>());
+            var redCommonPotion = brewingService.GetRecipe(Container.Resolve<RedCommonPotion>());
+            var yellowFoulSmellingPotion = brewingService.GetRecipe(Container.Resolve<YellowFoulSmellingPotion>());
 
             var beginerBookViewModel = Container.Resolve<BeginerBookViewModel>();
-            beginerBookViewModel.RegisterRecipe(beginerPotionRecipe);
+            beginerBookViewModel.RegisterRecipe(blueUselessPotion);
+            beginerBookViewModel.RegisterRecipe(cyanStrangePotion);
+            beginerBookViewModel.RegisterRecipe(greenSweetPotion);
+            beginerBookViewModel.RegisterRecipe(orangeSaltyPotion);
+            beginerBookViewModel.RegisterRecipe(pinkMysteryPotion);
+            beginerBookViewModel.RegisterRecipe(redCommonPotion);
+            beginerBookViewModel.RegisterRecipe(yellowFoulSmellingPotion);
         }
     }
 }

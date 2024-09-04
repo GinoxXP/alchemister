@@ -2,6 +2,6 @@
 {
     public class PineCone : AIngredient
     {
-        public override string NameKey => "ingredients.pineCone";
+        public override string NameKey => nameof(PineCone);
     }
 }

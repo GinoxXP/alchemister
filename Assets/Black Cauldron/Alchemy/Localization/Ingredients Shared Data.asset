@@ -10,41 +10,37 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
-  m_Name: Alchemy Shared Data
+  m_Name: Ingredients Shared Data
   m_EditorClassIdentifier: 
-  m_TableCollectionName: Alchemy
+  m_TableCollectionName: Ingredients
   m_TableCollectionNameGuidString: d0113603222691c4b8af6c27516498b0
   m_Entries:
   - m_Id: 47512784896
-    m_Key: ingredients.salt
+    m_Key: Salt
     m_Metadata:
       m_Items: []
   - m_Id: 145261039616
-    m_Key: ingredients.ash
-    m_Metadata:
-      m_Items: []
-  - m_Id: 205113757696
-    m_Key: potions.beginerPotion
+    m_Key: Ash
     m_Metadata:
       m_Items: []
   - m_Id: 4707715217330176
-    m_Key: ingredients.bayLeafs
+    m_Key: BayLeafs
     m_Metadata:
       m_Items: []
   - m_Id: 4708218521227264
-    m_Key: ingredients.licoriceRoot
+    m_Key: LicoriceRoot
     m_Metadata:
       m_Items: []
   - m_Id: 4708557215469568
-    m_Key: ingredients.pineCone
+    m_Key: PineCone
     m_Metadata:
       m_Items: []
   - m_Id: 4708684973969408
-    m_Key: ingredients.cattail
+    m_Key: CattailCob
     m_Metadata:
       m_Items: []
   - m_Id: 4712008636928000
-    m_Key: ingredients.flyAgaric
+    m_Key: FlyAgaric
     m_Metadata:
       m_Items: []
   m_Metadata:

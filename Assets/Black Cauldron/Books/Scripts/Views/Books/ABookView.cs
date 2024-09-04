@@ -37,10 +37,6 @@ namespace Ginox.BlackCauldron.Books.Views
             LocalizationSettings.Instance.OnSelectedLocaleChanged -= OnSelectedLocaleChanged;
         }
 
-        private void Update()
-        {
-            RenderPage();
-        }
         private void OnSelectedLocaleChanged(Locale obj)
         {
             RenderPage();
@@ -63,17 +59,22 @@ namespace Ginox.BlackCauldron.Books.Views
             var recipe = viewModel.Recipes[page];
             var potionNameKey = recipe.Potion.NameKey;
 
-            var potionLocalizedName = new LocalizedString("Alchemy", potionNameKey);
+            var potionLocalizedName = new LocalizedString("Potions", potionNameKey);
             leftContent.text = potionLocalizedName.GetLocalizedString();
 
             var ingredientsKeyNames = recipe.Ingredients.Select(x => x.NameKey).ToList();
 
             var ingredientsNames = new List<string>();
-            ingredientsKeyNames.ForEach(x =>
+            for (int i = 0; i < ingredientsKeyNames.Count; i++)
             {
-                var localizedName = new LocalizedString("Alchemy", x);
-                ingredientsNames.Add(localizedName.GetLocalizedString());
-            });
+                var localizedName = new LocalizedString("Ingredients", ingredientsKeyNames[i]);
+                var localizedString = localizedName.GetLocalizedString();
+
+                if (i != 0)
+                    localizedString = localizedString[..1].ToLowerInvariant() + localizedString[1..];
+
+                ingredientsNames.Add(localizedString);
+            }
 
             var potionRecpe = string.Empty;
             potionRecpe = string.Join(", ", ingredientsNames);

@@ -79,7 +79,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acb1523444767bb499578f8bfd058f30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  beginerPotionMaterial: {fileID: 2100000, guid: 809232c6e2011254f8583ad2f85853d3, type: 2}
+  blueUselessPotionMaterial: {fileID: 2100000, guid: 8ce46ae7c9c00c640b1078325db9f559, type: 2}
+  cyanStrangePotionMaterial: {fileID: 2100000, guid: 96c27a1071dbcda468152b6fb63c3a0d, type: 2}
+  greenSweetPotionMaterial: {fileID: 2100000, guid: 7aade42c586b5024eb0c81fc7b420ee5, type: 2}
+  orangeSaltyPotionMaterial: {fileID: 2100000, guid: 44a25536742f9eb41a6316a523d771ed, type: 2}
+  pinkMysteryPotionMaterial: {fileID: 2100000, guid: d9ef559cf90ca444ba6f4e43f99b7913, type: 2}
+  redCommonPotionMaterial: {fileID: 2100000, guid: 809232c6e2011254f8583ad2f85853d3, type: 2}
+  yellowFoulSmellingPotionMaterial: {fileID: 2100000, guid: f9ae5dd439b6a77488672522074aee88, type: 2}
 --- !u!114 &4624348786477235844
 MonoBehaviour:
   m_ObjectHideFlags: 0

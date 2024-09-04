@@ -2,6 +2,6 @@
 {
     public class CattailCob : AIngredient
     {
-        public override string NameKey => "ingredients.cattailCob";
+        public override string NameKey => nameof(CattailCob);
     }
 }

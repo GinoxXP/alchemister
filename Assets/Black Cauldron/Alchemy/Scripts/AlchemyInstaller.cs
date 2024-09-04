@@ -10,7 +10,19 @@ using UnityEngine;
 public class AlchemyInstaller : MonoInstaller
 {
     [SerializeField]
-    private Material beginerPotionMaterial;
+    private Material blueUselessPotionMaterial;
+    [SerializeField]
+    private Material cyanStrangePotionMaterial;
+    [SerializeField]
+    private Material greenSweetPotionMaterial;
+    [SerializeField]
+    private Material orangeSaltyPotionMaterial;
+    [SerializeField]
+    private Material pinkMysteryPotionMaterial;
+    [SerializeField]
+    private Material redCommonPotionMaterial;
+    [SerializeField]
+    private Material yellowFoulSmellingPotionMaterial;
 
     public override void InstallBindings()
     {
@@ -54,12 +66,49 @@ public class AlchemyInstaller : MonoInstaller
         var pineCone = Container.Resolve<PineCone>();
         var salt = Container.Resolve<Salt>();
 
-        Container.Bind<BeginerPotion>().FromMethod(x => new BeginerPotion(beginerPotionMaterial)).AsTransient();
+        Container.Bind<BlueUselessPotion>().FromMethod(x => new BlueUselessPotion(blueUselessPotionMaterial)).AsTransient();
+        Container.Bind<CyanStrangePotion>().FromMethod(x => new CyanStrangePotion(cyanStrangePotionMaterial)).AsTransient();
+        Container.Bind<GreenSweetPotion>().FromMethod(x => new GreenSweetPotion(greenSweetPotionMaterial)).AsTransient();
+        Container.Bind<OrangeSaltyPotion>().FromMethod(x => new OrangeSaltyPotion(orangeSaltyPotionMaterial)).AsTransient();
+        Container.Bind<PinkMysteryPotion>().FromMethod(x => new PinkMysteryPotion(pinkMysteryPotionMaterial)).AsTransient();
+        Container.Bind<RedCommonPotion>().FromMethod(x => new RedCommonPotion(redCommonPotionMaterial)).AsTransient();
+        Container.Bind<YellowFoulSmellingPotion>().FromMethod(x => new YellowFoulSmellingPotion(yellowFoulSmellingPotionMaterial)).AsTransient();
 
-        var beginerPotionRecipe = new Recipe(Container.Resolve<BeginerPotion>())
+        var blueUselessPotionRecipe = new Recipe(Container.Resolve<BlueUselessPotion>())
             .RegisterIngredient(ash)
+            .RegisterIngredient(bayLeafs)
+            .RegisterIngredient(cattailCob);
+        var cyanStrangePotionRecipe = new Recipe(Container.Resolve<CyanStrangePotion>())
+            .RegisterIngredient(ash)
+            .RegisterIngredient(bayLeafs)
+            .RegisterIngredient(flyAgaric);
+        var greenSweetPotionRecipe = new Recipe(Container.Resolve<GreenSweetPotion>())
+            .RegisterIngredient(ash)
+            .RegisterIngredient(bayLeafs)
+            .RegisterIngredient(licoriceRoot);
+        var orangeSaltyPotionRecipe = new Recipe(Container.Resolve<OrangeSaltyPotion>())
+            .RegisterIngredient(ash)
+            .RegisterIngredient(bayLeafs)
+            .RegisterIngredient(pineCone);
+        var pinkMysteryPotionRecipe = new Recipe(Container.Resolve<PinkMysteryPotion>())
+            .RegisterIngredient(ash)
+            .RegisterIngredient(bayLeafs)
             .RegisterIngredient(salt);
+        var redCommonPotionRecipe = new Recipe(Container.Resolve<RedCommonPotion>())
+            .RegisterIngredient(ash)
+            .RegisterIngredient(bayLeafs)
+            .RegisterIngredient(ash);
+        var yellowFoulSmellingPotionRecipe = new Recipe(Container.Resolve<YellowFoulSmellingPotion>())
+            .RegisterIngredient(ash)
+            .RegisterIngredient(bayLeafs)
+            .RegisterIngredient(bayLeafs);
 
-        brewingService.RegisterRecipe(beginerPotionRecipe);
+        brewingService.RegisterRecipe(blueUselessPotionRecipe);
+        brewingService.RegisterRecipe(cyanStrangePotionRecipe);
+        brewingService.RegisterRecipe(greenSweetPotionRecipe);
+        brewingService.RegisterRecipe(orangeSaltyPotionRecipe);
+        brewingService.RegisterRecipe(pinkMysteryPotionRecipe);
+        brewingService.RegisterRecipe(redCommonPotionRecipe);
+        brewingService.RegisterRecipe(yellowFoulSmellingPotionRecipe);
     }
 }
