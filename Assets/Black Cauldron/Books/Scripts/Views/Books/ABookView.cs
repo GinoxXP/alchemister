@@ -3,13 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.Localization;
 using UnityEngine.Localization.Settings;
+using UnityEngine.XR.Interaction.Toolkit;
 
 namespace Ginox.BlackCauldron.Books.Views
 {
     public class ABookView : MonoBehaviour
     {
+        private static readonly string OPEN_BOOK_TRIGGER = "OpenTrigger";
+        private static readonly string CLOSE_BOOK_TRIGGER = "CloseTrigger";
+
         [SerializeField]
         private TMP_Text leftContent;
         [SerializeField]
@@ -18,8 +23,13 @@ namespace Ginox.BlackCauldron.Books.Views
         private TMP_Text pageIndex;
 
         private ABookViewModel viewModel;
+        private Animator animator;
+        private Camera mainCamera;
+        private XRBaseInteractable xrBaseInteractable;
 
         private int page;
+        private bool isGrabed;
+        private bool isGrabStateChanged;
 
         protected void Init(ABookViewModel viewModel)
         {
@@ -28,13 +38,75 @@ namespace Ginox.BlackCauldron.Books.Views
 
         private void Start()
         {
+            animator = GetComponent<Animator>();
+
+            mainCamera = Camera.main;
+
+            xrBaseInteractable = GetComponent<XRBaseInteractable>();
+            xrBaseInteractable.activated.AddListener(Activated());
+            xrBaseInteractable.deactivated.AddListener(Deactivated());
+
             LocalizationSettings.Instance.OnSelectedLocaleChanged += OnSelectedLocaleChanged;
             RenderPage();
         }
 
         private void OnDestroy()
         {
+            xrBaseInteractable.activated.RemoveListener(Activated());
+            xrBaseInteractable.deactivated.RemoveListener(Deactivated());
+
             LocalizationSettings.Instance.OnSelectedLocaleChanged -= OnSelectedLocaleChanged;
+        }
+
+        private void Update()
+        {
+            if (!isGrabed)
+            {
+                SetState();
+            }
+            else if(isGrabStateChanged)
+            {
+                isGrabStateChanged = false;
+                Close();
+            }
+        }
+
+        private void SetState()
+        {
+            if (Vector3.Distance(mainCamera.transform.position, transform.position) < 0.5f)
+                Open();
+            else if (Vector3.Distance(mainCamera.transform.position, transform.position) > 1f)
+                Close();
+        }
+
+        private void Open()
+            => animator.SetTrigger(OPEN_BOOK_TRIGGER);
+
+        private void Close()
+            => animator.SetTrigger(CLOSE_BOOK_TRIGGER);
+
+        private UnityAction<ActivateEventArgs> Activated()
+        {
+            void Target(ActivateEventArgs args)
+            {
+                isGrabed = true;
+                isGrabStateChanged = true;
+            }
+
+            var action = new UnityAction<ActivateEventArgs>(Target);
+            return action;
+        }
+
+        private UnityAction<DeactivateEventArgs> Deactivated()
+        {
+            void Target(DeactivateEventArgs args)
+            {
+                isGrabed = false;
+                isGrabStateChanged = false;
+            }
+
+            var action = new UnityAction<DeactivateEventArgs>(Target);
+            return action;
         }
 
         private void OnSelectedLocaleChanged(Locale obj)
