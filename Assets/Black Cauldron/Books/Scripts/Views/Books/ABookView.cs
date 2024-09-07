@@ -25,7 +25,6 @@ namespace Ginox.BlackCauldron.Books.Views
         private ABookViewModel viewModel;
         private Animator animator;
         private Camera mainCamera;
-        private XRBaseInteractable xrBaseInteractable;
 
         private int page;
         private bool isGrabed;
@@ -42,19 +41,12 @@ namespace Ginox.BlackCauldron.Books.Views
 
             mainCamera = Camera.main;
 
-            xrBaseInteractable = GetComponent<XRBaseInteractable>();
-            xrBaseInteractable.activated.AddListener(Activated());
-            xrBaseInteractable.deactivated.AddListener(Deactivated());
-
             LocalizationSettings.Instance.OnSelectedLocaleChanged += OnSelectedLocaleChanged;
             RenderPage();
         }
 
         private void OnDestroy()
         {
-            xrBaseInteractable.activated.RemoveListener(Activated());
-            xrBaseInteractable.deactivated.RemoveListener(Deactivated());
-
             LocalizationSettings.Instance.OnSelectedLocaleChanged -= OnSelectedLocaleChanged;
         }
 
@@ -71,6 +63,30 @@ namespace Ginox.BlackCauldron.Books.Views
             }
         }
 
+        public void OnNextPage()
+        {
+            page++;
+            RenderPage();
+        }
+
+        public void OnPreviousPage()
+        {
+            page--;
+            RenderPage();
+        }
+
+        public void Activated()
+        {
+            isGrabStateChanged = !isGrabed;
+            isGrabed = true;
+        }
+
+        public void Deactivated()
+        {
+            isGrabStateChanged = isGrabed;
+            isGrabed = false;
+        }
+
         private void SetState()
         {
             if (Vector3.Distance(mainCamera.transform.position, transform.position) < 0.5f)
@@ -85,44 +101,8 @@ namespace Ginox.BlackCauldron.Books.Views
         private void Close()
             => animator.SetTrigger(CLOSE_BOOK_TRIGGER);
 
-        private UnityAction<ActivateEventArgs> Activated()
-        {
-            void Target(ActivateEventArgs args)
-            {
-                isGrabed = true;
-                isGrabStateChanged = true;
-            }
-
-            var action = new UnityAction<ActivateEventArgs>(Target);
-            return action;
-        }
-
-        private UnityAction<DeactivateEventArgs> Deactivated()
-        {
-            void Target(DeactivateEventArgs args)
-            {
-                isGrabed = false;
-                isGrabStateChanged = false;
-            }
-
-            var action = new UnityAction<DeactivateEventArgs>(Target);
-            return action;
-        }
-
         private void OnSelectedLocaleChanged(Locale obj)
         {
-            RenderPage();
-        }
-
-        public void OnNextPage()
-        {
-            page++;
-            RenderPage();
-        }
-
-        public void OnPreviousPage()
-        {
-            page--;
             RenderPage();
         }
 
