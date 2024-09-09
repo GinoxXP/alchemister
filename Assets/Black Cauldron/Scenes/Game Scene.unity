@@ -38,7 +38,6 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.3708985, g: 0.3783704, b: 0.35722548, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -988,19 +987,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 644718332199034167, guid: ee48c2a7db503994abc0ca615e15b1a8, type: 3}
       propertyPath: m_RotationOffsets.Array.data[0].y
-      value: 90
-      objectReference: {fileID: 0}
-    - target: {fileID: 644718332199034167, guid: ee48c2a7db503994abc0ca615e15b1a8, type: 3}
-      propertyPath: m_RotationOffsets.Array.data[0].z
       value: 90.00001
       objectReference: {fileID: 0}
     - target: {fileID: 644718332199034167, guid: ee48c2a7db503994abc0ca615e15b1a8, type: 3}
+      propertyPath: m_RotationOffsets.Array.data[0].z
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 644718332199034167, guid: ee48c2a7db503994abc0ca615e15b1a8, type: 3}
       propertyPath: m_TranslationOffsets.Array.data[0].x
-      value: -0.0029999018
+      value: -0.0030001402
       objectReference: {fileID: 0}
     - target: {fileID: 644718332199034167, guid: ee48c2a7db503994abc0ca615e15b1a8, type: 3}
       propertyPath: m_TranslationOffsets.Array.data[0].y
-      value: 0.13000011
+      value: 0.13
       objectReference: {fileID: 0}
     - target: {fileID: 3995099201810216089, guid: ee48c2a7db503994abc0ca615e15b1a8, type: 3}
       propertyPath: m_SizeDelta.x
@@ -1012,55 +1011,55 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4721400668562498892, guid: ee48c2a7db503994abc0ca615e15b1a8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.25
+      value: 1.3586779
       objectReference: {fileID: 0}
     - target: {fileID: 4721400668562498892, guid: ee48c2a7db503994abc0ca615e15b1a8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.897
+      value: 1.0829996
       objectReference: {fileID: 0}
     - target: {fileID: 4721400668562498892, guid: ee48c2a7db503994abc0ca615e15b1a8, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.151
+      value: 1.036
       objectReference: {fileID: 0}
     - target: {fileID: 4721400668562498892, guid: ee48c2a7db503994abc0ca615e15b1a8, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.000002210695
+      value: 0.65328276
       objectReference: {fileID: 0}
     - target: {fileID: 4721400668562498892, guid: ee48c2a7db503994abc0ca615e15b1a8, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.0000016963215
+      value: -0.27059802
       objectReference: {fileID: 0}
     - target: {fileID: 4721400668562498892, guid: ee48c2a7db503994abc0ca615e15b1a8, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.79335415
+      value: -0.6532807
       objectReference: {fileID: 0}
     - target: {fileID: 4721400668562498892, guid: ee48c2a7db503994abc0ca615e15b1a8, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.6087605
+      value: 0.27059716
       objectReference: {fileID: 0}
     - target: {fileID: 4721400668562498892, guid: ee48c2a7db503994abc0ca615e15b1a8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 75
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4721400668562498892, guid: ee48c2a7db503994abc0ca615e15b1a8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -179.999
+      value: -90
       objectReference: {fileID: 0}
     - target: {fileID: 4721400668562498892, guid: ee48c2a7db503994abc0ca615e15b1a8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0.001
+      value: 45
       objectReference: {fileID: 0}
     - target: {fileID: 4893558061887391444, guid: ee48c2a7db503994abc0ca615e15b1a8, type: 3}
       propertyPath: m_RotationOffsets.Array.data[0].y
-      value: -90
-      objectReference: {fileID: 0}
-    - target: {fileID: 4893558061887391444, guid: ee48c2a7db503994abc0ca615e15b1a8, type: 3}
-      propertyPath: m_RotationOffsets.Array.data[0].z
       value: -90.00001
       objectReference: {fileID: 0}
     - target: {fileID: 4893558061887391444, guid: ee48c2a7db503994abc0ca615e15b1a8, type: 3}
+      propertyPath: m_RotationOffsets.Array.data[0].z
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 4893558061887391444, guid: ee48c2a7db503994abc0ca615e15b1a8, type: 3}
       propertyPath: m_TranslationOffsets.Array.data[0].x
-      value: 0.0030001402
+      value: 0.0029999018
       objectReference: {fileID: 0}
     - target: {fileID: 4893558061887391444, guid: ee48c2a7db503994abc0ca615e15b1a8, type: 3}
       propertyPath: m_TranslationOffsets.Array.data[0].y
