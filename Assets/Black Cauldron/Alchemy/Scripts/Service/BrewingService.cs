@@ -34,6 +34,8 @@ namespace Ginox.BlackCauldron.Alchemy.Service
                 }
             }
 
+            suitableRecipes = newSuitableRecipes;
+
             if (!isAcceptedRecipe)
             {
                 /// TODO: Restart brewing process
