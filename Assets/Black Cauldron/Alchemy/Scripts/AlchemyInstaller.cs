@@ -6,6 +6,8 @@ using Ginox.BlackCauldron.Alchemy.Model.Ingredients;
 using Zenject;
 using Ginox.BlackCauldron.Alchemy.ViewModel.Ingredients;
 using UnityEngine;
+using Ginox.BlackCauldron.Alchemy.View.Ingredients;
+using Ginox.BlackCauldron.Alchemy.View;
 
 public class AlchemyInstaller : MonoInstaller
 {
@@ -23,6 +25,21 @@ public class AlchemyInstaller : MonoInstaller
     private Material redCommonPotionMaterial;
     [SerializeField]
     private Material yellowFoulSmellingPotionMaterial;
+
+    [SerializeField]
+    private GameObject ash;
+    [SerializeField]
+    private GameObject bayLeafs;
+    [SerializeField]
+    private GameObject cattailCob;
+    [SerializeField]
+    private GameObject flyAgaric;
+    [SerializeField]
+    private GameObject licoriceRoot;
+    [SerializeField]
+    private GameObject pineCone;
+    [SerializeField]
+    private GameObject salt;
 
     public override void InstallBindings()
     {
@@ -52,6 +69,14 @@ public class AlchemyInstaller : MonoInstaller
         Container.Bind<LicoriceRootViewModel>().AsTransient();
         Container.Bind<PineConeViewModel>().AsTransient();
         Container.Bind<SaltViewModel>().AsTransient();
+
+        Container.BindFactory<AshView, AIngredientView.Factory<AshView>>().FromComponentInNewPrefab(ash);
+        Container.BindFactory<BayLeafsView, AIngredientView.Factory<BayLeafsView>>().FromComponentInNewPrefab(bayLeafs);
+        Container.BindFactory<CattailCobView, AIngredientView.Factory<CattailCobView>>().FromComponentInNewPrefab(cattailCob);
+        Container.BindFactory<FlyAgaricView, AIngredientView.Factory<FlyAgaricView>>().FromComponentInNewPrefab(flyAgaric);
+        Container.BindFactory<LicoriceRootView, AIngredientView.Factory<LicoriceRootView>>().FromComponentInNewPrefab(licoriceRoot);
+        Container.BindFactory<PineConeView, AIngredientView.Factory<PineConeView>>().FromComponentInNewPrefab(pineCone);
+        Container.BindFactory<SaltView, AIngredientView.Factory<SaltView>>().FromComponentInNewPrefab(salt);
     }
 
     private void InstallPotions()

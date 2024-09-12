@@ -1,6 +1,7 @@
 using Ginox.BlackCauldron.Alchemy.ViewModel;
 using UnityEngine;
 using UnityEngine.Localization;
+using Zenject;
 
 namespace Ginox.BlackCauldron.Alchemy.View
 {
@@ -41,6 +42,11 @@ namespace Ginox.BlackCauldron.Alchemy.View
         private void OnDestroyed()
         {
             Destroy(gameObject);
+        }
+
+        public class Factory<T> : PlaceholderFactory<T>
+        {
+
         }
     }
 }

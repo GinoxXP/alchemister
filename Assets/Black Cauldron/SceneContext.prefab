@@ -86,6 +86,13 @@ MonoBehaviour:
   pinkMysteryPotionMaterial: {fileID: 2100000, guid: d9ef559cf90ca444ba6f4e43f99b7913, type: 2}
   redCommonPotionMaterial: {fileID: 2100000, guid: 809232c6e2011254f8583ad2f85853d3, type: 2}
   yellowFoulSmellingPotionMaterial: {fileID: 2100000, guid: f9ae5dd439b6a77488672522074aee88, type: 2}
+  ash: {fileID: 4669268222328994004, guid: 05bbbc6b7b08561418ae7886ff565323, type: 3}
+  bayLeafs: {fileID: 2617457135415251914, guid: 18f861ff4aa9fb0438fb9dcc173ee09d, type: 3}
+  cattailCob: {fileID: 4046488857747730717, guid: 70cd56d8ff56c5a4eb22e6e6fa7fa09e, type: 3}
+  flyAgaric: {fileID: 6670578593323725260, guid: bf83fb38d2474fb4ea581f14607f2cc3, type: 3}
+  licoriceRoot: {fileID: 8735661986476884146, guid: e01e914b5f73d3540aca1e5106c96f5f, type: 3}
+  pineCone: {fileID: 2105614773620593350, guid: fba1bdbf917bf554d9eb561752d49f65, type: 3}
+  salt: {fileID: 3188356959568993858, guid: 8936aff2475dd374586ad553bc7bd615, type: 3}
 --- !u!114 &4624348786477235844
 MonoBehaviour:
   m_ObjectHideFlags: 0
