@@ -1,13 +1,18 @@
 ﻿using Ginox.BlackCauldron.Alchemy.View.Ingredients;
+using System;
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit;
 using Zenject;
 
 namespace Ginox.BlackCauldron.Alchemy.View
 {
-    public class IngredientSpawner : MonoBehaviour
+    public class IngredientSpawner : XRBaseInteractable
     {
         [SerializeField]
         private Ingredient ingredient;
+
+        private delegate GameObject CreateIngredient();
+        CreateIngredient createIngredient;
 
         [Inject]
         private void Init(
@@ -19,40 +24,27 @@ namespace Ginox.BlackCauldron.Alchemy.View
             AIngredientView.Factory<PineConeView> pineConeFactory,
             AIngredientView.Factory<SaltView> saltFactory)
         {
-            Transform ingredientTransform = null;
-
-            switch (ingredient)
+            GameObject Create() => ingredient switch
             {
-                case Ingredient.Ash:
-                    ingredientTransform = ashFactory.Create().transform;
-                    break;
+                Ingredient.Ash => ashFactory.Create().gameObject,
+                Ingredient.BayLeafs => bayLeafsFactory.Create().gameObject,
+                Ingredient.CattailCob => cattailCobFactory.Create().gameObject,
+                Ingredient.FlyAgaric => flyAgaricFactory.Create().gameObject,
+                Ingredient.LicoriceRoot => licoriceRootFactory.Create().gameObject,
+                Ingredient.PineCone => pineConeFactory.Create().gameObject,
+                Ingredient.Salt => saltFactory.Create().gameObject,
+                _ => throw new System.NotImplementedException(),
+            };
+            createIngredient = Create;
+        }
 
-                case Ingredient.BayLeafs:
-                    ingredientTransform = bayLeafsFactory.Create().transform;
-                    break;
+        public void Create(SelectEnterEventArgs args)
+        {
+            var ingredient = createIngredient.Invoke();
+            ingredient.transform.position = transform.position;
 
-                case Ingredient.CattailCob:
-                    ingredientTransform = cattailCobFactory.Create().transform;
-                    break;
-
-                case Ingredient.FlyAgaric:
-                    ingredientTransform = flyAgaricFactory.Create().transform;
-                    break;
-
-                case Ingredient.LicoriceRoot:
-                    ingredientTransform = licoriceRootFactory.Create().transform;
-                    break;
-
-                case Ingredient.PineCone:
-                    ingredientTransform = pineConeFactory.Create().transform;
-                    break;
-
-                case Ingredient.Salt:
-                    ingredientTransform = saltFactory.Create().transform;
-                    break;
-            }
-
-            ingredientTransform.position = transform.position;
+            var interactable = ingredient.GetComponent<XRGrabInteractable>();
+            interactionManager.SelectEnter(args.interactorObject, interactable);
         }
     }
 }
