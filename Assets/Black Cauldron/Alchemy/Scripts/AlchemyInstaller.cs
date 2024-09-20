@@ -1,13 +1,13 @@
-using Ginox.BlackCauldron.Alchemy.Service;
-using Ginox.BlackCauldron.Alchemy.ViewModel;
-using Ginox.BlackCauldron.Alchemy.Model;
-using Ginox.BlackCauldron.Alchemy.Model.Potions;
-using Ginox.BlackCauldron.Alchemy.Model.Ingredients;
+using Ginox.BlackCauldron.Alchemy.Services;
+using Ginox.BlackCauldron.Alchemy.Controllers;
+using Ginox.BlackCauldron.Alchemy.Models;
+using Ginox.BlackCauldron.Alchemy.Models.Potions;
+using Ginox.BlackCauldron.Alchemy.Models.Ingredients;
 using Zenject;
-using Ginox.BlackCauldron.Alchemy.ViewModel.Ingredients;
+using Ginox.BlackCauldron.Alchemy.Controllers.Ingredients;
 using UnityEngine;
-using Ginox.BlackCauldron.Alchemy.View.Ingredients;
-using Ginox.BlackCauldron.Alchemy.View;
+using Ginox.BlackCauldron.Alchemy.Views.Ingredients;
+using Ginox.BlackCauldron.Alchemy.Views;
 
 public class AlchemyInstaller : MonoInstaller
 {
@@ -44,9 +44,9 @@ public class AlchemyInstaller : MonoInstaller
     public override void InstallBindings()
     {
 
-        Container.Bind<CauldronViewModel>().AsTransient();
+        Container.Bind<CauldronController>().AsTransient();
         Container.Bind<BrewingService>().AsSingle();
-        Container.Bind<BottleViewModel>().AsTransient();
+        Container.Bind<BottleController>().AsTransient();
 
         InstallIngredients();
         InstallPotions();
@@ -62,13 +62,13 @@ public class AlchemyInstaller : MonoInstaller
         Container.Bind<PineCone>().AsTransient();
         Container.Bind<Salt>().AsTransient();
 
-        Container.Bind<AshViewModel>().AsTransient();
-        Container.Bind<BayLeafsViewModel>().AsTransient();
-        Container.Bind<CattailCobViewModel>().AsTransient();
-        Container.Bind<FlyAgaricViewModel>().AsTransient();
-        Container.Bind<LicoriceRootViewModel>().AsTransient();
-        Container.Bind<PineConeViewModel>().AsTransient();
-        Container.Bind<SaltViewModel>().AsTransient();
+        Container.Bind<AshController>().AsTransient();
+        Container.Bind<BayLeafsController>().AsTransient();
+        Container.Bind<CattailCobController>().AsTransient();
+        Container.Bind<FlyAgaricController>().AsTransient();
+        Container.Bind<LicoriceRootController>().AsTransient();
+        Container.Bind<PineConeController>().AsTransient();
+        Container.Bind<SaltController>().AsTransient();
 
         Container.BindFactory<AshView, AIngredientView.Factory<AshView>>().FromComponentInNewPrefab(ash);
         Container.BindFactory<BayLeafsView, AIngredientView.Factory<BayLeafsView>>().FromComponentInNewPrefab(bayLeafs);

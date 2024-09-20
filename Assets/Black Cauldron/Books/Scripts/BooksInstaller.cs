@@ -1,6 +1,6 @@
-using Ginox.BlackCauldron.Alchemy.Model.Potions;
-using Ginox.BlackCauldron.Alchemy.Service;
-using Ginox.BlackCauldron.Books.ViewModels.Books;
+using Ginox.BlackCauldron.Alchemy.Models.Potions;
+using Ginox.BlackCauldron.Alchemy.Services;
+using Ginox.BlackCauldron.Books.Controllers.Books;
 using Zenject;
 
 namespace Ginox.BlackCauldron.Books
@@ -9,7 +9,7 @@ namespace Ginox.BlackCauldron.Books
     {
         public override void InstallBindings()
         {
-            Container.Bind<BeginerBookViewModel>().AsSingle();
+            Container.Bind<BeginerBookController>().AsSingle();
 
             var brewingService = Container.Resolve<BrewingService>();
 
@@ -21,7 +21,7 @@ namespace Ginox.BlackCauldron.Books
             var redCommonPotion = brewingService.GetRecipe(Container.Resolve<RedCommonPotion>());
             var yellowFoulSmellingPotion = brewingService.GetRecipe(Container.Resolve<YellowFoulSmellingPotion>());
 
-            var beginerBookViewModel = Container.Resolve<BeginerBookViewModel>();
+            var beginerBookViewModel = Container.Resolve<BeginerBookController>();
             beginerBookViewModel.RegisterRecipe(blueUselessPotion);
             beginerBookViewModel.RegisterRecipe(cyanStrangePotion);
             beginerBookViewModel.RegisterRecipe(greenSweetPotion);

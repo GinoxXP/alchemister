@@ -1,4 +1,4 @@
-﻿using Ginox.BlackCauldron.Books.ViewModels.Books;
+﻿using Ginox.BlackCauldron.Books.Controllers.Books;
 using Zenject;
 
 namespace Ginox.BlackCauldron.Books.Views.Books
@@ -6,7 +6,7 @@ namespace Ginox.BlackCauldron.Books.Views.Books
     public class BeginerBookView : ABookView
     {
         [Inject]
-        private void Init(BeginerBookViewModel viewModel)
+        private void Init(BeginerBookController viewModel)
         {
             base.Init(viewModel);
         }
