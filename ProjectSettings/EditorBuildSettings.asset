@@ -14,3 +14,4 @@ EditorBuildSettings:
     com.unity.addressableassets: {fileID: 11400000, guid: b732d0451ce080b4788609465c3cb1c6, type: 2}
     com.unity.localization.settings: {fileID: 11400000, guid: 81a88f1095fc2bd4ba751e8164456316, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 772e9c6b44ccca848af9e65837390029, type: 2}
+    com.unity.xr.openxr.settings4: {fileID: 11400000, guid: 77f8200189610d548a870f8aab600df1, type: 2}

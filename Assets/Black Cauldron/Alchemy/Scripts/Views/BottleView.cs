@@ -9,12 +9,14 @@ namespace Ginox.BlackCauldron.Alchemy.Views
         [SerializeField]
         private MeshRenderer fillingMaterial;
 
-        private BottleController bottleViewModel;
+        private BottleController bottleController;
+
+        public BottleController BottleController => bottleController;
 
         [Inject]
         private void Init(BottleController bottleViewModel)
         {
-            this.bottleViewModel = bottleViewModel;
+            this.bottleController = bottleViewModel;
         }
 
         public void Scoop(CauldronView cauldronView)
@@ -27,7 +29,7 @@ namespace Ginox.BlackCauldron.Alchemy.Views
                 return;
             }
 
-            bottleViewModel.Potion = potion;
+            bottleController.Potion = potion;
             fillingMaterial.material = potion.Material;
         }
     }
