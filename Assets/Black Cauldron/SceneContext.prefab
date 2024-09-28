@@ -95,6 +95,7 @@ MonoBehaviour:
   licoriceRoot: {fileID: 8735661986476884146, guid: e01e914b5f73d3540aca1e5106c96f5f, type: 3}
   pineCone: {fileID: 2105614773620593350, guid: fba1bdbf917bf554d9eb561752d49f65, type: 3}
   salt: {fileID: 3188356959568993858, guid: 8936aff2475dd374586ad553bc7bd615, type: 3}
+  bottle: {fileID: 5951818125932470985, guid: 3b2bf9521359eb644b74e7aba5cd94c4, type: 3}
 --- !u!114 &4624348786477235844
 MonoBehaviour:
   m_ObjectHideFlags: 0

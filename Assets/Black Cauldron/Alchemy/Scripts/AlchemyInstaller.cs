@@ -41,6 +41,9 @@ public class AlchemyInstaller : MonoInstaller
     [SerializeField]
     private GameObject salt;
 
+    [SerializeField]
+    private GameObject bottle;
+
     public override void InstallBindings()
     {
 
@@ -77,6 +80,8 @@ public class AlchemyInstaller : MonoInstaller
         Container.BindFactory<LicoriceRootView, AIngredientView.Factory<LicoriceRootView>>().FromComponentInNewPrefab(licoriceRoot);
         Container.BindFactory<PineConeView, AIngredientView.Factory<PineConeView>>().FromComponentInNewPrefab(pineCone);
         Container.BindFactory<SaltView, AIngredientView.Factory<SaltView>>().FromComponentInNewPrefab(salt);
+
+        Container.BindFactory<BottleView, BottleView.Factory<BottleView>>().FromComponentInNewPrefab(bottle);
     }
 
     private void InstallPotions()

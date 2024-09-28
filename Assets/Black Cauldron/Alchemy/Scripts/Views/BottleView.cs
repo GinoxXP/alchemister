@@ -32,5 +32,10 @@ namespace Ginox.BlackCauldron.Alchemy.Views
             bottleController.Potion = potion;
             fillingMaterial.material = potion.Material;
         }
+
+        public class Factory<T> : PlaceholderFactory<T>
+        {
+
+        }
     }
 }

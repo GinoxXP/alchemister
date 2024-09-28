@@ -1,5 +1,4 @@
 ﻿using Ginox.BlackCauldron.Alchemy.Views.Ingredients;
-using System;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 using Zenject;
