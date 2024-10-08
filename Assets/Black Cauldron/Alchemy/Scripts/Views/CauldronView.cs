@@ -26,7 +26,7 @@ namespace Ginox.BlackCauldron.Alchemy.Views
         public void PutIn(AIngredient ingredient)
         {
             cauldronViewModel.PutIn(ingredient);
-            var potion = cauldronViewModel.CheckPotion();
+            var potion = cauldronViewModel.GetPotion();
 
             if (potion == null)
             {

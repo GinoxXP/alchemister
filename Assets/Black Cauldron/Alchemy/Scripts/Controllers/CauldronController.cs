@@ -18,7 +18,7 @@ namespace Ginox.BlackCauldron.Alchemy.Controllers
         public APotion Finish()
             => brewingService.FinishBrew();
 
-        public APotion CheckPotion()
-            => brewingService.CheckPotion();
+        public APotion GetPotion()
+            => brewingService.GetPotion();
     }
 }

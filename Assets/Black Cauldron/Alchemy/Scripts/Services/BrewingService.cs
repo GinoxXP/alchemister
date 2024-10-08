@@ -6,92 +6,128 @@ namespace Ginox.BlackCauldron.Alchemy.Services
 {
     public class BrewingService 
     {
-        private int recipeIterator;
-        private List<Recipe> suitableRecipes = new();
+        private Root root = new();
+        private ANode currentNode;
+        private APotion compleatedPotion;
 
         public List<Recipe> Recipes { get; private set; } = new();
 
         public void RegisterRecipe(Recipe recipe)
-            => Recipes.Add(recipe);
+        {
+            Recipes.Add(recipe);
+            CreateGraph(recipe);
+        }
 
         public Recipe GetRecipe(APotion potion)
             => Recipes.FirstOrDefault(x => x.Potion.ToString() == potion.ToString());
 
-
         public void Brew(AIngredient ingredient)
         {
-            if (recipeIterator == 0)
-                StartNewBrew();
+            currentNode ??= root;
 
-            var newSuitableRecipes = new List<Recipe>();
-            bool isAcceptedRecipe = false;
-            foreach (var recipe in suitableRecipes)
+            var targetType = ingredient.GetType();
+
+            var node = currentNode.Nodes.FirstOrDefault(x => ((Node)x).Ingredient.GetType() == targetType);
+            if (node == null)
             {
-                if (recipe.Perform(ingredient, recipeIterator))
-                {
-                    newSuitableRecipes.Add(recipe);
-                    isAcceptedRecipe = true;
-                }
+                Reset();
             }
-
-            suitableRecipes = newSuitableRecipes;
-
-            if (!isAcceptedRecipe)
+            else
             {
-                /// TODO: Restart brewing process
-                ingredient.Destroy();
-
-                return;
+                currentNode = node;
+                if (currentNode.Nodes[0] is Leaf)
+                    CompleatePotion(((Leaf)currentNode.Nodes.FirstOrDefault()).Potion);
             }
+        }
 
-            ingredient.Destroy();
+        private void Reset()
+        {
+            // TODO Something
+            compleatedPotion = null;
+            currentNode = null;
+        }
 
-            recipeIterator++;
+        private void CompleatePotion(APotion potion)
+        {
+            // TODO Something
+            compleatedPotion = potion;
         }
 
         public APotion FinishBrew()
         {
-            var potion = CheckPotion();
-            StartNewBrew();
-            if (potion == null)
-            {
-                /// TODO: Restart brewing process
-            }
-            else
-            {
-                return potion;
-            }
-
-            return null;
+            return compleatedPotion;
         }
 
-        public APotion CheckPotion()
+        public APotion GetPotion()
         {
-            Recipe compleatedRecipe = null;
-            foreach (var recipe in suitableRecipes)
-            {
-                if (recipe.Ingredients.Count == recipeIterator)
-                {
-                    compleatedRecipe = recipe;
-                    break;
-                }
-            }
-
-            if (compleatedRecipe != null)
-            {
-                return compleatedRecipe.Potion;
-            }
-
-            return null;
+            return compleatedPotion;
         }
 
-        private void StartNewBrew()
+        public void CreateGraph(Recipe recipe)
         {
-            recipeIterator = 0;
-            suitableRecipes.Clear();
+            var targetIngredient = recipe.Ingredients[0];
+            var targetType = targetIngredient.GetType();
 
-            foreach (var recipe in Recipes)
-                suitableRecipes.Add(recipe);
+            var node = root.Nodes.FirstOrDefault(x => ((Node)x).Ingredient.GetType() == targetType);
+            if (node == null)
+            {
+                node = new Node(targetIngredient);
+                root.Nodes.Add(node);
+            }
+
+            CreateGraph(recipe, node, 1);
+        }
+
+        private void CreateGraph(Recipe recipe, ANode currentNode, int deep)
+        {
+            if (deep >= recipe.Ingredients.Count)
+            {
+                var leaf = new Leaf(recipe.Potion);
+                currentNode.Nodes.Add(leaf);
+                return;
+            }
+
+            var targetIngredient = recipe.Ingredients[deep];
+            var targetType = targetIngredient.GetType();
+
+            var node = currentNode.Nodes.FirstOrDefault(x => ((Node)x).Ingredient.GetType() == targetType);
+            if (node == null)
+            {
+                node = new Node(targetIngredient);
+                currentNode.Nodes.Add(node);
+            }
+
+            CreateGraph(recipe, node, deep + 1);
+        }
+
+        private abstract class ANode
+        {
+            public List<ANode> Nodes { get; } = new();
+        }
+
+        private class Root : ANode
+        {
+        }
+
+        private class Node : ANode
+        {
+            public Node(AIngredient ingredient)
+            {
+                Ingredient = ingredient;
+            }
+
+            public AIngredient Ingredient { get; set; }
+
+        }
+
+        private class Leaf : ANode
+        {
+            public Leaf(APotion potion)
+            {
+                Potion = potion;
+            }
+
+            public APotion Potion { get; set; }
         }
     }
 }
