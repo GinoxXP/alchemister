@@ -6,9 +6,11 @@ namespace Ginox.BlackCauldron.Alchemy.Services
 {
     public class BrewingService 
     {
-        private Root root = new();
+        private static readonly Root root = new();
+
         private ANode currentNode;
-        private APotion compleatedPotion;
+
+        public APotion CompleatedPotion { get; private set; }
 
         public List<Recipe> Recipes { get; private set; } = new();
 
@@ -43,24 +45,19 @@ namespace Ginox.BlackCauldron.Alchemy.Services
         private void Reset()
         {
             // TODO Something
-            compleatedPotion = null;
+            CompleatedPotion = null;
             currentNode = null;
         }
 
         private void CompleatePotion(APotion potion)
         {
             // TODO Something
-            compleatedPotion = potion;
+            CompleatedPotion = potion;
         }
 
-        public APotion FinishBrew()
+        public void FinishBrew()
         {
-            return compleatedPotion;
-        }
-
-        public APotion GetPotion()
-        {
-            return compleatedPotion;
+            Reset();
         }
 
         public void CreateGraph(Recipe recipe)

@@ -15,10 +15,10 @@ namespace Ginox.BlackCauldron.Alchemy.Controllers
         public void PutIn(AIngredient ingredient)
             => brewingService.Brew(ingredient);
 
-        public APotion Finish()
+        public void Finish()
             => brewingService.FinishBrew();
 
         public APotion GetPotion()
-            => brewingService.GetPotion();
+            => brewingService.CompleatedPotion;
     }
 }

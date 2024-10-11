@@ -15,36 +15,50 @@ namespace Ginox.BlackCauldron.Alchemy.Views
         [SerializeField]
         private List<Material> prepotionsMaterials;
 
-        private CauldronController cauldronViewModel;
+        private CauldronController cauldronController;
 
         [Inject]
         private void Init(CauldronController cauldronViewModel)
         {
-            this.cauldronViewModel = cauldronViewModel;
+            this.cauldronController = cauldronViewModel;
         }
 
         public void PutIn(AIngredient ingredient)
         {
-            cauldronViewModel.PutIn(ingredient);
-            var potion = cauldronViewModel.GetPotion();
+            cauldronController.PutIn(ingredient);
+            var potion = cauldronController.GetPotion();
 
             if (potion == null)
-            {
-                Random.InitState((int)Time.time);
-                var randomIndex = Random.Range(0, prepotionsMaterials.Count - 1);
-                liquidSurface.material = prepotionsMaterials[randomIndex];
-            }
+                SetMaterialPotionInProcess();
             else
-            {
-                liquidSurface.material = potion.Material;
-            }
-            
+                SetMaterialCompleatedPotion(potion);
         }
 
         public APotion Finish()
         {
+            var potion = cauldronController.GetPotion();
+
+            SetMaterialClearWater();
+            cauldronController.Finish();
+
+            return potion;
+        }
+
+        private void SetMaterialCompleatedPotion(APotion potion)
+        {
+            liquidSurface.material = potion.Material;
+        }
+
+        private void SetMaterialPotionInProcess()
+        {
+            Random.InitState((int)Time.time);
+            var randomIndex = Random.Range(0, prepotionsMaterials.Count - 1);
+            liquidSurface.material = prepotionsMaterials[randomIndex];
+        }
+
+        private void SetMaterialClearWater()
+        {
             liquidSurface.material = waterMaterial;
-            return cauldronViewModel.Finish();
         }
     }
 }
