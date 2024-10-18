@@ -1,13 +1,13 @@
-using Ginox.BlackCauldron.Alchemy.Services;
 using Ginox.BlackCauldron.Alchemy.Controllers;
+using Ginox.BlackCauldron.Alchemy.Controllers.Ingredients;
 using Ginox.BlackCauldron.Alchemy.Models;
 using Ginox.BlackCauldron.Alchemy.Models.Potions;
 using Ginox.BlackCauldron.Alchemy.Models.Ingredients;
-using Zenject;
-using Ginox.BlackCauldron.Alchemy.Controllers.Ingredients;
-using UnityEngine;
+using Ginox.BlackCauldron.Alchemy.Services;
 using Ginox.BlackCauldron.Alchemy.Views.Ingredients;
 using Ginox.BlackCauldron.Alchemy.Views;
+using UnityEngine;
+using Zenject;
 
 public class AlchemyInstaller : MonoInstaller
 {
@@ -40,6 +40,16 @@ public class AlchemyInstaller : MonoInstaller
     private GameObject pineCone;
     [SerializeField]
     private GameObject salt;
+    [SerializeField]
+    private GameObject paprika;
+    [SerializeField]
+    private GameObject herringSkin;
+    [SerializeField]
+    private GameObject mint;
+    [SerializeField]
+    private GameObject beaverTail;
+    [SerializeField]
+    private GameObject coal;
 
     [SerializeField]
     private GameObject bottle;
@@ -64,6 +74,11 @@ public class AlchemyInstaller : MonoInstaller
         Container.Bind<LicoriceRoot>().AsTransient();
         Container.Bind<PineCone>().AsTransient();
         Container.Bind<Salt>().AsTransient();
+        Container.Bind<Paprika>().AsTransient();
+        Container.Bind<HerringSkin>().AsTransient();
+        Container.Bind<Mint>().AsTransient();
+        Container.Bind<BeaverTail>().AsTransient();
+        Container.Bind<Coal>().AsTransient();
 
         Container.Bind<AshController>().AsTransient();
         Container.Bind<BayLeafsController>().AsTransient();
@@ -72,6 +87,11 @@ public class AlchemyInstaller : MonoInstaller
         Container.Bind<LicoriceRootController>().AsTransient();
         Container.Bind<PineConeController>().AsTransient();
         Container.Bind<SaltController>().AsTransient();
+        Container.Bind<PaprikaController>().AsTransient();
+        Container.Bind<HerringSkinController>().AsTransient();
+        Container.Bind<MintController>().AsTransient();
+        Container.Bind<BeaverTailController>().AsTransient();
+        Container.Bind<CoalController>().AsTransient();
 
         Container.BindFactory<AshView, AIngredientView.Factory<AshView>>().FromComponentInNewPrefab(ash);
         Container.BindFactory<BayLeafsView, AIngredientView.Factory<BayLeafsView>>().FromComponentInNewPrefab(bayLeafs);
@@ -80,6 +100,11 @@ public class AlchemyInstaller : MonoInstaller
         Container.BindFactory<LicoriceRootView, AIngredientView.Factory<LicoriceRootView>>().FromComponentInNewPrefab(licoriceRoot);
         Container.BindFactory<PineConeView, AIngredientView.Factory<PineConeView>>().FromComponentInNewPrefab(pineCone);
         Container.BindFactory<SaltView, AIngredientView.Factory<SaltView>>().FromComponentInNewPrefab(salt);
+        Container.BindFactory<PaprikaView, AIngredientView.Factory<PaprikaView>>().FromComponentInNewPrefab(paprika);
+        Container.BindFactory<HerringSkinView, AIngredientView.Factory<HerringSkinView>>().FromComponentInNewPrefab(herringSkin);
+        Container.BindFactory<MintView, AIngredientView.Factory<MintView>>().FromComponentInNewPrefab(mint);
+        Container.BindFactory<BeaverTailView, AIngredientView.Factory<BeaverTailView>>().FromComponentInNewPrefab(beaverTail);
+        Container.BindFactory<CoalView, AIngredientView.Factory<CoalView>>().FromComponentInNewPrefab(coal);
 
         Container.BindFactory<BottleView, BottleView.Factory<BottleView>>().FromComponentInNewPrefab(bottle);
     }

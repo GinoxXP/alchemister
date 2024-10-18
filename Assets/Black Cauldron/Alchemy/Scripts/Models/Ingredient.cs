@@ -7,4 +7,9 @@
     LicoriceRoot,
     PineCone,
     Salt,
+    Paprika,
+    HerringSkin,
+    Mint,
+    BeaverTail,
+    Coal,
 }

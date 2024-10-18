@@ -21,7 +21,12 @@ namespace Ginox.BlackCauldron.Alchemy.Views
             AIngredientView.Factory<FlyAgaricView> flyAgaricFactory,
             AIngredientView.Factory<LicoriceRootView> licoriceRootFactory,
             AIngredientView.Factory<PineConeView> pineConeFactory,
-            AIngredientView.Factory<SaltView> saltFactory)
+            AIngredientView.Factory<SaltView> saltFactory,
+            AIngredientView.Factory<PaprikaView> paprikaFactory,
+            AIngredientView.Factory<HerringSkinView> herringFactory,
+            AIngredientView.Factory<MintView> mintFactory,
+            AIngredientView.Factory<BeaverTailView> beaverTailFactory,
+            AIngredientView.Factory<CoalView> coalFactory)
         {
             GameObject Create() => ingredient switch
             {
@@ -32,6 +37,11 @@ namespace Ginox.BlackCauldron.Alchemy.Views
                 Ingredient.LicoriceRoot => licoriceRootFactory.Create().gameObject,
                 Ingredient.PineCone => pineConeFactory.Create().gameObject,
                 Ingredient.Salt => saltFactory.Create().gameObject,
+                Ingredient.Paprika => paprikaFactory.Create().gameObject,
+                Ingredient.HerringSkin => herringFactory.Create().gameObject,
+                Ingredient.Mint => mintFactory.Create().gameObject,
+                Ingredient.BeaverTail => beaverTailFactory.Create().gameObject,
+                Ingredient.Coal => coalFactory.Create().gameObject,
                 _ => throw new System.NotImplementedException(),
             };
             createIngredient = Create;

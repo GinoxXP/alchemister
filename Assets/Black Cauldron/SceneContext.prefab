@@ -95,6 +95,11 @@ MonoBehaviour:
   licoriceRoot: {fileID: 8735661986476884146, guid: e01e914b5f73d3540aca1e5106c96f5f, type: 3}
   pineCone: {fileID: 2105614773620593350, guid: fba1bdbf917bf554d9eb561752d49f65, type: 3}
   salt: {fileID: 3188356959568993858, guid: 8936aff2475dd374586ad553bc7bd615, type: 3}
+  paprika: {fileID: 3779311570274846203, guid: edd39630293658943b0d03fb81977369, type: 3}
+  herringSkin: {fileID: 3930939991875836446, guid: 279039b1144474444bd2ebc0866b19b2, type: 3}
+  mint: {fileID: 3048448165777344447, guid: f3de5ce792521e4439b19ec9ebddf137, type: 3}
+  beaverTail: {fileID: 85925098223529651, guid: 440c3fbe71e26b746b61b75b2066e341, type: 3}
+  coal: {fileID: 371412119509471495, guid: 8892c9da95654f6488e457ffc03e344b, type: 3}
   bottle: {fileID: 5951818125932470985, guid: 3b2bf9521359eb644b74e7aba5cd94c4, type: 3}
 --- !u!114 &4624348786477235844
 MonoBehaviour:
