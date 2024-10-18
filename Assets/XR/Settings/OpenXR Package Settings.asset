@@ -56,6 +56,7 @@ MonoBehaviour:
   - {fileID: 1263411535793101340}
   - {fileID: 3258043938196583114}
   - {fileID: 8808396956000738745}
+  - {fileID: 6758474585411902228}
   - {fileID: 4139046323563985445}
   - {fileID: 5010732334935570175}
   - {fileID: 5145034244570434244}
@@ -76,6 +77,7 @@ MonoBehaviour:
   m_depthSubmissionMode: 0
   m_optimizeBufferDiscards: 0
   m_symmetricProjection: 0
+  m_foveatedRenderingApi: 0
 --- !u!114 &-6259454182613878820
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -325,6 +327,27 @@ MonoBehaviour:
   Values:
   - {fileID: 5907203823523303280}
   - {fileID: -7277530469110126848}
+--- !u!114 &295669568360920621
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6a75d1f5ff90154ea2a8e58222a1f59, type: 3}
+  m_Name: FoveatedRenderingFeature Standalone
+  m_EditorClassIdentifier: 
+  m_enabled: 0
+  nameUi: Foveated Rendering
+  version: 1
+  featureIdInternal: com.unity.openxr.feature.foveatedrendering
+  openxrExtensionStrings: XR_UNITY_foveation XR_FB_foveation XR_FB_foveation_configuration
+    XR_FB_swapchain_update_state XR_FB_foveation_vulkan
+  company: Unity
+  priority: 0
+  required: 0
 --- !u!114 &406762340155874710
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -719,6 +742,7 @@ MonoBehaviour:
   - {fileID: 3979888810508827830}
   - {fileID: -2193274376807408812}
   - {fileID: -4055306209574224695}
+  - {fileID: 295669568360920621}
   - {fileID: 5538941776542035269}
   - {fileID: -4707651451002275123}
   - {fileID: 6735706999036126002}
@@ -741,6 +765,7 @@ MonoBehaviour:
   m_depthSubmissionMode: 0
   m_optimizeBufferDiscards: 0
   m_symmetricProjection: 0
+  m_foveatedRenderingApi: 0
 --- !u!114 &6735706999036126002
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -758,6 +783,27 @@ MonoBehaviour:
   version: 0.0.1
   featureIdInternal: com.unity.openxr.feature.input.hpreverb
   openxrExtensionStrings: XR_EXT_hp_mixed_reality_controller
+  company: Unity
+  priority: 0
+  required: 0
+--- !u!114 &6758474585411902228
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6a75d1f5ff90154ea2a8e58222a1f59, type: 3}
+  m_Name: FoveatedRenderingFeature Android
+  m_EditorClassIdentifier: 
+  m_enabled: 0
+  nameUi: Foveated Rendering
+  version: 1
+  featureIdInternal: com.unity.openxr.feature.foveatedrendering
+  openxrExtensionStrings: XR_UNITY_foveation XR_FB_foveation XR_FB_foveation_configuration
+    XR_FB_swapchain_update_state XR_FB_foveation_vulkan
   company: Unity
   priority: 0
   required: 0

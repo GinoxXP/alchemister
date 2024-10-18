@@ -5,7 +5,7 @@ using Zenject;
 
 namespace Ginox.BlackCauldron.Alchemy.Views
 {
-    public class IngredientSpawner : XRBaseInteractable
+    public class IngredientSpawner : UnityEngine.XR.Interaction.Toolkit.Interactables.XRBaseInteractable
     {
         [SerializeField]
         private Ingredient ingredient;
@@ -52,7 +52,7 @@ namespace Ginox.BlackCauldron.Alchemy.Views
             var ingredient = createIngredient.Invoke();
             ingredient.transform.position = transform.position;
 
-            var interactable = ingredient.GetComponent<XRGrabInteractable>();
+            var interactable = ingredient.GetComponent<UnityEngine.XR.Interaction.Toolkit.Interactables.XRGrabInteractable>();
             interactionManager.SelectEnter(args.interactorObject, interactable);
         }
     }

@@ -5,17 +5,17 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using UnityEngine.XR;
-using UnityEngine.XR.Interaction.Toolkit;
+
 
 public class VirtualDisplayEvent : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IDragHandler,
     IInitializePotentialDragHandler
 {
     public string tag = "VirtualDisplayEvent----";
-    public XRRayInteractor xrLeftRayInteractor;
-    public XRRayInteractor xrRightRayInteractor;
+    public UnityEngine.XR.Interaction.Toolkit.Interactors.XRRayInteractor xrLeftRayInteractor;
+    public UnityEngine.XR.Interaction.Toolkit.Interactors.XRRayInteractor xrRightRayInteractor;
     public VirtualDisplayDemo virtualDisplayController;
     public Text mylog;
-    private XRRayInteractor currentRayInteractor;
+    private UnityEngine.XR.Interaction.Toolkit.Interactors.XRRayInteractor currentRayInteractor;
     private GameObject mDisplay;
     private RectTransform mDisplayTran;
     private int mKeyEvent;

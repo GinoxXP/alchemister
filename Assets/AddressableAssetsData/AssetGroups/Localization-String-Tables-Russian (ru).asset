@@ -13,8 +13,6 @@ MonoBehaviour:
   m_Name: Localization-String-Tables-Russian (ru)
   m_EditorClassIdentifier: 
   m_GroupName: Localization-String-Tables-Russian (ru)
-  m_Data:
-    m_SerializedData: []
   m_GUID: d39a5579e6ab9d2488d2eb3086be671a
   m_SerializeEntries:
   - m_GUID: 1c8a6ef5a433eef4c9dd0fdfe3002cec
@@ -23,14 +21,14 @@ MonoBehaviour:
     m_SerializedLabels:
     - Locale-ru
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: a17c32e7a166f6a4ea9050a9723b10f0
-    m_Address: Book_ru
+  - m_GUID: 2dec0b736108dd7418ecaa6122757512
+    m_Address: Potions_ru
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-ru
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 2dec0b736108dd7418ecaa6122757512
-    m_Address: Potions_ru
+  - m_GUID: a17c32e7a166f6a4ea9050a9723b10f0
+    m_Address: Book_ru
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-ru

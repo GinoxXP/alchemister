@@ -3,7 +3,7 @@ using Zenject;
 
 namespace Ginox.BlackCauldron.Alchemy.Views
 {
-    public class BottleSpawner : XRBaseInteractable
+    public class BottleSpawner : UnityEngine.XR.Interaction.Toolkit.Interactables.XRBaseInteractable
     {
         private BottleView.Factory<BottleView> factory;
 
@@ -19,7 +19,7 @@ namespace Ginox.BlackCauldron.Alchemy.Views
 
             bottle.transform.position = transform.position;
 
-            var interactable = bottle.GetComponent<XRGrabInteractable>();
+            var interactable = bottle.GetComponent<UnityEngine.XR.Interaction.Toolkit.Interactables.XRGrabInteractable>();
             interactionManager.SelectEnter(args.interactorObject, interactable);
         }
     }

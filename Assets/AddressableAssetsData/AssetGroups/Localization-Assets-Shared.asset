@@ -13,12 +13,10 @@ MonoBehaviour:
   m_Name: Localization-Assets-Shared
   m_EditorClassIdentifier: 
   m_GroupName: Localization-Assets-Shared
-  m_Data:
-    m_SerializedData: []
   m_GUID: 95087928c58766c48963f6673f085b8f
   m_SerializeEntries:
-  - m_GUID: d0113603222691c4b8af6c27516498b0
-    m_Address: Assets/Black Cauldron/Alchemy/Alchemy Shared Data.asset
+  - m_GUID: 024ba68222b90c946a7a4ad801fbdf38
+    m_Address: Assets/Black Cauldron/Alchemy/Localization/Potions Shared Data.asset
     m_ReadOnly: 1
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -27,8 +25,8 @@ MonoBehaviour:
     m_ReadOnly: 1
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 024ba68222b90c946a7a4ad801fbdf38
-    m_Address: Assets/Black Cauldron/Alchemy/Localization/Potions Shared Data.asset
+  - m_GUID: d0113603222691c4b8af6c27516498b0
+    m_Address: Assets/Black Cauldron/Alchemy/Alchemy Shared Data.asset
     m_ReadOnly: 1
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
