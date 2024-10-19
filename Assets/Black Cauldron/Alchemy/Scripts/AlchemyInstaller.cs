@@ -25,6 +25,16 @@ public class AlchemyInstaller : MonoInstaller
     private Material redCommonPotionMaterial;
     [SerializeField]
     private Material yellowFoulSmellingPotionMaterial;
+    [SerializeField]
+    private Material coughSyrupMaterial;
+    [SerializeField]
+    private Material tinctureForRunnyNoseMaterial;
+    [SerializeField]
+    private Material antiBaldnessLotionMaterial;
+    [SerializeField]
+    private Material thickHairPotionMaterial;
+    [SerializeField]
+    private Material ointmentForRestoringLostFingersMaterial;
 
     [SerializeField]
     private GameObject ash;
@@ -121,6 +131,12 @@ public class AlchemyInstaller : MonoInstaller
         var pineCone = Container.Resolve<PineCone>();
         var salt = Container.Resolve<Salt>();
 
+        var paprika = Container.Resolve<Paprika>();
+        var herringSkin = Container.Resolve<HerringSkin>();
+        var mint = Container.Resolve<Mint>();
+        var beaverTail = Container.Resolve<BeaverTail>();
+        var coal = Container.Resolve<Coal>();
+
         Container.Bind<BlueUselessPotion>().FromMethod(x => new BlueUselessPotion(blueUselessPotionMaterial)).AsTransient();
         Container.Bind<CyanStrangePotion>().FromMethod(x => new CyanStrangePotion(cyanStrangePotionMaterial)).AsTransient();
         Container.Bind<GreenSweetPotion>().FromMethod(x => new GreenSweetPotion(greenSweetPotionMaterial)).AsTransient();
@@ -128,6 +144,12 @@ public class AlchemyInstaller : MonoInstaller
         Container.Bind<PinkMysteryPotion>().FromMethod(x => new PinkMysteryPotion(pinkMysteryPotionMaterial)).AsTransient();
         Container.Bind<RedCommonPotion>().FromMethod(x => new RedCommonPotion(redCommonPotionMaterial)).AsTransient();
         Container.Bind<YellowFoulSmellingPotion>().FromMethod(x => new YellowFoulSmellingPotion(yellowFoulSmellingPotionMaterial)).AsTransient();
+
+        Container.Bind<CoughSyrup>().FromMethod(x => new CoughSyrup(coughSyrupMaterial)).AsTransient();
+        Container.Bind<TinctureForRunnyNose>().FromMethod(x => new TinctureForRunnyNose(tinctureForRunnyNoseMaterial)).AsTransient();
+        Container.Bind<AntiBaldnessLotion>().FromMethod(x => new AntiBaldnessLotion(antiBaldnessLotionMaterial)).AsTransient();
+        Container.Bind<ThickHairPotion>().FromMethod(x => new ThickHairPotion(thickHairPotionMaterial)).AsTransient();
+        Container.Bind<OintmentForRestoringLostFingers>().FromMethod(x => new OintmentForRestoringLostFingers(ointmentForRestoringLostFingersMaterial)).AsTransient();
 
         var blueUselessPotionRecipe = new Recipe(Container.Resolve<BlueUselessPotion>())
             .RegisterIngredient(ash)
@@ -158,6 +180,37 @@ public class AlchemyInstaller : MonoInstaller
             .RegisterIngredient(bayLeafs)
             .RegisterIngredient(bayLeafs);
 
+        var coughSyrupRecipe = new Recipe(Container.Resolve<CoughSyrup>())
+            .RegisterIngredient(ash)
+            .RegisterIngredient(coal)
+            .RegisterIngredient(mint)
+            .RegisterIngredient(bayLeafs)
+            .RegisterIngredient(salt);
+        var tinctureForRunnyNoseRecipe = new Recipe(Container.Resolve<TinctureForRunnyNose>())
+            .RegisterIngredient(coal)
+            .RegisterIngredient(ash)
+            .RegisterIngredient(salt)
+            .RegisterIngredient(flyAgaric)
+            .RegisterIngredient(licoriceRoot);
+        var antiBaldnessLotionRecipe = new Recipe(Container.Resolve<AntiBaldnessLotion>())
+            .RegisterIngredient(bayLeafs)
+            .RegisterIngredient(coal)
+            .RegisterIngredient(pineCone)
+            .RegisterIngredient(beaverTail)
+            .RegisterIngredient(cattailCob);
+        var thickHairPotionRecipe = new Recipe(Container.Resolve<ThickHairPotion>())
+            .RegisterIngredient(coal)
+            .RegisterIngredient(ash)
+            .RegisterIngredient(flyAgaric)
+            .RegisterIngredient(ash)
+            .RegisterIngredient(coal);
+        var ointmentForRestoringLostFingersRecipe = new Recipe(Container.Resolve<OintmentForRestoringLostFingers>())
+            .RegisterIngredient(flyAgaric)
+            .RegisterIngredient(coal)
+            .RegisterIngredient(beaverTail)
+            .RegisterIngredient(licoriceRoot)
+            .RegisterIngredient(bayLeafs);
+
         brewingService.RegisterRecipe(blueUselessPotionRecipe);
         brewingService.RegisterRecipe(cyanStrangePotionRecipe);
         brewingService.RegisterRecipe(greenSweetPotionRecipe);
@@ -165,5 +218,11 @@ public class AlchemyInstaller : MonoInstaller
         brewingService.RegisterRecipe(pinkMysteryPotionRecipe);
         brewingService.RegisterRecipe(redCommonPotionRecipe);
         brewingService.RegisterRecipe(yellowFoulSmellingPotionRecipe);
+
+        brewingService.RegisterRecipe(coughSyrupRecipe);
+        brewingService.RegisterRecipe(tinctureForRunnyNoseRecipe);
+        brewingService.RegisterRecipe(antiBaldnessLotionRecipe);
+        brewingService.RegisterRecipe(thickHairPotionRecipe);
+        brewingService.RegisterRecipe(ointmentForRestoringLostFingersRecipe);
     }
 }

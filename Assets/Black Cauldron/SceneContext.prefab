@@ -88,6 +88,11 @@ MonoBehaviour:
   pinkMysteryPotionMaterial: {fileID: 2100000, guid: d9ef559cf90ca444ba6f4e43f99b7913, type: 2}
   redCommonPotionMaterial: {fileID: 2100000, guid: 809232c6e2011254f8583ad2f85853d3, type: 2}
   yellowFoulSmellingPotionMaterial: {fileID: 2100000, guid: f9ae5dd439b6a77488672522074aee88, type: 2}
+  coughSyrupMaterial: {fileID: 2100000, guid: ce9bc7bd80ffcfa41bb85f75a18b9575, type: 2}
+  tinctureForRunnyNoseMaterial: {fileID: 2100000, guid: 55dd6e0984e14964fa0ac1a0f6f836fb, type: 2}
+  antiBaldnessLotionMaterial: {fileID: 2100000, guid: 52f1d293a67cfff429bcb9a6ae44c56c, type: 2}
+  thickHairPotionMaterial: {fileID: 2100000, guid: 4dce6ac7f5cb2d341b6861e0b1b9a8f9, type: 2}
+  ointmentForRestoringLostFingersMaterial: {fileID: 2100000, guid: 5a69c2e2b478efc4aa8ffae435187690, type: 2}
   ash: {fileID: 4669268222328994004, guid: 05bbbc6b7b08561418ae7886ff565323, type: 3}
   bayLeafs: {fileID: 2617457135415251914, guid: 18f861ff4aa9fb0438fb9dcc173ee09d, type: 3}
   cattailCob: {fileID: 4046488857747730717, guid: 70cd56d8ff56c5a4eb22e6e6fa7fa09e, type: 3}

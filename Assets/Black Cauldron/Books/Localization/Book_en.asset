@@ -22,6 +22,10 @@ MonoBehaviour:
     m_Localized: The beginer's alchemist's recipe book
     m_Metadata:
       m_Items: []
+  - m_Id: 22002881502351360
+    m_Localized: Village doctor's recipe book
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

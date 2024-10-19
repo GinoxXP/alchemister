@@ -29,6 +29,21 @@ namespace Ginox.BlackCauldron.Books
             beginerBookViewModel.RegisterRecipe(pinkMysteryPotion);
             beginerBookViewModel.RegisterRecipe(redCommonPotion);
             beginerBookViewModel.RegisterRecipe(yellowFoulSmellingPotion);
+
+            Container.Bind<VillageDoctorsRecipeBookController>().AsSingle();
+
+            var coughSyrup = brewingService.GetRecipe(Container.Resolve<CoughSyrup>());
+            var tinctureForRunnyNose = brewingService.GetRecipe(Container.Resolve<TinctureForRunnyNose>());
+            var antiBaldnessLotion = brewingService.GetRecipe(Container.Resolve<AntiBaldnessLotion>());
+            var thickHairPotion = brewingService.GetRecipe(Container.Resolve<ThickHairPotion>());
+            var ointmentForRestoringLostFingers = brewingService.GetRecipe(Container.Resolve<OintmentForRestoringLostFingers>());
+
+            var villageDoctorsRecipeBookController = Container.Resolve<VillageDoctorsRecipeBookController>();
+            villageDoctorsRecipeBookController.RegisterRecipe(coughSyrup);
+            villageDoctorsRecipeBookController.RegisterRecipe(tinctureForRunnyNose);
+            villageDoctorsRecipeBookController.RegisterRecipe(antiBaldnessLotion);
+            villageDoctorsRecipeBookController.RegisterRecipe(thickHairPotion);
+            villageDoctorsRecipeBookController.RegisterRecipe(ointmentForRestoringLostFingers);
         }
     }
 }

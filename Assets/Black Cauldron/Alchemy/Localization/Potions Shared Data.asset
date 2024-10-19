@@ -43,6 +43,26 @@ MonoBehaviour:
     m_Key: RedCommonPotion
     m_Metadata:
       m_Items: []
+  - m_Id: 16291886461063168
+    m_Key: CoughSyrup
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16292150102429696
+    m_Key: TinctureForRunnyNose
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16293680666873856
+    m_Key: AntiBaldnessLotion
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16295398033035264
+    m_Key: ThickHairPotion
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16296685772443648
+    m_Key: OintmentForRestoringLostFingers
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

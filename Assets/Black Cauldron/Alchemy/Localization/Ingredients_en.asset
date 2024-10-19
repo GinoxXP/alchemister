@@ -46,6 +46,26 @@ MonoBehaviour:
     m_Localized: Fly agaric
     m_Metadata:
       m_Items: []
+  - m_Id: 22001547482992640
+    m_Localized: Paprika
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22001600998117376
+    m_Localized: Herring skin
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22002042410864640
+    m_Localized: Mint
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22002099273043968
+    m_Localized: Beaver tail
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22002173206040576
+    m_Localized: Coal
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

@@ -1,6 +1,6 @@
 {
-    "name": "Alchemy.Editor",
-    "rootNamespace": "Ginox.BlackCauldron.Alchemy.Editor",
+    "name": "Books.Editor",
+    "rootNamespace": "Ginox.BlackCauldron.Books.Editor",
     "references": [
         "GUID:34d1e552dab981640aa82a3e6d053bd2"
     ],
@@ -10,9 +10,7 @@
     "excludePlatforms": [],
     "allowUnsafeCode": false,
     "overrideReferences": false,
-    "precompiledReferences": [
-        "Microsoft.CodeAnalysis.dll"
-    ],
+    "precompiledReferences": [],
     "autoReferenced": true,
     "defineConstraints": [],
     "versionDefines": [],

@@ -16,7 +16,11 @@ MonoBehaviour:
   m_TableCollectionNameGuidString: b30c41b3713406147a720329b22e3631
   m_Entries:
   - m_Id: 5292920832
-    m_Key: books.beginerBook
+    m_Key: BeginerBook
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22002881502351360
+    m_Key: VillageDoctorsRecipeBook
     m_Metadata:
       m_Items: []
   m_Metadata:

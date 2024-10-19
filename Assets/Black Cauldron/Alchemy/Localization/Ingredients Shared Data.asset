@@ -43,6 +43,26 @@ MonoBehaviour:
     m_Key: FlyAgaric
     m_Metadata:
       m_Items: []
+  - m_Id: 22001547482992640
+    m_Key: Paprika
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22001600998117376
+    m_Key: HerringSkin
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22002042410864640
+    m_Key: Mint
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22002099273043968
+    m_Key: BeaverTail
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22002173206040576
+    m_Key: Coal
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
