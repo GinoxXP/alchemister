@@ -39,6 +39,8 @@ namespace Ginox.BlackCauldron.Alchemy.Views
             }
 
             cauldronController.PutIn(ingredient);
+            ingredient.Destroy();
+
             var potion = cauldronController.GetPotion();
 
             if (potion == null)

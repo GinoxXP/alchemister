@@ -8,6 +8,7 @@ namespace Ginox.BlackCauldron.Alchemy.Models
 
 
         public event Action Destroyed;
+
         public void Destroy()
             => Destroyed?.Invoke();
     }
