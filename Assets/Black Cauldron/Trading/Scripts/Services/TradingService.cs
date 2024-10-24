@@ -1,15 +1,17 @@
 using Ginox.BlackCauldron.Alchemy.Models;
-using UnityEngine;
+using System;
 
 namespace Ginox.BlackCauldron.Trading.Services
 {
     public class TradingService
     {
-        private APotion[] potions;
+        private readonly APotion[] potions;
 
         public APotion RequirmentPotion { get; private set; }
 
-        public event System.Action NewTradeAvailabled;
+        public event Action NewTradeAvailabled;
+
+        public event Action TradeDone;
 
         public TradingService(APotion[] potions)
         {
@@ -19,14 +21,15 @@ namespace Ginox.BlackCauldron.Trading.Services
 
         private void CreateNewTrade()
         {
-            var randomIndex = Random.Range(0, potions.Length);
+            var randomIndex = UnityEngine.Random.Range(0, potions.Length);
             RequirmentPotion = potions[randomIndex];
 
             NewTradeAvailabled?.Invoke();
         }
 
-        public void Trade(APotion potion)
+        public void Trade()
         {
+            TradeDone?.Invoke();
             CreateNewTrade();
         }
     }

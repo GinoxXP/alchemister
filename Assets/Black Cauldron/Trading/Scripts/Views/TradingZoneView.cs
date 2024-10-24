@@ -22,7 +22,7 @@ namespace Ginox.BlackCauldron.Trading.Views
             {
                 if (bottle.BottleController.Potion.ToString() == tradingServices.RequirmentPotion.ToString())
                 {
-                    tradingServices.Trade(bottle.BottleController.Potion);
+                    tradingServices.Trade();
                     Destroy(bottle.gameObject);
                 }
             }
