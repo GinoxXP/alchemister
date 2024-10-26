@@ -8,9 +8,33 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1023263398604130793}
     m_Modifications:
+    - target: {fileID: 3458037354850668409, guid: 70cd56d8ff56c5a4eb22e6e6fa7fa09e, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3458037354850668409, guid: 70cd56d8ff56c5a4eb22e6e6fa7fa09e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 4046488857747730717, guid: 70cd56d8ff56c5a4eb22e6e6fa7fa09e, type: 3}
       propertyPath: m_Name
       value: Cattail Cob (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4046488857747730717, guid: 70cd56d8ff56c5a4eb22e6e6fa7fa09e, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4046488857747730717, guid: 70cd56d8ff56c5a4eb22e6e6fa7fa09e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 5039985733546042796, guid: 70cd56d8ff56c5a4eb22e6e6fa7fa09e, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5039985733546042796, guid: 70cd56d8ff56c5a4eb22e6e6fa7fa09e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 6836400324709448723, guid: 70cd56d8ff56c5a4eb22e6e6fa7fa09e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -52,6 +76,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -8.499
       objectReference: {fileID: 0}
+    - target: {fileID: 7054126231501993447, guid: 70cd56d8ff56c5a4eb22e6e6fa7fa09e, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7054126231501993447, guid: 70cd56d8ff56c5a4eb22e6e6fa7fa09e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 770631152600252695, guid: 70cd56d8ff56c5a4eb22e6e6fa7fa09e, type: 3}
     - {fileID: 3169598543891936107, guid: 70cd56d8ff56c5a4eb22e6e6fa7fa09e, type: 3}
@@ -74,9 +106,33 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1023263398604130793}
     m_Modifications:
+    - target: {fileID: 3458037354850668409, guid: 70cd56d8ff56c5a4eb22e6e6fa7fa09e, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3458037354850668409, guid: 70cd56d8ff56c5a4eb22e6e6fa7fa09e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 4046488857747730717, guid: 70cd56d8ff56c5a4eb22e6e6fa7fa09e, type: 3}
       propertyPath: m_Name
       value: Cattail Cob
+      objectReference: {fileID: 0}
+    - target: {fileID: 4046488857747730717, guid: 70cd56d8ff56c5a4eb22e6e6fa7fa09e, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4046488857747730717, guid: 70cd56d8ff56c5a4eb22e6e6fa7fa09e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 5039985733546042796, guid: 70cd56d8ff56c5a4eb22e6e6fa7fa09e, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5039985733546042796, guid: 70cd56d8ff56c5a4eb22e6e6fa7fa09e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 6836400324709448723, guid: 70cd56d8ff56c5a4eb22e6e6fa7fa09e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -117,6 +173,14 @@ PrefabInstance:
     - target: {fileID: 6836400324709448723, guid: 70cd56d8ff56c5a4eb22e6e6fa7fa09e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7054126231501993447, guid: 70cd56d8ff56c5a4eb22e6e6fa7fa09e, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7054126231501993447, guid: 70cd56d8ff56c5a4eb22e6e6fa7fa09e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 770631152600252695, guid: 70cd56d8ff56c5a4eb22e6e6fa7fa09e, type: 3}
@@ -231,9 +295,33 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1023263398604130793}
     m_Modifications:
+    - target: {fileID: 3458037354850668409, guid: 70cd56d8ff56c5a4eb22e6e6fa7fa09e, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3458037354850668409, guid: 70cd56d8ff56c5a4eb22e6e6fa7fa09e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 4046488857747730717, guid: 70cd56d8ff56c5a4eb22e6e6fa7fa09e, type: 3}
       propertyPath: m_Name
       value: Cattail Cob (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4046488857747730717, guid: 70cd56d8ff56c5a4eb22e6e6fa7fa09e, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4046488857747730717, guid: 70cd56d8ff56c5a4eb22e6e6fa7fa09e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 5039985733546042796, guid: 70cd56d8ff56c5a4eb22e6e6fa7fa09e, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5039985733546042796, guid: 70cd56d8ff56c5a4eb22e6e6fa7fa09e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 6836400324709448723, guid: 70cd56d8ff56c5a4eb22e6e6fa7fa09e, type: 3}
       propertyPath: m_LocalScale.x
@@ -290,6 +378,14 @@ PrefabInstance:
     - target: {fileID: 6836400324709448723, guid: 70cd56d8ff56c5a4eb22e6e6fa7fa09e, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7054126231501993447, guid: 70cd56d8ff56c5a4eb22e6e6fa7fa09e, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7054126231501993447, guid: 70cd56d8ff56c5a4eb22e6e6fa7fa09e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 770631152600252695, guid: 70cd56d8ff56c5a4eb22e6e6fa7fa09e, type: 3}

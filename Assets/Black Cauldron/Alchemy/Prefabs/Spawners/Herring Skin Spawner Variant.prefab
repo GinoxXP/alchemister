@@ -108,6 +108,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Herring Skin (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3930939991875836446, guid: 279039b1144474444bd2ebc0866b19b2, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3930939991875836446, guid: 279039b1144474444bd2ebc0866b19b2, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 5727611767730535875, guid: 279039b1144474444bd2ebc0866b19b2, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5727611767730535875, guid: 279039b1144474444bd2ebc0866b19b2, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 5799018847451748112, guid: 279039b1144474444bd2ebc0866b19b2, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.024
@@ -173,6 +189,22 @@ PrefabInstance:
     - target: {fileID: 3930939991875836446, guid: 279039b1144474444bd2ebc0866b19b2, type: 3}
       propertyPath: m_Name
       value: Herring Skin
+      objectReference: {fileID: 0}
+    - target: {fileID: 3930939991875836446, guid: 279039b1144474444bd2ebc0866b19b2, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3930939991875836446, guid: 279039b1144474444bd2ebc0866b19b2, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 5727611767730535875, guid: 279039b1144474444bd2ebc0866b19b2, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5727611767730535875, guid: 279039b1144474444bd2ebc0866b19b2, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 5799018847451748112, guid: 279039b1144474444bd2ebc0866b19b2, type: 3}
       propertyPath: m_LocalPosition.x

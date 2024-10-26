@@ -155,9 +155,25 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3299504391023896187, guid: e01e914b5f73d3540aca1e5106c96f5f, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3299504391023896187, guid: e01e914b5f73d3540aca1e5106c96f5f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 8735661986476884146, guid: e01e914b5f73d3540aca1e5106c96f5f, type: 3}
       propertyPath: m_Name
       value: Licorice Root (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8735661986476884146, guid: e01e914b5f73d3540aca1e5106c96f5f, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8735661986476884146, guid: e01e914b5f73d3540aca1e5106c96f5f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5450092861924126904, guid: e01e914b5f73d3540aca1e5106c96f5f, type: 3}
@@ -237,9 +253,25 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3299504391023896187, guid: e01e914b5f73d3540aca1e5106c96f5f, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3299504391023896187, guid: e01e914b5f73d3540aca1e5106c96f5f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 8735661986476884146, guid: e01e914b5f73d3540aca1e5106c96f5f, type: 3}
       propertyPath: m_Name
       value: Licorice Root (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8735661986476884146, guid: e01e914b5f73d3540aca1e5106c96f5f, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8735661986476884146, guid: e01e914b5f73d3540aca1e5106c96f5f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5450092861924126904, guid: e01e914b5f73d3540aca1e5106c96f5f, type: 3}
@@ -303,9 +335,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3299504391023896187, guid: e01e914b5f73d3540aca1e5106c96f5f, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3299504391023896187, guid: e01e914b5f73d3540aca1e5106c96f5f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 8735661986476884146, guid: e01e914b5f73d3540aca1e5106c96f5f, type: 3}
       propertyPath: m_Name
       value: Licorice Root
+      objectReference: {fileID: 0}
+    - target: {fileID: 8735661986476884146, guid: e01e914b5f73d3540aca1e5106c96f5f, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8735661986476884146, guid: e01e914b5f73d3540aca1e5106c96f5f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5450092861924126904, guid: e01e914b5f73d3540aca1e5106c96f5f, type: 3}
