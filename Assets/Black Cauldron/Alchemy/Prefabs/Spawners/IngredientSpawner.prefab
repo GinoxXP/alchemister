@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 722026320358776356}
   - component: {fileID: 4649468801380715211}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Interactable Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -64,7 +64,7 @@ GameObject:
   - component: {fileID: 3803536893573810493}
   - component: {fileID: 8509189847574321026}
   - component: {fileID: 2485677367734989916}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: IngredientSpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}

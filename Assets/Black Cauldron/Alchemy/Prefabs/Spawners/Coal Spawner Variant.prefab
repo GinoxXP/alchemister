@@ -14,7 +14,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 371412119509471495, guid: 8892c9da95654f6488e457ffc03e344b, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 371412119509471495, guid: 8892c9da95654f6488e457ffc03e344b, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -62,7 +62,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7776612762039190972, guid: 8892c9da95654f6488e457ffc03e344b, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 7776612762039190972, guid: 8892c9da95654f6488e457ffc03e344b, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -199,7 +199,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 371412119509471495, guid: 8892c9da95654f6488e457ffc03e344b, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 371412119509471495, guid: 8892c9da95654f6488e457ffc03e344b, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -247,7 +247,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7776612762039190972, guid: 8892c9da95654f6488e457ffc03e344b, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 7776612762039190972, guid: 8892c9da95654f6488e457ffc03e344b, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -281,7 +281,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 371412119509471495, guid: 8892c9da95654f6488e457ffc03e344b, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 371412119509471495, guid: 8892c9da95654f6488e457ffc03e344b, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -329,7 +329,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7776612762039190972, guid: 8892c9da95654f6488e457ffc03e344b, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 7776612762039190972, guid: 8892c9da95654f6488e457ffc03e344b, type: 3}
       propertyPath: m_StaticEditorFlags

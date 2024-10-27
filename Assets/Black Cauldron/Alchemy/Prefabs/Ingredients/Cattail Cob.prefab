@@ -48,9 +48,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6280969049883955942, guid: 2619d9bd2999cef4b8adfcf99699d5a2, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 2619d9bd2999cef4b8adfcf99699d5a2, type: 3}
       propertyPath: m_Name
       value: reedflute
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2619d9bd2999cef4b8adfcf99699d5a2, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7407756339908614020, guid: 2619d9bd2999cef4b8adfcf99699d5a2, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -142,7 +154,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6403539551056524290, guid: 53c0432a9b51c4e4caade63a96f65d67, type: 3}
       propertyPath: m_Name
-      value: Cattail Variant
+      value: Cattail Cob
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

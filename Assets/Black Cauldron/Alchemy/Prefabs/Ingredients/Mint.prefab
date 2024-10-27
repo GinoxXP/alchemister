@@ -8,6 +8,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5528593530623314609}
     m_Modifications:
+    - target: {fileID: -8825089644315758036, guid: b3c4d2579879f7c44a9bf21d7c0ac43f, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b3c4d2579879f7c44a9bf21d7c0ac43f, type: 3}
       propertyPath: m_LocalScale.x
       value: 5
@@ -64,9 +68,33 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -1856605900544817654, guid: b3c4d2579879f7c44a9bf21d7c0ac43f, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -1325845048252605953, guid: b3c4d2579879f7c44a9bf21d7c0ac43f, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -368726145275599185, guid: b3c4d2579879f7c44a9bf21d7c0ac43f, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 255392547667693228, guid: b3c4d2579879f7c44a9bf21d7c0ac43f, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: b3c4d2579879f7c44a9bf21d7c0ac43f, type: 3}
       propertyPath: m_Name
       value: mint
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b3c4d2579879f7c44a9bf21d7c0ac43f, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7599776694917898314, guid: b3c4d2579879f7c44a9bf21d7c0ac43f, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
