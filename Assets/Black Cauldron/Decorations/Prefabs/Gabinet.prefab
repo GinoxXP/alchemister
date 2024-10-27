@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1230711846460445165}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Gabinet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46,7 +46,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 129536, guid: 23942876fd996034c89ed1b82cc8516f, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 129536, guid: 23942876fd996034c89ed1b82cc8516f, type: 3}
       propertyPath: m_StaticEditorFlags
