@@ -23,6 +23,17 @@ namespace Ginox.BlackCauldron.Alchemy.Views
         private CauldronController cauldronController;
 
         private bool isBoiling;
+        private bool isFilled;
+
+        private bool IsFilled
+        {
+            get => isFilled;
+            set
+            {
+                isFilled = value;
+                liquidSurface.gameObject.SetActive(value);
+            }
+        }
 
         [Inject]
         private void Init(CauldronController cauldronViewModel)
@@ -30,8 +41,16 @@ namespace Ginox.BlackCauldron.Alchemy.Views
             this.cauldronController = cauldronViewModel;
         }
 
+        private void Awake()
+        {
+            IsFilled = false;
+        }
+
         public void PutIn(AIngredient ingredient)
         {
+            if (!isFilled)
+                return;
+
             if (!isBoiling)
             {
                 visualEffect.SendEvent(START_BOILING_EVENT);
@@ -58,7 +77,20 @@ namespace Ginox.BlackCauldron.Alchemy.Views
 
             visualEffect.SendEvent(STOP_BOILING_EVENT);
             isBoiling = false;
+
+            Drain();
+
             return potion;
+        }
+
+        public void Fill()
+        {
+            IsFilled = true;
+        }
+
+        public void Drain()
+        {
+            IsFilled = false;
         }
 
         private void SetMaterialCompleatedPotion(APotion potion)
