@@ -22,15 +22,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 422110, guid: fad3894d33d323447a3187fbca3004cc, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.3
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 422110, guid: fad3894d33d323447a3187fbca3004cc, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.3
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 422110, guid: fad3894d33d323447a3187fbca3004cc, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.3
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 422110, guid: fad3894d33d323447a3187fbca3004cc, type: 3}
       propertyPath: m_LocalPosition.x
@@ -72,6 +72,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 422110, guid: fad3894d33d323447a3187fbca3004cc, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6499918, guid: fad3894d33d323447a3187fbca3004cc, type: 3}
       propertyPath: m_Convex
       value: 1
@@ -96,7 +100,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 722026320358776356, guid: 4a9e8804ea7372e43a1a8c8ea4c0588d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.34
+      value: 0.23
       objectReference: {fileID: 0}
     - target: {fileID: 3803536893573810493, guid: 4a9e8804ea7372e43a1a8c8ea4c0588d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -112,7 +116,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4649468801380715211, guid: 4a9e8804ea7372e43a1a8c8ea4c0588d, type: 3}
       propertyPath: m_Size.x
-      value: 0.2
+      value: 0.15
       objectReference: {fileID: 0}
     - target: {fileID: 4649468801380715211, guid: 4a9e8804ea7372e43a1a8c8ea4c0588d, type: 3}
       propertyPath: m_Size.y
@@ -120,7 +124,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4649468801380715211, guid: 4a9e8804ea7372e43a1a8c8ea4c0588d, type: 3}
       propertyPath: m_Size.z
-      value: 0.2
+      value: 0.15
       objectReference: {fileID: 0}
     - target: {fileID: 6961330082717484088, guid: 4a9e8804ea7372e43a1a8c8ea4c0588d, type: 3}
       propertyPath: m_Name

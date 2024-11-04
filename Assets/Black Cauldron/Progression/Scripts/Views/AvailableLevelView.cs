@@ -20,7 +20,8 @@ namespace Ginox.BlackCauldron.Progression
 
         private void Awake()
         {
-            gameObject.SetActive(false);
+            if (progressionService.Level < activationLevel)
+                gameObject.SetActive(false);
         }
 
         private void OnDestroy()
