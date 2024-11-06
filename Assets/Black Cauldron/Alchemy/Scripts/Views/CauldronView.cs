@@ -8,8 +8,9 @@ namespace Ginox.BlackCauldron.Alchemy.Views
 {
     public class CauldronView : MonoBehaviour
     {
-        private static readonly string START_BOILING_EVENT = "OnStartBoiling";
-        private static readonly string STOP_BOILING_EVENT = "OnStopBoiling";
+        private const string START_BOILING_EVENT = "OnStartBoiling";
+        private const string STOP_BOILING_EVENT = "OnStopBoiling";
+        private const string FILL_TRIGGER = "Fill";
 
         [SerializeField]
         private Material waterMaterial;
@@ -21,6 +22,7 @@ namespace Ginox.BlackCauldron.Alchemy.Views
         private VisualEffect visualEffect;
 
         private CauldronController cauldronController;
+        private Animator animator;
 
         private bool isBoiling;
         private bool isFilled;
@@ -32,6 +34,8 @@ namespace Ginox.BlackCauldron.Alchemy.Views
             {
                 isFilled = value;
                 liquidSurface.gameObject.SetActive(value);
+                if (value)
+                    animator.SetTrigger(FILL_TRIGGER);
             }
         }
 
@@ -44,6 +48,11 @@ namespace Ginox.BlackCauldron.Alchemy.Views
         private void Awake()
         {
             IsFilled = false;
+        }
+
+        private void Start()
+        {
+            animator = GetComponent<Animator>();
         }
 
         public void PutIn(AIngredient ingredient)
