@@ -9,6 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3332829978757334211}
+  - component: {fileID: 1551963924612200949}
+  - component: {fileID: 7364297007508943398}
   m_Layer: 8
   m_Name: Firepit
   m_TagString: Untagged
@@ -40,6 +42,40 @@ Transform:
   - {fileID: 1182357298907786951}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1551963924612200949
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2272417567893830572}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7767f60897284a48ae8958b564b28ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  light: {fileID: 8890159401159878367}
+--- !u!65 &7364297007508943398
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2272417567893830572}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.6, y: 0.1, z: 0.6}
+  m_Center: {x: 0, y: 0.15, z: 0}
 --- !u!1 &8890159401159878367
 GameObject:
   m_ObjectHideFlags: 0
@@ -123,7 +159,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 2
+  m_Lightmapping: 4
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -173,6 +209,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3945120536985388527, guid: e81c960dc6efd1f45bfc46f538dce976, type: 3}
+      propertyPath: firepitView
+      value: 
+      objectReference: {fileID: 1551963924612200949}
     - target: {fileID: 5110129957070212129, guid: e81c960dc6efd1f45bfc46f538dce976, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.7

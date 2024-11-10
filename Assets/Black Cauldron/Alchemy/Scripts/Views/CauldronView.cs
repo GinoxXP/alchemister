@@ -20,12 +20,16 @@ namespace Ginox.BlackCauldron.Alchemy.Views
         private Material prepotionMaterial;
         [SerializeField]
         private VisualEffect visualEffect;
+        [SerializeField]
+        private FirepitView firepitView;
 
         private CauldronController cauldronController;
         private Animator animator;
+        private FirepitController firepitController;
 
         private bool isBoiling;
         private bool isFilled;
+        private bool isHasFire;
 
         private bool IsFilled
         {
@@ -53,11 +57,23 @@ namespace Ginox.BlackCauldron.Alchemy.Views
         private void Start()
         {
             animator = GetComponent<Animator>();
+            firepitController = firepitView.Controller;
+            firepitController.FuelChanged += OnFuelChanged;
+        }
+
+        private void OnDestroy()
+        {
+            firepitController.FuelChanged -= OnFuelChanged;
+        }
+
+        private void OnFuelChanged(int count)
+        {
+            isHasFire = count > 0;
         }
 
         public void PutIn(AIngredient ingredient)
         {
-            if (!isFilled)
+            if (!isFilled || !isHasFire)
                 return;
 
             if (!isBoiling)

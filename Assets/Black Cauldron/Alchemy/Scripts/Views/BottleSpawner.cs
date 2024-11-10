@@ -1,9 +1,10 @@
 ﻿using UnityEngine.XR.Interaction.Toolkit;
+using UnityEngine.XR.Interaction.Toolkit.Interactables;
 using Zenject;
 
 namespace Ginox.BlackCauldron.Alchemy.Views
 {
-    public class BottleSpawner : UnityEngine.XR.Interaction.Toolkit.Interactables.XRBaseInteractable
+    public class BottleSpawner : XRBaseInteractable
     {
         private BottleView.Factory<BottleView> factory;
 

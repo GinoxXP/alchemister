@@ -63,13 +63,15 @@ public class AlchemyInstaller : MonoInstaller
 
     [SerializeField]
     private GameObject bottle;
+    [SerializeField]
+    private GameObject firelog;
 
     public override void InstallBindings()
     {
-
         Container.Bind<CauldronController>().AsTransient();
         Container.Bind<BrewingService>().AsSingle();
         Container.Bind<BottleController>().AsTransient();
+        Container.Bind<FirepitController>().AsTransient();
 
         InstallIngredients();
         InstallPotions();
@@ -117,6 +119,7 @@ public class AlchemyInstaller : MonoInstaller
         Container.BindFactory<CoalView, AIngredientView.Factory<CoalView>>().FromComponentInNewPrefab(coal);
 
         Container.BindFactory<BottleView, BottleView.Factory<BottleView>>().FromComponentInNewPrefab(bottle);
+        Container.BindFactory<FirelogView, FirelogView.Factory<FirelogView>>().FromComponentInNewPrefab(firelog);
     }
 
     private void InstallPotions()
