@@ -28,6 +28,11 @@ namespace Ginox.BlackCauldron.Alchemy
             OnFuelChanged(Controller.FuelCount);
         }
 
+        private void OnDestroy()
+        {
+            Controller.FuelChanged -= OnFuelChanged;
+        }
+
         private void OnFuelChanged(int fuelCount)
         {
             SetFireActive(fuelCount != 0);

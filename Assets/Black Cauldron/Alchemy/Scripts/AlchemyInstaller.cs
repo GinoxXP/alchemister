@@ -8,6 +8,9 @@ using Ginox.BlackCauldron.Alchemy.Views.Ingredients;
 using Ginox.BlackCauldron.Alchemy.Views;
 using UnityEngine;
 using Zenject;
+using System.ComponentModel;
+using System;
+using ModestTree;
 
 public class AlchemyInstaller : MonoInstaller
 {
@@ -68,13 +71,21 @@ public class AlchemyInstaller : MonoInstaller
 
     public override void InstallBindings()
     {
-        Container.Bind<CauldronController>().AsTransient();
+        Container.Bind<CauldronController>().AsSingle();
         Container.Bind<BrewingService>().AsSingle();
-        Container.Bind<BottleController>().AsTransient();
-        Container.Bind<FirepitController>().AsTransient();
+        Container.BindInterfacesAndSelfTo<FirepitController>().AsSingle();
 
+        InstallTools();
         InstallIngredients();
         InstallPotions();
+    }
+
+    private void InstallTools()
+    {
+        Container.Bind<BottleController>().AsTransient();
+
+        Container.BindFactory<BottleView, BottleView.Factory<BottleView>>().FromComponentInNewPrefab(bottle);
+        Container.BindFactory<FirelogView, FirelogView.Factory<FirelogView>>().FromComponentInNewPrefab(firelog);
     }
 
     private void InstallIngredients()
@@ -117,9 +128,6 @@ public class AlchemyInstaller : MonoInstaller
         Container.BindFactory<MintView, AIngredientView.Factory<MintView>>().FromComponentInNewPrefab(mint);
         Container.BindFactory<BeaverTailView, AIngredientView.Factory<BeaverTailView>>().FromComponentInNewPrefab(beaverTail);
         Container.BindFactory<CoalView, AIngredientView.Factory<CoalView>>().FromComponentInNewPrefab(coal);
-
-        Container.BindFactory<BottleView, BottleView.Factory<BottleView>>().FromComponentInNewPrefab(bottle);
-        Container.BindFactory<FirelogView, FirelogView.Factory<FirelogView>>().FromComponentInNewPrefab(firelog);
     }
 
     private void InstallPotions()
