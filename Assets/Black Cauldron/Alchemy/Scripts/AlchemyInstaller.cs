@@ -1,17 +1,15 @@
 using Ginox.BlackCauldron.Alchemy.Controllers;
 using Ginox.BlackCauldron.Alchemy.Controllers.Ingredients;
+using Ginox.BlackCauldron.Alchemy.Controllers.Tools;
 using Ginox.BlackCauldron.Alchemy.Models;
 using Ginox.BlackCauldron.Alchemy.Models.Potions;
 using Ginox.BlackCauldron.Alchemy.Models.Ingredients;
 using Ginox.BlackCauldron.Alchemy.Services;
-using Ginox.BlackCauldron.Alchemy.Views.Ingredients;
 using Ginox.BlackCauldron.Alchemy.Views;
+using Ginox.BlackCauldron.Alchemy.Views.Ingredients;
+using Ginox.BlackCauldron.Alchemy.Views.Tools;
 using UnityEngine;
 using Zenject;
-using System.ComponentModel;
-using System;
-using ModestTree;
-using Ginox.BlackCauldron.Alchemy.Views.Tools;
 
 public class AlchemyInstaller : MonoInstaller
 {

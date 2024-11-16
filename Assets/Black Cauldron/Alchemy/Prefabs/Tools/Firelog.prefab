@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6349094029376657952}
   - component: {fileID: 8942694364588059964}
   - component: {fileID: 4382477526160874168}
-  - component: {fileID: -2550367043031976769}
+  - component: {fileID: 8098271028662992058}
   m_Layer: 6
   m_Name: Firelog
   m_TagString: Untagged
@@ -206,7 +206,7 @@ MonoBehaviour:
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
   m_FarAttachMode: 0
---- !u!114 &-2550367043031976769
+--- !u!114 &8098271028662992058
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -215,7 +215,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6222937616932261825}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d540552b7d54c547a614a786c89a135, type: 3}
+  m_Script: {fileID: 11500000, guid: 56a0c143f4f26f84b8800afc88a8e92e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &3458150834492195877

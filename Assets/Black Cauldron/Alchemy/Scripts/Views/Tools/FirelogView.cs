@@ -1,13 +1,14 @@
-﻿using UnityEngine;
+﻿using Ginox.BlackCauldron.Alchemy.Controllers;
+using UnityEngine;
 using Zenject;
 
 namespace Ginox.BlackCauldron.Alchemy.Views.Tools
 {
-    public class FirelogView : MonoBehaviour, IFuel
+    public class FirelogView : MonoBehaviour, IFirepitInteractable
     {
-        public void PutFuel(FirepitView view)
+        public void Interact(FirepitController controller)
         {
-            view.Controller.AddFuel();
+            controller.AddFuel();
             Destroy(gameObject);
         }
 

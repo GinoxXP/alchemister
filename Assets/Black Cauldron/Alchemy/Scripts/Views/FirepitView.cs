@@ -13,7 +13,6 @@ namespace Ginox.BlackCauldron.Alchemy
 
         public FirepitController Controller { get; private set; }
 
-        public bool IsFireActive { get; private set; }
 
         [Inject]
         private void Init(FirepitController firepitController)
@@ -23,33 +22,33 @@ namespace Ginox.BlackCauldron.Alchemy
 
         private void Start()
         {
-            Controller.FuelChanged += OnFuelChanged;
+            Controller.BurnChanged += OnBurnChanged;
 
-            OnFuelChanged(Controller.FuelCount);
+            OnBurnChanged(Controller.IsBurn);
+        }
+
+        private void OnBurnChanged(bool isBurn)
+        {
+            SetFireActive(isBurn);
         }
 
         private void OnDestroy()
         {
-            Controller.FuelChanged -= OnFuelChanged;
+            Controller.BurnChanged -= OnBurnChanged;
         }
 
-        private void OnFuelChanged(int fuelCount)
-        {
-            SetFireActive(fuelCount != 0);
-        }
 
         private void SetFireActive(bool state)
         {
             light.SetActive(state);
-            IsFireActive = state;
         }
 
         private void OnTriggerEnter(Collider other)
         {
-            var fuel = other.GetComponentsInParent<MonoBehaviour>().OfType<IFuel>().FirstOrDefault();
+            var interactable = other.GetComponentsInParent<MonoBehaviour>().OfType<IFirepitInteractable>().FirstOrDefault();
 
-            if (fuel != null)
-                fuel.PutFuel(this);
+            if (interactable != null)
+                interactable.Interact(Controller);
         }
     }
 }

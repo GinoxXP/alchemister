@@ -9,11 +9,34 @@ namespace Ginox.BlackCauldron.Alchemy.Controllers
         private const int firepitBurnTime = 60;
         public const int MAX_FIREPITS_COUNT = 5;
 
-        public int FuelCount { get; private set; }
+        private int fuelCount;
+        private bool isBurn;
+
+        public int FuelCount
+        {
+            get => fuelCount;
+            set
+            {
+                fuelCount = value;
+                FuelChanged?.Invoke(fuelCount);
+            }
+        }
+
+        public bool IsBurn
+        {
+            get => isBurn;
+            set
+            {
+                isBurn = value;
+                BurnChanged?.Invoke(isBurn);
+            }
+        }
 
         private float time;
 
         public event Action<int> FuelChanged;
+
+        public event Action<bool> BurnChanged;
 
         public void AddFuel()
         {
@@ -21,7 +44,14 @@ namespace Ginox.BlackCauldron.Alchemy.Controllers
                 return;
 
             FuelCount++;
-            FuelChanged?.Invoke(FuelCount);
+        }
+
+        public void Burn()
+        {
+            if (FuelCount <= 0)
+                return;
+
+            IsBurn = true;
         }
 
         public void Tick()
@@ -34,7 +64,10 @@ namespace Ginox.BlackCauldron.Alchemy.Controllers
             if (time >= firepitBurnTime)
             {
                 FuelCount--;
-                FuelChanged?.Invoke(FuelCount);
+
+                if (FuelCount <= 0)
+                    IsBurn = false;
+
                 time = 0;
             }
         }
