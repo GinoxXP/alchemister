@@ -2,7 +2,7 @@
 using UnityEngine;
 using Zenject;
 
-namespace Ginox.BlackCauldron.Alchemy.Views
+namespace Ginox.BlackCauldron.Alchemy.Views.Tools
 {
     public class BottleView : MonoBehaviour, IScoopCauldron
     {

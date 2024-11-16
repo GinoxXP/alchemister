@@ -1,4 +1,5 @@
-﻿using UnityEngine.XR.Interaction.Toolkit;
+﻿using Ginox.BlackCauldron.Alchemy.Views.Tools;
+using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
 using Zenject;
 
@@ -20,7 +21,7 @@ namespace Ginox.BlackCauldron.Alchemy.Views
 
             bottle.transform.position = transform.position;
 
-            var interactable = bottle.GetComponent<UnityEngine.XR.Interaction.Toolkit.Interactables.XRGrabInteractable>();
+            var interactable = bottle.GetComponent<XRGrabInteractable>();
             interactionManager.SelectEnter(args.interactorObject, interactable);
         }
     }

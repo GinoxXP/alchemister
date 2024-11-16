@@ -1,4 +1,4 @@
-using Ginox.BlackCauldron.Alchemy.Views;
+using Ginox.BlackCauldron.Alchemy.Views.Tools;
 using Ginox.BlackCauldron.Trading.Services;
 using UnityEngine;
 using Zenject;

@@ -11,6 +11,7 @@ using Zenject;
 using System.ComponentModel;
 using System;
 using ModestTree;
+using Ginox.BlackCauldron.Alchemy.Views.Tools;
 
 public class AlchemyInstaller : MonoInstaller
 {

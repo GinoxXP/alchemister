@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.VFX;
 
-namespace Ginox.BlackCauldron.Alchemy.Views
+namespace Ginox.BlackCauldron.Alchemy.Views.Tools
 {
     public class PotView : MonoBehaviour, IPourCauldron
     {
