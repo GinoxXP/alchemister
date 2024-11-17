@@ -8,8 +8,8 @@ namespace Ginox.BlackCauldron.Alchemy.Views.Tools
     {
         public void Interact(FirepitController controller)
         {
-            controller.AddFuel();
-            Destroy(gameObject);
+            if (controller.TryAddFuel())
+                Destroy(gameObject);
         }
 
         public class Factory<T> : PlaceholderFactory<T>

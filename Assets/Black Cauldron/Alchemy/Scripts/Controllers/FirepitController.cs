@@ -6,8 +6,8 @@ namespace Ginox.BlackCauldron.Alchemy.Controllers
 {
     public class FirepitController : ITickable
     {
-        private const int firepitBurnTime = 60;
-        public const int MAX_FIREPITS_COUNT = 5;
+        private const int FUEL_FIRE_TIME = 60;
+        private const int MAX_FIREPITS_COUNT = 6;
 
         private int fuelCount;
         private bool isBurn;
@@ -38,12 +38,13 @@ namespace Ginox.BlackCauldron.Alchemy.Controllers
 
         public event Action<bool> BurnChanged;
 
-        public void AddFuel()
+        public bool TryAddFuel()
         {
             if (FuelCount >= MAX_FIREPITS_COUNT)
-                return;
+                return false;
 
             FuelCount++;
+            return true;
         }
 
         public void Burn()
@@ -61,7 +62,7 @@ namespace Ginox.BlackCauldron.Alchemy.Controllers
 
             time += Time.deltaTime;
 
-            if (time >= firepitBurnTime)
+            if (time >= FUEL_FIRE_TIME)
             {
                 FuelCount--;
 

@@ -10,6 +10,8 @@ namespace Ginox.BlackCauldron.Alchemy
     {
         [SerializeField]
         private new GameObject light;
+        [SerializeField]
+        private GameObject[] firelogs;
 
         public FirepitController Controller { get; private set; }
 
@@ -23,18 +25,27 @@ namespace Ginox.BlackCauldron.Alchemy
         private void Start()
         {
             Controller.BurnChanged += OnBurnChanged;
+            Controller.FuelChanged += OnFuelChanged;
 
             OnBurnChanged(Controller.IsBurn);
-        }
-
-        private void OnBurnChanged(bool isBurn)
-        {
-            SetFireActive(isBurn);
+            OnFuelChanged(Controller.FuelCount);
         }
 
         private void OnDestroy()
         {
             Controller.BurnChanged -= OnBurnChanged;
+            Controller.FuelChanged -= OnFuelChanged;
+        }
+
+        private void OnFuelChanged(int fuelCount)
+        {
+            for(int i = 0; i < firelogs.Length; i++)
+                firelogs[i].SetActive(i < fuelCount);
+        }
+
+        private void OnBurnChanged(bool isBurn)
+        {
+            SetFireActive(isBurn);
         }
 
 
