@@ -1,5 +1,6 @@
 {
     "name": "PICO.TobSupport",
+    "rootNamespace": "",
     "references": [
         "Unity.XR.PICO.Editor",
         "Unity.XR.Interaction.Toolkit",
@@ -8,7 +9,9 @@
         "Unity.XR.OpenXR.Features.PICOSupport",
         "Unity.XR.OpenXR"
     ],
-    "includePlatforms": [],
+    "includePlatforms": [
+        "Android"
+    ],
     "excludePlatforms": [],
     "allowUnsafeCode": true,
     "overrideReferences": false,
@@ -20,7 +23,8 @@
             "name": "com.unity.xr.picoxr",
             "expression": "2.3.3",
             "define": "PICO_XR"
-        },{
+        },
+        {
             "name": "com.unity.xr.interaction.toolkit",
             "expression": "2.4.0",
             "define": "XRI_240"
