@@ -11,11 +11,10 @@ namespace Ginox.BlackCauldron.Alchemy.Controllers
 
         public AIngredientController(AIngredient model)
         {
-            this.Model = model;
-            model.Destroyed += OnDestroyed;
+            Model = model;
         }
 
-        private void OnDestroyed()
+        public void Destroy()
         {
             Destroyed?.Invoke();
         }

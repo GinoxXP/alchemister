@@ -60,7 +60,7 @@ namespace Ginox.BlackCauldron.Alchemy.Services
             Reset();
         }
 
-        public void CreateGraph(Recipe recipe)
+        private void CreateGraph(Recipe recipe)
         {
             var targetIngredient = recipe.Ingredients[0];
             var targetType = targetIngredient.GetType();

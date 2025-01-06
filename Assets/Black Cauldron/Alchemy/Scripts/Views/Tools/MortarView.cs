@@ -1,33 +1,79 @@
 ﻿using Ginox.BlackCauldron.Alchemy.Controllers.Tools;
 using System.Linq;
+using System.Xml.Schema;
 using UnityEngine;
 using Zenject;
 
 namespace Ginox.BlackCauldron.Alchemy.Views.Tools
 {
-    public class MortarView : MonoBehaviour
+    public class MortarView : MonoBehaviour, IPourCauldron
     {
+        private const float MAX_ANGLE_FOR_CONTAIN = 30f;
+
         [SerializeField]
         private GameObject pile;
+        [SerializeField]
+        private Transform ingredientHolder;
 
-        private MortarController controller;
+        public MortarController Controller { get; private set; }
 
         [Inject]
         private void Init(MortarController controller)
         {
-            this.controller = controller;
+            Controller = controller;
         }
 
         private void Start ()
         {
             pile.SetActive(false);
+            Controller.HangedIngredientChanged += OnHangedIngredientChanged;
+        }
+
+        private void OnHangedIngredientChanged(AIngredientView ingredientView)
+        {
+            var state = ingredientView != null;
+
+            if (!state)
+                return;
+
+            ingredientView.SetInteractableState(!state);
+            ingredientView.transform.parent = transform;
+            ingredientView.transform.localPosition = Vector3.zero;
+            ingredientView.transform.localRotation = Quaternion.identity;
+        }
+
+        private void Update()
+        {
+            var angle = 180 - Vector3.Angle(transform.up, Vector3.down);
+
+            if (angle >= MAX_ANGLE_FOR_CONTAIN)
+                Drop();
         }
 
         private void OnTriggerEnter(Collider other)
         {
             var interactable = other.GetComponentsInParent<MonoBehaviour>().OfType<IMortarInteractable>().FirstOrDefault();
 
-            interactable?.Interact(controller);
+            interactable?.Interact(Controller);
+        }
+
+        private void Drop()
+        {
+            var ray = new Ray(transform.position, Vector3.down);
+            if (!Physics.Raycast(ray, out var hit))
+                return;
+
+            if(!hit.collider.TryGetComponent<CauldronCollider>(out var cauldronCollider))
+                return;
+
+            cauldronCollider.Pour(this);
+        }
+
+        public void Pour(CauldronView cauldronView)
+        {
+            var ingredinet = Controller.Drop();
+
+            cauldronView.PutIn(ingredinet);
         }
     }
 }

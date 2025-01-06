@@ -1,26 +1,29 @@
 using Ginox.BlackCauldron.Alchemy.Controllers;
+using Ginox.BlackCauldron.Alchemy.Controllers.Tools;
+using Ginox.BlackCauldron.Alchemy.Views.Tools;
 using UnityEngine;
 using UnityEngine.Localization;
+using UnityEngine.XR.Interaction.Toolkit.Interactables;
 using Zenject;
 
 namespace Ginox.BlackCauldron.Alchemy.Views
 {
-    public abstract class AIngredientView : MonoBehaviour, IScoopCauldron
+    public abstract class AIngredientView : MonoBehaviour, IScoopCauldron, IMortarInteractable
     {
         private LocalizedString localizedName;
 
-        public AIngredientController ViewModel { get; protected set; }
+        public AIngredientController Controller { get; protected set; }
         public string Name { get; private set; }
 
-        protected void Init(AIngredientController viewModel)
+        protected void Init(AIngredientController controller)
         {
-            ViewModel = viewModel;
-            ViewModel.Destroyed += OnDestroyed;
+            Controller = controller;
+            Controller.Destroyed += OnDestroyed;
         }
 
         private void Start()
         {
-            localizedName = new LocalizedString("Alchemy", ViewModel.Model.NameKey);
+            localizedName = new LocalizedString("Alchemy", Controller.Model.NameKey);
             localizedName.StringChanged += OnStringChanged;
             Name = localizedName.GetLocalizedString();
         }
@@ -31,17 +34,41 @@ namespace Ginox.BlackCauldron.Alchemy.Views
 
         public void Scoop(CauldronView cauldronView)
         {
-            cauldronView.PutIn(ViewModel.Model);
+            cauldronView.PutIn(Controller);
         }
 
-        public void OnDestroy()
+        private void OnDestroy()
         {
-            ViewModel.Destroyed -= OnDestroyed;
+            Controller.Destroyed -= OnDestroyed;
         }
 
         private void OnDestroyed()
         {
             Destroy(gameObject);
+        }
+
+        public void Interact(MortarController controller)
+        {
+            controller.AddIngredient(this);
+        }
+
+        public void SetInteractableState(bool isInteractable)
+        {
+            var rigidbodies = GetComponentsInChildren<Rigidbody>();
+            var colliders = GetComponentsInChildren<Collider>();
+            var xrGrabs = GetComponentsInChildren<XRGrabInteractable>();
+
+            foreach (var rigidbody in rigidbodies)
+            {
+                rigidbody.isKinematic = !isInteractable;
+                rigidbody.useGravity = isInteractable;
+            }
+
+            foreach (var collider  in colliders)
+                collider.enabled = isInteractable;
+
+            foreach (var xrGrab in xrGrabs)
+                xrGrab.enabled = isInteractable;
         }
 
         public class Factory<T> : PlaceholderFactory<T>

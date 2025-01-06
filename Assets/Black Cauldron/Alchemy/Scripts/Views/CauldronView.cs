@@ -71,6 +71,12 @@ namespace Ginox.BlackCauldron.Alchemy.Views
             isHasFire = count > 0;
         }
 
+        public void PutIn(AIngredientController ingredient)
+        {
+            PutIn(ingredient.Model);
+            ingredient.Destroy();
+        }
+
         public void PutIn(AIngredient ingredient)
         {
             if (!isFilled || !isHasFire)
@@ -83,7 +89,6 @@ namespace Ginox.BlackCauldron.Alchemy.Views
             }
 
             cauldronController.PutIn(ingredient);
-            ingredient.Destroy();
 
             var potion = cauldronController.GetPotion();
 
