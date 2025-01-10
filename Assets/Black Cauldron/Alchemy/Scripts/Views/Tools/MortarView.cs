@@ -1,6 +1,5 @@
 ﻿using Ginox.BlackCauldron.Alchemy.Controllers.Tools;
 using System.Linq;
-using System.Xml.Schema;
 using UnityEngine;
 using Zenject;
 
@@ -26,7 +25,20 @@ namespace Ginox.BlackCauldron.Alchemy.Views.Tools
         private void Start ()
         {
             pile.SetActive(false);
+
             Controller.HangedIngredientChanged += OnHangedIngredientChanged;
+            Controller.PerformedIngredientChanged += OnPerformedIngredientChanged;
+        }
+
+        private void OnDestroy()
+        {
+            Controller.HangedIngredientChanged -= OnHangedIngredientChanged;
+            Controller.PerformedIngredientChanged -= OnPerformedIngredientChanged;
+        }
+
+        private void OnPerformedIngredientChanged(Models.AIngredient ingredient)
+        {
+            pile.SetActive(pile != null);
         }
 
         private void OnHangedIngredientChanged(AIngredientView ingredientView)

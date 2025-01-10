@@ -18,6 +18,8 @@ namespace Ginox.BlackCauldron.Alchemy.Controllers.Tools
 
         public event Action<AIngredientView> HangedIngredientChanged;
 
+        public event Action<AIngredient> PerformedIngredientChanged;
+
         public void Perform()
         {
             if (hangedIngredient == null)
@@ -28,12 +30,15 @@ namespace Ginox.BlackCauldron.Alchemy.Controllers.Tools
             hangedIngredient = null;
 
             HangedIngredientChanged?.Invoke(null);
+            PerformedIngredientChanged?.Invoke(performedIngredient);
         }
 
         public AIngredient Drop()
         {
             var ingredient = performedIngredient;
             performedIngredient = null;
+
+            PerformedIngredientChanged?.Invoke(performedIngredient);
 
             return ingredient;
         }
