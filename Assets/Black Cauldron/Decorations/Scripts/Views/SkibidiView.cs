@@ -15,8 +15,14 @@ namespace Ginox.BlackCauldron.Decorations.Views
 
         public void Play()
         {
-            animator.Play("Rise");
+            animator.SetTrigger("Rise");
             source.Play();
+        }
+
+        public void Sleep()
+        {
+            animator.SetTrigger("Sleep");
+            source.Stop();
         }
     }
 }

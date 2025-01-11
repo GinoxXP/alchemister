@@ -1080,15 +1080,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1915567827981542085, guid: 8194baff8c8ce134db02b63a29282eb7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.1786871
+      value: -0.17868651
       objectReference: {fileID: 0}
     - target: {fileID: 1915567827981542085, guid: 8194baff8c8ce134db02b63a29282eb7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.07177082
+      value: 0.07177038
       objectReference: {fileID: 0}
     - target: {fileID: 1915567827981542085, guid: 8194baff8c8ce134db02b63a29282eb7, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.0000003119529
+      value: 0.00000030687886
       objectReference: {fileID: 0}
     - target: {fileID: 1915567827981542085, guid: 8194baff8c8ce134db02b63a29282eb7, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1109,6 +1109,14 @@ PrefabInstance:
     - target: {fileID: 1977178240135218492, guid: 8194baff8c8ce134db02b63a29282eb7, type: 3}
       propertyPath: m_Name
       value: Skibidi
+      objectReference: {fileID: 0}
+    - target: {fileID: 3202475055772791565, guid: 8194baff8c8ce134db02b63a29282eb7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.00000005960462
+      objectReference: {fileID: 0}
+    - target: {fileID: 3202475055772791565, guid: 8194baff8c8ce134db02b63a29282eb7, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.00000004308831
       objectReference: {fileID: 0}
     - target: {fileID: 4122575584009713204, guid: 8194baff8c8ce134db02b63a29282eb7, type: 3}
       propertyPath: m_ConstrainProportionsScale
