@@ -1,4 +1,5 @@
 ﻿using Ginox.BlackCauldron.Alchemy.Controllers.Tools;
+using System.Collections;
 using System.Linq;
 using UnityEngine;
 using Zenject;
@@ -13,6 +14,8 @@ namespace Ginox.BlackCauldron.Alchemy.Views.Tools
         private GameObject pile;
         [SerializeField]
         private Transform ingredientHolder;
+
+        private IEnumerator waitAfterDropIngredient;
 
         public MortarController Controller { get; private set; }
 
@@ -71,6 +74,15 @@ namespace Ginox.BlackCauldron.Alchemy.Views.Tools
 
         private void Drop()
         {
+            if (Controller.HangedIngredient != null)
+            {
+                Controller.RemoveIngredient();
+
+                waitAfterDropIngredient = WaitAfterDropIngredient();
+                StartCoroutine(waitAfterDropIngredient);
+                return;
+            }
+
             var ray = new Ray(transform.position, Vector3.down);
             if (!Physics.Raycast(ray, out var hit))
                 return;
@@ -79,6 +91,13 @@ namespace Ginox.BlackCauldron.Alchemy.Views.Tools
                 return;
 
             cauldronCollider.Pour(this);
+        }
+
+        private IEnumerator WaitAfterDropIngredient()
+        {
+            Controller.IsReadyForAddIngredient = false;
+            yield return new WaitForSeconds(1);
+            Controller.IsReadyForAddIngredient = true;
         }
 
         public void Pour(CauldronView cauldronView)

@@ -8,13 +8,17 @@ namespace Ginox.BlackCauldron.Alchemy.Controllers.Tools
     public class MortarController
     {
         private MortarService mortarService;
-        private AIngredientController hangedIngredient;
+        private AIngredientView hangedIngredient;
         private AIngredient performedIngredient;
 
         public MortarController(MortarService mortarService)
         {
             this.mortarService = mortarService;
         }
+
+        public AIngredientView HangedIngredient => hangedIngredient;
+
+        public bool IsReadyForAddIngredient { get; set; } = true;
 
         public event Action<AIngredientView> HangedIngredientChanged;
 
@@ -25,8 +29,8 @@ namespace Ginox.BlackCauldron.Alchemy.Controllers.Tools
             if (hangedIngredient == null)
                 return;
 
-            performedIngredient = mortarService.Transform(hangedIngredient.Model);
-            hangedIngredient.Destroy();
+            performedIngredient = mortarService.Transform(hangedIngredient.Controller.Model);
+            hangedIngredient.Controller.Destroy();
             hangedIngredient = null;
 
             HangedIngredientChanged?.Invoke(null);
@@ -45,11 +49,24 @@ namespace Ginox.BlackCauldron.Alchemy.Controllers.Tools
 
         public void AddIngredient(AIngredientView view)
         {
+            if (!IsReadyForAddIngredient)
+                return;
+
             if (hangedIngredient != null)
                 return;
 
-            hangedIngredient = view.Controller;
+            hangedIngredient = view;
             HangedIngredientChanged?.Invoke(view);
+        }
+
+        public void RemoveIngredient()
+        {
+            hangedIngredient.SetInteractableState(true);
+            hangedIngredient.transform.parent = null;
+            hangedIngredient = null;
+
+            // TODO Refactor this bullshit
+            //HangedIngredientChanged?.Invoke(hangedIngredient);
         }
     }
 }
