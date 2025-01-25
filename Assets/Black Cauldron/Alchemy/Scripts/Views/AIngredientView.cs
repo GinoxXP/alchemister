@@ -1,6 +1,4 @@
 using Ginox.BlackCauldron.Alchemy.Controllers;
-using Ginox.BlackCauldron.Alchemy.Controllers.Tools;
-using Ginox.BlackCauldron.Alchemy.Views.Tools;
 using UnityEngine;
 using UnityEngine.Localization;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
@@ -8,7 +6,7 @@ using Zenject;
 
 namespace Ginox.BlackCauldron.Alchemy.Views
 {
-    public abstract class AIngredientView : MonoBehaviour, IScoopCauldron, IMortarInteractable
+    public abstract class AIngredientView : MonoBehaviour, IScoopCauldron
     {
         private LocalizedString localizedName;
 
@@ -45,11 +43,6 @@ namespace Ginox.BlackCauldron.Alchemy.Views
         private void OnDestroyed()
         {
             Destroy(gameObject);
-        }
-
-        public void Interact(MortarController controller)
-        {
-            controller.AddIngredient(this);
         }
 
         public void SetInteractableState(bool isInteractable)

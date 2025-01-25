@@ -11,9 +11,9 @@ namespace Ginox.BlackCauldron.Alchemy.Views.Tools
         private const float MAX_ANGLE_FOR_CONTAIN = 30f;
 
         [SerializeField]
-        private GameObject pile;
-        [SerializeField]
         private Transform ingredientHolder;
+        [SerializeField]
+        private GameObject dummyPile;
 
         private IEnumerator waitAfterDropIngredient;
 
@@ -27,7 +27,7 @@ namespace Ginox.BlackCauldron.Alchemy.Views.Tools
 
         private void Start ()
         {
-            pile.SetActive(false);
+            dummyPile.SetActive(false);
 
             Controller.HangedIngredientChanged += OnHangedIngredientChanged;
             Controller.PerformedIngredientChanged += OnPerformedIngredientChanged;
@@ -41,7 +41,11 @@ namespace Ginox.BlackCauldron.Alchemy.Views.Tools
 
         private void OnPerformedIngredientChanged(Models.AIngredient ingredient)
         {
-            pile.SetActive(pile != null);
+            if (ingredient == null)
+                return;
+
+            //TODO spawn ingredient for visualization
+            dummyPile.SetActive(true);
         }
 
         private void OnHangedIngredientChanged(AIngredientView ingredientView)
@@ -52,7 +56,7 @@ namespace Ginox.BlackCauldron.Alchemy.Views.Tools
                 return;
 
             ingredientView.SetInteractableState(!state);
-            ingredientView.transform.parent = transform;
+            ingredientView.transform.parent = ingredientHolder;
             ingredientView.transform.localPosition = Vector3.zero;
             ingredientView.transform.localRotation = Quaternion.identity;
         }
@@ -76,7 +80,7 @@ namespace Ginox.BlackCauldron.Alchemy.Views.Tools
         {
             if (Controller.HangedIngredient != null)
             {
-                Controller.RemoveIngredient();
+                Controller.PutOut();
 
                 waitAfterDropIngredient = WaitAfterDropIngredient();
                 StartCoroutine(waitAfterDropIngredient);
@@ -102,7 +106,8 @@ namespace Ginox.BlackCauldron.Alchemy.Views.Tools
 
         public void Pour(CauldronView cauldronView)
         {
-            var ingredinet = Controller.Drop();
+            var ingredinet = Controller.PutOut();
+            dummyPile.SetActive(false);
 
             cauldronView.PutIn(ingredinet);
         }

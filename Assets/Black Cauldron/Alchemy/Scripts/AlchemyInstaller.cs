@@ -62,6 +62,8 @@ public class AlchemyInstaller : MonoInstaller
     private GameObject beaverTail;
     [SerializeField]
     private GameObject coal;
+    [SerializeField]
+    private GameObject coalPowder;
 
     [SerializeField]
     private GameObject bottle;
@@ -78,6 +80,7 @@ public class AlchemyInstaller : MonoInstaller
         InstallTools();
         InstallIngredients();
         InstallPotions();
+        InstallMortarTransformation();
     }
 
     private void InstallTools()
@@ -103,6 +106,7 @@ public class AlchemyInstaller : MonoInstaller
         Container.Bind<Mint>().AsTransient();
         Container.Bind<BeaverTail>().AsTransient();
         Container.Bind<Coal>().AsTransient();
+        Container.Bind<CoalPowder>().AsTransient();
 
         Container.Bind<AshController>().AsTransient();
         Container.Bind<BayLeafsController>().AsTransient();
@@ -116,6 +120,7 @@ public class AlchemyInstaller : MonoInstaller
         Container.Bind<MintController>().AsTransient();
         Container.Bind<BeaverTailController>().AsTransient();
         Container.Bind<CoalController>().AsTransient();
+        Container.Bind<CoalPowderController>().AsTransient();
 
         Container.BindFactory<AshView, AIngredientView.Factory<AshView>>().FromComponentInNewPrefab(ash);
         Container.BindFactory<BayLeafsView, AIngredientView.Factory<BayLeafsView>>().FromComponentInNewPrefab(bayLeafs);
@@ -129,6 +134,7 @@ public class AlchemyInstaller : MonoInstaller
         Container.BindFactory<MintView, AIngredientView.Factory<MintView>>().FromComponentInNewPrefab(mint);
         Container.BindFactory<BeaverTailView, AIngredientView.Factory<BeaverTailView>>().FromComponentInNewPrefab(beaverTail);
         Container.BindFactory<CoalView, AIngredientView.Factory<CoalView>>().FromComponentInNewPrefab(coal);
+        Container.BindFactory<CoalPowderView, AIngredientView.Factory<CoalPowderView>>().FromComponentInNewPrefab(coalPowder);
     }
 
     private void InstallPotions()
@@ -236,5 +242,16 @@ public class AlchemyInstaller : MonoInstaller
         brewingService.RegisterRecipe(antiBaldnessLotionRecipe);
         brewingService.RegisterRecipe(thickHairPotionRecipe);
         brewingService.RegisterRecipe(ointmentForRestoringLostFingersRecipe);
+    }
+
+    private void InstallMortarTransformation()
+    {
+        var mortarService = Container.Resolve<MortarService>();
+
+        var coal = Container.Resolve<Coal>();
+
+        var coalPowder = Container.Resolve<CoalPowder>();
+
+        mortarService.RegisterTransformation(new IngredientTransformation(coal, coalPowder));
     }
 }

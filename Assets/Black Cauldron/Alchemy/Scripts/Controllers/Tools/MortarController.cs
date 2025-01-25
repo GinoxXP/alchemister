@@ -24,6 +24,29 @@ namespace Ginox.BlackCauldron.Alchemy.Controllers.Tools
 
         public event Action<AIngredient> PerformedIngredientChanged;
 
+        public void PutIn(AIngredientView view)
+        {
+            if (!IsReadyForAddIngredient)
+                return;
+
+            if (hangedIngredient != null)
+                return;
+
+            hangedIngredient = view;
+            HangedIngredientChanged?.Invoke(view);
+        }
+
+        public AIngredient PutOut()
+        {
+            if (hangedIngredient != null)
+            {
+                RemoveIngredient();
+                return null;
+            }
+
+            return Drop();
+        }
+
         public void Perform()
         {
             if (hangedIngredient == null)
@@ -37,7 +60,7 @@ namespace Ginox.BlackCauldron.Alchemy.Controllers.Tools
             PerformedIngredientChanged?.Invoke(performedIngredient);
         }
 
-        public AIngredient Drop()
+        private AIngredient Drop()
         {
             var ingredient = performedIngredient;
             performedIngredient = null;
@@ -47,26 +70,11 @@ namespace Ginox.BlackCauldron.Alchemy.Controllers.Tools
             return ingredient;
         }
 
-        public void AddIngredient(AIngredientView view)
-        {
-            if (!IsReadyForAddIngredient)
-                return;
-
-            if (hangedIngredient != null)
-                return;
-
-            hangedIngredient = view;
-            HangedIngredientChanged?.Invoke(view);
-        }
-
-        public void RemoveIngredient()
+        private void RemoveIngredient()
         {
             hangedIngredient.SetInteractableState(true);
             hangedIngredient.transform.parent = null;
             hangedIngredient = null;
-
-            // TODO Refactor this bullshit
-            //HangedIngredientChanged?.Invoke(hangedIngredient);
         }
     }
 }

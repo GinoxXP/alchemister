@@ -107,6 +107,7 @@ MonoBehaviour:
   mint: {fileID: 3048448165777344447, guid: f3de5ce792521e4439b19ec9ebddf137, type: 3}
   beaverTail: {fileID: 85925098223529651, guid: 440c3fbe71e26b746b61b75b2066e341, type: 3}
   coal: {fileID: 371412119509471495, guid: 8892c9da95654f6488e457ffc03e344b, type: 3}
+  coalPowder: {fileID: 1677817031350257508, guid: 0a53bdcf900076c42ab272a42cd961fa, type: 3}
   bottle: {fileID: 5951818125932470985, guid: 3b2bf9521359eb644b74e7aba5cd94c4, type: 3}
   firelog: {fileID: 6222937616932261825, guid: cd7b13487f0a0cb40b3e09dbbcf1154a, type: 3}
 --- !u!114 &4624348786477235844
