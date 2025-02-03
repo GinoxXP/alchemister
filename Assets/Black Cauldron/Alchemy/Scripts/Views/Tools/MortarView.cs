@@ -6,16 +6,17 @@ using Zenject;
 
 namespace Ginox.BlackCauldron.Alchemy.Views.Tools
 {
+    [RequireComponent(typeof(IngredientSpawner))]
     public class MortarView : MonoBehaviour, IPourCauldron
     {
         private const float MAX_ANGLE_FOR_CONTAIN = 30f;
 
         [SerializeField]
         private Transform ingredientHolder;
-        [SerializeField]
-        private GameObject dummyPile;
 
+        private IngredientSpawner spawner;
         private IEnumerator waitAfterDropIngredient;
+        private GameObject performedIngredient;
 
         public MortarController Controller { get; private set; }
 
@@ -27,7 +28,7 @@ namespace Ginox.BlackCauldron.Alchemy.Views.Tools
 
         private void Start ()
         {
-            dummyPile.SetActive(false);
+            spawner = GetComponent<IngredientSpawner>();
 
             Controller.HangedIngredientChanged += OnHangedIngredientChanged;
             Controller.PerformedIngredientChanged += OnPerformedIngredientChanged;
@@ -44,8 +45,17 @@ namespace Ginox.BlackCauldron.Alchemy.Views.Tools
             if (ingredient == null)
                 return;
 
-            //TODO spawn ingredient for visualization
-            dummyPile.SetActive(true);
+            var ingredientName = ingredient.GetType().Name;
+            var ingredientGameObject = spawner.CreateByName(ingredientName);
+
+            var view = ingredientGameObject.GetComponent<AIngredientView>();
+            view.SetInteractableState(false);
+            Destroy(view);
+
+            ingredientGameObject.transform.parent = ingredientHolder;
+            ingredientGameObject.transform.localPosition = Vector3.zero;
+
+            performedIngredient = ingredientGameObject;
         }
 
         private void OnHangedIngredientChanged(AIngredientView ingredientView)
@@ -107,8 +117,8 @@ namespace Ginox.BlackCauldron.Alchemy.Views.Tools
         public void Pour(CauldronView cauldronView)
         {
             var ingredinet = Controller.PutOut();
-            dummyPile.SetActive(false);
 
+            Destroy(performedIngredient);
             cauldronView.PutIn(ingredinet);
         }
     }

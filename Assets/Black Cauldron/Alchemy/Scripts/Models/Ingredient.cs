@@ -12,4 +12,5 @@
     Mint,
     BeaverTail,
     Coal,
+    CoalPowder,
 }
