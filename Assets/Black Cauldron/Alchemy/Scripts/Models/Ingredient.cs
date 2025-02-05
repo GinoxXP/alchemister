@@ -13,4 +13,10 @@
     BeaverTail,
     Coal,
     CoalPowder,
+    GroundBayLeafs,
+    GroundCattailCob,
+    GroundFlyAgaric,
+    GroundLicoriceRoot,
+    GroundMint,
+    GroundPineCone,
 }

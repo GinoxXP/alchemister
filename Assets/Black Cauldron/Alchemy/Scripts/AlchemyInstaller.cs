@@ -13,6 +13,7 @@ using Zenject;
 
 public class AlchemyInstaller : MonoInstaller
 {
+    #region PotionMaterials
     [SerializeField]
     private Material blueUselessPotionMaterial;
     [SerializeField]
@@ -37,7 +38,9 @@ public class AlchemyInstaller : MonoInstaller
     private Material thickHairPotionMaterial;
     [SerializeField]
     private Material ointmentForRestoringLostFingersMaterial;
+    #endregion
 
+    #region Ingredients
     [SerializeField]
     private GameObject ash;
     [SerializeField]
@@ -62,8 +65,26 @@ public class AlchemyInstaller : MonoInstaller
     private GameObject beaverTail;
     [SerializeField]
     private GameObject coal;
+    #endregion
+
+    #region MortarIngredients
     [SerializeField]
     private GameObject coalPowder;
+    [SerializeField]
+    private GameObject groundBayLeafs;
+    [SerializeField]
+    private GameObject groundCattailCob;
+    [SerializeField]
+    private GameObject groundFlyAgaric;
+    [SerializeField]
+    private GameObject groundHerringSkin;
+    [SerializeField]
+    private GameObject groundLicoriceRoot;
+    [SerializeField]
+    private GameObject groundMint;
+    [SerializeField]
+    private GameObject groundPineCone;
+    #endregion
 
     [SerializeField]
     private GameObject bottle;
@@ -94,6 +115,7 @@ public class AlchemyInstaller : MonoInstaller
 
     private void InstallIngredients()
     {
+        #region Ingredients
         Container.Bind<Ash>().AsTransient();
         Container.Bind<BayLeafs>().AsTransient();
         Container.Bind<CattailCob>().AsTransient();
@@ -106,7 +128,6 @@ public class AlchemyInstaller : MonoInstaller
         Container.Bind<Mint>().AsTransient();
         Container.Bind<BeaverTail>().AsTransient();
         Container.Bind<Coal>().AsTransient();
-        Container.Bind<CoalPowder>().AsTransient();
 
         Container.Bind<AshController>().AsTransient();
         Container.Bind<BayLeafsController>().AsTransient();
@@ -120,7 +141,6 @@ public class AlchemyInstaller : MonoInstaller
         Container.Bind<MintController>().AsTransient();
         Container.Bind<BeaverTailController>().AsTransient();
         Container.Bind<CoalController>().AsTransient();
-        Container.Bind<CoalPowderController>().AsTransient();
 
         Container.BindFactory<AshView, AIngredientView.Factory<AshView>>().FromComponentInNewPrefab(ash);
         Container.BindFactory<BayLeafsView, AIngredientView.Factory<BayLeafsView>>().FromComponentInNewPrefab(bayLeafs);
@@ -134,7 +154,34 @@ public class AlchemyInstaller : MonoInstaller
         Container.BindFactory<MintView, AIngredientView.Factory<MintView>>().FromComponentInNewPrefab(mint);
         Container.BindFactory<BeaverTailView, AIngredientView.Factory<BeaverTailView>>().FromComponentInNewPrefab(beaverTail);
         Container.BindFactory<CoalView, AIngredientView.Factory<CoalView>>().FromComponentInNewPrefab(coal);
+        #endregion
+
+        #region MortarIngredients
+        Container.Bind<CoalPowder>().AsTransient();
+        Container.Bind<GroundBayLeafs>().AsTransient();
+        Container.Bind<GroundFlyAgaric>().AsTransient();
+        Container.Bind<GroundHerringSkin>().AsTransient();
+        Container.Bind<GroundLicoriceRoot>().AsTransient();
+        Container.Bind<GroundMint>().AsTransient();
+        Container.Bind<GroundPineCone>().AsTransient();
+
+        Container.Bind<CoalPowderController>().AsTransient();
+        Container.Bind<GroundBayLeafsController>().AsTransient();
+        Container.Bind<GroundFlyAgaricController>().AsTransient();
+        Container.Bind<GroundHerringSkinController>().AsTransient();
+        Container.Bind<GroundLicoriceRootController>().AsTransient();
+        Container.Bind<GroundMintController>().AsTransient();
+        Container.Bind<GroundPineConeController>().AsTransient();
+
         Container.BindFactory<CoalPowderView, AIngredientView.Factory<CoalPowderView>>().FromComponentInNewPrefab(coalPowder);
+        Container.BindFactory<GroundBayLeafs, AIngredientView.Factory<GroundBayLeafs>>().FromComponentInNewPrefab(groundBayLeafs);
+        Container.BindFactory<GroundFlyAgaric, AIngredientView.Factory<GroundFlyAgaric>>().FromComponentInNewPrefab(groundFlyAgaric);
+        Container.BindFactory<GroundHerringSkin, AIngredientView.Factory<GroundHerringSkin>>().FromComponentInNewPrefab(groundHerringSkin);
+        Container.BindFactory<GroundLicoriceRoot, AIngredientView.Factory<GroundLicoriceRoot>>().FromComponentInNewPrefab(groundLicoriceRoot);
+        Container.BindFactory<GroundMint, AIngredientView.Factory<GroundMint>>().FromComponentInNewPrefab(groundMint);
+        Container.BindFactory<GroundPineCone, AIngredientView.Factory<GroundPineCone>>().FromComponentInNewPrefab(groundPineCone);
+        #endregion
+
     }
 
     private void InstallPotions()
@@ -169,6 +216,7 @@ public class AlchemyInstaller : MonoInstaller
         Container.Bind<ThickHairPotion>().FromMethod(x => new ThickHairPotion(thickHairPotionMaterial)).AsTransient();
         Container.Bind<OintmentForRestoringLostFingers>().FromMethod(x => new OintmentForRestoringLostFingers(ointmentForRestoringLostFingersMaterial)).AsTransient();
 
+        #region Level1
         var blueUselessPotionRecipe = new Recipe(Container.Resolve<BlueUselessPotion>())
             .RegisterIngredient(ash)
             .RegisterIngredient(bayLeafs)
@@ -198,6 +246,16 @@ public class AlchemyInstaller : MonoInstaller
             .RegisterIngredient(bayLeafs)
             .RegisterIngredient(bayLeafs);
 
+        brewingService.RegisterRecipe(blueUselessPotionRecipe);
+        brewingService.RegisterRecipe(cyanStrangePotionRecipe);
+        brewingService.RegisterRecipe(greenSweetPotionRecipe);
+        brewingService.RegisterRecipe(orangeSaltyPotionRecipe);
+        brewingService.RegisterRecipe(pinkMysteryPotionRecipe);
+        brewingService.RegisterRecipe(redCommonPotionRecipe);
+        brewingService.RegisterRecipe(yellowFoulSmellingPotionRecipe);
+        #endregion
+
+        #region Level2
         var coughSyrupRecipe = new Recipe(Container.Resolve<CoughSyrup>())
             .RegisterIngredient(ash)
             .RegisterIngredient(coal)
@@ -229,29 +287,47 @@ public class AlchemyInstaller : MonoInstaller
             .RegisterIngredient(licoriceRoot)
             .RegisterIngredient(bayLeafs);
 
-        brewingService.RegisterRecipe(blueUselessPotionRecipe);
-        brewingService.RegisterRecipe(cyanStrangePotionRecipe);
-        brewingService.RegisterRecipe(greenSweetPotionRecipe);
-        brewingService.RegisterRecipe(orangeSaltyPotionRecipe);
-        brewingService.RegisterRecipe(pinkMysteryPotionRecipe);
-        brewingService.RegisterRecipe(redCommonPotionRecipe);
-        brewingService.RegisterRecipe(yellowFoulSmellingPotionRecipe);
-
         brewingService.RegisterRecipe(coughSyrupRecipe);
         brewingService.RegisterRecipe(tinctureForRunnyNoseRecipe);
         brewingService.RegisterRecipe(antiBaldnessLotionRecipe);
         brewingService.RegisterRecipe(thickHairPotionRecipe);
         brewingService.RegisterRecipe(ointmentForRestoringLostFingersRecipe);
+        #endregion
     }
 
     private void InstallMortarTransformation()
     {
         var mortarService = Container.Resolve<MortarService>();
 
+        #region Ingredients
         var coal = Container.Resolve<Coal>();
+        var bayLeafs = Container.Resolve<BayLeafs>();
+        var cattailCob = Container.Resolve<CattailCob>();
+        var flyAgaric = Container.Resolve<FlyAgaric>();
+        var herringSkin = Container.Resolve<HerringSkin>();
+        var licoriceRoot = Container.Resolve<LicoriceRoot>();
+        var mint = Container.Resolve<Mint>();
+        var pineCone = Container.Resolve<PineCone>();
+        #endregion
 
+        #region MortarIngredients
         var coalPowder = Container.Resolve<CoalPowder>();
+        var groundBayLeafs = Container.Resolve<GroundBayLeafs>();
+        var groundCattailCob = Container.Resolve<GroundCattailCob>();
+        var groundFlyAgaric = Container.Resolve<GroundFlyAgaric>();
+        var groundHerringSkin = Container.Resolve<GroundHerringSkin>();
+        var groundLicoriceRoot = Container.Resolve<GroundLicoriceRoot>();
+        var groundMint = Container.Resolve<GroundMint>();
+        var groundPineCone = Container.Resolve<GroundPineCone>();
+        #endregion
 
         mortarService.RegisterTransformation(new IngredientTransformation(coal, coalPowder));
+        mortarService.RegisterTransformation(new IngredientTransformation(bayLeafs, groundBayLeafs));
+        mortarService.RegisterTransformation(new IngredientTransformation(cattailCob, groundCattailCob));
+        mortarService.RegisterTransformation(new IngredientTransformation(flyAgaric, groundFlyAgaric));
+        mortarService.RegisterTransformation(new IngredientTransformation(herringSkin, groundHerringSkin));
+        mortarService.RegisterTransformation(new IngredientTransformation(licoriceRoot, groundLicoriceRoot));
+        mortarService.RegisterTransformation(new IngredientTransformation(mint, groundMint));
+        mortarService.RegisterTransformation(new IngredientTransformation(pineCone, groundPineCone));
     }
 }

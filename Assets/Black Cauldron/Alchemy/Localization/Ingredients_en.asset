@@ -66,6 +66,34 @@ MonoBehaviour:
     m_Localized: Coal
     m_Metadata:
       m_Items: []
+  - m_Id: 61243233530515456
+    m_Localized: Coal powder
+    m_Metadata:
+      m_Items: []
+  - m_Id: 61243294834462720
+    m_Localized: Ground bay leafs
+    m_Metadata:
+      m_Items: []
+  - m_Id: 61243473327263744
+    m_Localized: Ground cattail cob
+    m_Metadata:
+      m_Items: []
+  - m_Id: 61243605405896704
+    m_Localized: Ground fly agaric
+    m_Metadata:
+      m_Items: []
+  - m_Id: 61243719813926912
+    m_Localized: Ground licorice root
+    m_Metadata:
+      m_Items: []
+  - m_Id: 61243836671430656
+    m_Localized: Ground mint
+    m_Metadata:
+      m_Items: []
+  - m_Id: 61243985799909376
+    m_Localized: Ground pine cone
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

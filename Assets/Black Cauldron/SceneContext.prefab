@@ -108,6 +108,13 @@ MonoBehaviour:
   beaverTail: {fileID: 85925098223529651, guid: 440c3fbe71e26b746b61b75b2066e341, type: 3}
   coal: {fileID: 371412119509471495, guid: 8892c9da95654f6488e457ffc03e344b, type: 3}
   coalPowder: {fileID: 1677817031350257508, guid: 0a53bdcf900076c42ab272a42cd961fa, type: 3}
+  groundBayLeafs: {fileID: 3152750490630249470, guid: aac210c2db7067b428cbf51e5d68ac81, type: 3}
+  groundCattailCob: {fileID: 6278848441125371248, guid: ee31eb94f096bb44293e2109312b4402, type: 3}
+  groundFlyAgaric: {fileID: 2473179388955775697, guid: d65d436aff18f4644aca544b9c51c0ab, type: 3}
+  groundHerringSkin: {fileID: 5870168682975918811, guid: 8a68eaf0af3226e43a76949e4399391f, type: 3}
+  groundLicoriceRoot: {fileID: 6666619975829866752, guid: f64f9687b5f135e40b0a45f0a77f820f, type: 3}
+  groundMint: {fileID: 7830828726630717887, guid: d3146fc2e7794fc46ba49e7e62483709, type: 3}
+  groundPineCone: {fileID: 2910484345192801049, guid: f5ac7c3887491fe4ab23d2abfe1bfbc0, type: 3}
   bottle: {fileID: 5951818125932470985, guid: 3b2bf9521359eb644b74e7aba5cd94c4, type: 3}
   firelog: {fileID: 6222937616932261825, guid: cd7b13487f0a0cb40b3e09dbbcf1154a, type: 3}
 --- !u!114 &4624348786477235844

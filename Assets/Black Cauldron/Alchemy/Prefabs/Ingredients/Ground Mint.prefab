@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &8407473072908169549
+--- !u!1001 &1101451958798938006
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -48,13 +48,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2658693186509781936, guid: b52421e3fafc5194f8a0234cfc7628bc, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2100000, guid: edae9c3fda9266046a7f482926164cec, type: 2}
     - target: {fileID: 7198323974779041321, guid: b52421e3fafc5194f8a0234cfc7628bc, type: 3}
       propertyPath: m_Name
-      value: Coal Powder Ingredient Variant
+      value: Ground Mint
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -62,22 +58,22 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 7198323974779041321, guid: b52421e3fafc5194f8a0234cfc7628bc, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 6032192318350555992}
+      addedObject: {fileID: 6893773584501967378}
   m_SourcePrefab: {fileID: 100100000, guid: b52421e3fafc5194f8a0234cfc7628bc, type: 3}
---- !u!1 &1677817031350257508 stripped
+--- !u!1 &7830828726630717887 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7198323974779041321, guid: b52421e3fafc5194f8a0234cfc7628bc, type: 3}
-  m_PrefabInstance: {fileID: 8407473072908169549}
+  m_PrefabInstance: {fileID: 1101451958798938006}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &6032192318350555992
+--- !u!114 &6893773584501967378
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1677817031350257508}
+  m_GameObject: {fileID: 7830828726630717887}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e2ec0428d0be5cd4dabc56021e3f42bc, type: 3}
+  m_Script: {fileID: 11500000, guid: ad1dbdb12e27eea46a400497a822cca1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

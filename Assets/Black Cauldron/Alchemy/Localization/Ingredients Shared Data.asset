@@ -63,6 +63,34 @@ MonoBehaviour:
     m_Key: Coal
     m_Metadata:
       m_Items: []
+  - m_Id: 61243233530515456
+    m_Key: CoalPowder
+    m_Metadata:
+      m_Items: []
+  - m_Id: 61243294834462720
+    m_Key: GroundBayLeafs
+    m_Metadata:
+      m_Items: []
+  - m_Id: 61243473327263744
+    m_Key: GroundCattailCob
+    m_Metadata:
+      m_Items: []
+  - m_Id: 61243605405896704
+    m_Key: GroundFlyAgaric
+    m_Metadata:
+      m_Items: []
+  - m_Id: 61243719813926912
+    m_Key: GroundLicoriceRoot
+    m_Metadata:
+      m_Items: []
+  - m_Id: 61243836671430656
+    m_Key: GroundMint
+    m_Metadata:
+      m_Items: []
+  - m_Id: 61243985799909376
+    m_Key: GroundPineCone
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
