@@ -7,6 +7,9 @@ namespace Ginox.BlackCauldron.Alchemy.Controllers.Tools
 {
     public class MortarController
     {
+        private static readonly int PERFORM_MAX_RANDOM_RANGE = 5;
+
+        private Random random;
         private MortarService mortarService;
         private AIngredientView hangedIngredient;
         private AIngredient performedIngredient;
@@ -14,6 +17,7 @@ namespace Ginox.BlackCauldron.Alchemy.Controllers.Tools
         public MortarController(MortarService mortarService)
         {
             this.mortarService = mortarService;
+            random = new Random();
         }
 
         public AIngredientView HangedIngredient => hangedIngredient;
@@ -49,6 +53,10 @@ namespace Ginox.BlackCauldron.Alchemy.Controllers.Tools
 
         public void Perform()
         {
+            var randomValue = random.Next(PERFORM_MAX_RANDOM_RANGE);
+            if (randomValue != 0)
+                return;
+
             if (hangedIngredient == null)
                 return;
 

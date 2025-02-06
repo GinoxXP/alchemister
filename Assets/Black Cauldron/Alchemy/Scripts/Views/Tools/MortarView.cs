@@ -10,6 +10,7 @@ namespace Ginox.BlackCauldron.Alchemy.Views.Tools
     public class MortarView : MonoBehaviour, IPourCauldron
     {
         private const float MAX_ANGLE_FOR_CONTAIN = 30f;
+        private const float WAIT_AFTER_DROP_DELAY = 1;
 
         [SerializeField]
         private Transform ingredientHolder;
@@ -110,7 +111,7 @@ namespace Ginox.BlackCauldron.Alchemy.Views.Tools
         private IEnumerator WaitAfterDropIngredient()
         {
             Controller.IsReadyForAddIngredient = false;
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(WAIT_AFTER_DROP_DELAY);
             Controller.IsReadyForAddIngredient = true;
         }
 

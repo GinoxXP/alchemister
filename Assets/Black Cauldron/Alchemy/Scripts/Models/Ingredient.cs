@@ -16,6 +16,7 @@
     GroundBayLeafs,
     GroundCattailCob,
     GroundFlyAgaric,
+    GroundHerringSkin,
     GroundLicoriceRoot,
     GroundMint,
     GroundPineCone,

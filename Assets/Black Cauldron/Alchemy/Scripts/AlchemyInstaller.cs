@@ -159,6 +159,7 @@ public class AlchemyInstaller : MonoInstaller
         #region MortarIngredients
         Container.Bind<CoalPowder>().AsTransient();
         Container.Bind<GroundBayLeafs>().AsTransient();
+        Container.Bind<GroundCattailCob>().AsTransient();
         Container.Bind<GroundFlyAgaric>().AsTransient();
         Container.Bind<GroundHerringSkin>().AsTransient();
         Container.Bind<GroundLicoriceRoot>().AsTransient();
@@ -167,6 +168,7 @@ public class AlchemyInstaller : MonoInstaller
 
         Container.Bind<CoalPowderController>().AsTransient();
         Container.Bind<GroundBayLeafsController>().AsTransient();
+        Container.Bind<GroundCattailCobController>().AsTransient();
         Container.Bind<GroundFlyAgaricController>().AsTransient();
         Container.Bind<GroundHerringSkinController>().AsTransient();
         Container.Bind<GroundLicoriceRootController>().AsTransient();
@@ -174,12 +176,13 @@ public class AlchemyInstaller : MonoInstaller
         Container.Bind<GroundPineConeController>().AsTransient();
 
         Container.BindFactory<CoalPowderView, AIngredientView.Factory<CoalPowderView>>().FromComponentInNewPrefab(coalPowder);
-        Container.BindFactory<GroundBayLeafs, AIngredientView.Factory<GroundBayLeafs>>().FromComponentInNewPrefab(groundBayLeafs);
-        Container.BindFactory<GroundFlyAgaric, AIngredientView.Factory<GroundFlyAgaric>>().FromComponentInNewPrefab(groundFlyAgaric);
-        Container.BindFactory<GroundHerringSkin, AIngredientView.Factory<GroundHerringSkin>>().FromComponentInNewPrefab(groundHerringSkin);
-        Container.BindFactory<GroundLicoriceRoot, AIngredientView.Factory<GroundLicoriceRoot>>().FromComponentInNewPrefab(groundLicoriceRoot);
-        Container.BindFactory<GroundMint, AIngredientView.Factory<GroundMint>>().FromComponentInNewPrefab(groundMint);
-        Container.BindFactory<GroundPineCone, AIngredientView.Factory<GroundPineCone>>().FromComponentInNewPrefab(groundPineCone);
+        Container.BindFactory<GroundBayLeafsView, AIngredientView.Factory<GroundBayLeafsView>>().FromComponentInNewPrefab(groundBayLeafs);
+        Container.BindFactory<GroundCattailCobView, AIngredientView.Factory<GroundCattailCobView>>().FromComponentInNewPrefab(groundCattailCob);
+        Container.BindFactory<GroundFlyAgaricView, AIngredientView.Factory<GroundFlyAgaricView>>().FromComponentInNewPrefab(groundFlyAgaric);
+        Container.BindFactory<GroundHerringSkinView, AIngredientView.Factory<GroundHerringSkinView>>().FromComponentInNewPrefab(groundHerringSkin);
+        Container.BindFactory<GroundLicoriceRootView, AIngredientView.Factory<GroundLicoriceRootView>>().FromComponentInNewPrefab(groundLicoriceRoot);
+        Container.BindFactory<GroundMintView, AIngredientView.Factory<GroundMintView>>().FromComponentInNewPrefab(groundMint);
+        Container.BindFactory<GroundPineConeView, AIngredientView.Factory<GroundPineConeView>>().FromComponentInNewPrefab(groundPineCone);
         #endregion
 
     }

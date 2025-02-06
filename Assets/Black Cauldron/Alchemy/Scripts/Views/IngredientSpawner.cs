@@ -25,6 +25,13 @@ namespace Ginox.BlackCauldron.Alchemy.Views
         private AIngredientView.Factory<BeaverTailView> beaverTailFactory;
         private AIngredientView.Factory<CoalView> coalFactory;
         private AIngredientView.Factory<CoalPowderView> coalPowderFactory;
+        private AIngredientView.Factory<GroundBayLeafsView> groundBayLeafsFactory;
+        private AIngredientView.Factory<GroundCattailCobView> groundCattailCobFactory;
+        private AIngredientView.Factory<GroundFlyAgaricView> groundFlyAgaricFactory;
+        private AIngredientView.Factory<GroundHerringSkinView> groundHerringSkinFactory;
+        private AIngredientView.Factory<GroundLicoriceRootView> groundLicoriceRootFactory;
+        private AIngredientView.Factory<GroundMintView> groundMintFactory;
+        private AIngredientView.Factory<GroundPineConeView> groundPineConeFactory;
         #endregion
 
         [Inject]
@@ -41,7 +48,14 @@ namespace Ginox.BlackCauldron.Alchemy.Views
             AIngredientView.Factory<MintView> mintFactory,
             AIngredientView.Factory<BeaverTailView> beaverTailFactory,
             AIngredientView.Factory<CoalView> coalFactory,
-            AIngredientView.Factory<CoalPowderView> coalPowderFactory)
+            AIngredientView.Factory<CoalPowderView> coalPowderFactory,
+            AIngredientView.Factory<GroundBayLeafsView> groundBayLeafsFactory,
+            AIngredientView.Factory<GroundCattailCobView> groundCattailCobFactory,
+            AIngredientView.Factory<GroundFlyAgaricView> groundFlyAgaricFactory,
+            AIngredientView.Factory<GroundHerringSkinView> groundHerringSkinFactory,
+            AIngredientView.Factory<GroundLicoriceRootView> groundLicoriceRootFactory,
+            AIngredientView.Factory<GroundMintView> groundMintFactory,
+            AIngredientView.Factory<GroundPineConeView> groundPineConeFactory)
         {
             this.ashFactory = ashFactory;
             this.bayLeafsFactory = bayLeafsFactory;
@@ -56,6 +70,13 @@ namespace Ginox.BlackCauldron.Alchemy.Views
             this.beaverTailFactory = beaverTailFactory;
             this.coalFactory = coalFactory;
             this.coalPowderFactory = coalPowderFactory;
+            this.groundBayLeafsFactory = groundBayLeafsFactory;
+            this.groundCattailCobFactory = groundCattailCobFactory;
+            this.groundFlyAgaricFactory = groundFlyAgaricFactory;
+            this.groundHerringSkinFactory = groundHerringSkinFactory;
+            this.groundLicoriceRootFactory = groundLicoriceRootFactory;
+            this.groundMintFactory = groundMintFactory;
+            this.groundPineConeFactory = groundPineConeFactory;
         }
 
         public GameObject CreateByName(string name)
@@ -88,6 +109,13 @@ namespace Ginox.BlackCauldron.Alchemy.Views
                 Ingredient.BeaverTail => beaverTailFactory.Create().gameObject,
                 Ingredient.Coal => coalFactory.Create().gameObject,
                 Ingredient.CoalPowder => coalPowderFactory.Create().gameObject,
+                Ingredient.GroundBayLeafs => groundBayLeafsFactory.Create().gameObject,
+                Ingredient.GroundCattailCob => groundCattailCobFactory.Create().gameObject,
+                Ingredient.GroundFlyAgaric => groundFlyAgaricFactory.Create().gameObject,
+                Ingredient.GroundHerringSkin => groundHerringSkinFactory.Create().gameObject,
+                Ingredient.GroundLicoriceRoot => groundLicoriceRootFactory.Create().gameObject,
+                Ingredient.GroundMint => groundMintFactory.Create().gameObject,
+                Ingredient.GroundPineCone => groundPineConeFactory.Create().gameObject,
                 _ => throw new NotImplementedException(),
             };
 

@@ -47,21 +47,21 @@ namespace Ginox.BlackCauldron.Alchemy.Views
 
         public void SetInteractableState(bool isInteractable)
         {
-            var rigidbodies = GetComponentsInChildren<Rigidbody>();
             var colliders = GetComponentsInChildren<Collider>();
             var xrGrabs = GetComponentsInChildren<XRGrabInteractable>();
-
-            foreach (var rigidbody in rigidbodies)
-            {
-                rigidbody.isKinematic = !isInteractable;
-                rigidbody.useGravity = isInteractable;
-            }
+            var rigidbodies = GetComponentsInChildren<Rigidbody>();
 
             foreach (var collider  in colliders)
                 collider.enabled = isInteractable;
 
             foreach (var xrGrab in xrGrabs)
                 xrGrab.enabled = isInteractable;
+
+            foreach (var rigidbody in rigidbodies)
+            {
+                rigidbody.isKinematic = !isInteractable;
+                rigidbody.useGravity = isInteractable;
+            }
         }
 
         public class Factory<T> : PlaceholderFactory<T>
