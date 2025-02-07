@@ -44,7 +44,10 @@ namespace Ginox.BlackCauldron.Alchemy.Views.Tools
         private void OnPerformedIngredientChanged(Models.AIngredient ingredient)
         {
             if (ingredient == null)
+            {
+                Destroy(performedIngredient);
                 return;
+            }
 
             var ingredientName = ingredient.GetType().Name;
             var ingredientGameObject = spawner.CreateByName(ingredientName);
@@ -100,10 +103,16 @@ namespace Ginox.BlackCauldron.Alchemy.Views.Tools
 
             var ray = new Ray(transform.position, Vector3.down);
             if (!Physics.Raycast(ray, out var hit))
+            {
+                Controller.Drop();
                 return;
+            }
 
             if(!hit.collider.TryGetComponent<CauldronCollider>(out var cauldronCollider))
+            {
+                Controller.Drop();
                 return;
+            }
 
             cauldronCollider.Pour(this);
         }

@@ -68,7 +68,7 @@ namespace Ginox.BlackCauldron.Alchemy.Controllers.Tools
             PerformedIngredientChanged?.Invoke(performedIngredient);
         }
 
-        private AIngredient Drop()
+        public AIngredient Drop()
         {
             var ingredient = performedIngredient;
             performedIngredient = null;
