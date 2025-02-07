@@ -1263,6 +1263,8 @@ MonoBehaviour:
   leftContent: {fileID: 2271243062528174524}
   rightContent: {fileID: 725335406784118985}
   pageIndex: {fileID: 5327259288828952001}
+  prevButton: {fileID: 5099490918928859573}
+  nextButton: {fileID: 1932506861309011710}
 --- !u!95 &4203568964561365554
 Animator:
   serializedVersion: 7

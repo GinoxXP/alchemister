@@ -6,7 +6,9 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Localization;
 using UnityEngine.Localization.Settings;
+using UnityEngine.UI;
 using UnityEngine.XR.Interaction.Toolkit;
+using static UnityEditor.Profiling.HierarchyFrameDataView;
 
 namespace Ginox.BlackCauldron.Books.Views
 {
@@ -21,6 +23,10 @@ namespace Ginox.BlackCauldron.Books.Views
         private TMP_Text rightContent;
         [SerializeField]
         private TMP_Text pageIndex;
+        [SerializeField]
+        private Button prevButton;
+        [SerializeField]
+        private Button nextButton;
 
         private ABookController viewModel;
         private Animator animator;
@@ -108,6 +114,9 @@ namespace Ginox.BlackCauldron.Books.Views
 
         private void RenderPage()
         {
+            prevButton.interactable = page > 0;
+            nextButton.interactable = page < viewModel.Recipes.Count - 1;
+
             var recipe = viewModel.Recipes[page];
             var potionNameKey = recipe.Potion.NameKey;
 
