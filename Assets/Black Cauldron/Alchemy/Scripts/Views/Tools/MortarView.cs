@@ -1,4 +1,5 @@
 ﻿using Ginox.BlackCauldron.Alchemy.Controllers.Tools;
+using Ginox.BlackCauldron.Core;
 using System.Collections;
 using System.Linq;
 using UnityEngine;
@@ -7,15 +8,16 @@ using Zenject;
 namespace Ginox.BlackCauldron.Alchemy.Views.Tools
 {
     [RequireComponent(typeof(IngredientSpawner))]
+    [RequireComponent(typeof(TurnOverBehaviour))]
     public class MortarView : MonoBehaviour, IPourCauldron
     {
-        private const float MAX_ANGLE_FOR_CONTAIN = 30f;
         private const float WAIT_AFTER_DROP_DELAY = 1;
 
         [SerializeField]
         private Transform ingredientHolder;
 
         private IngredientSpawner spawner;
+        private TurnOverBehaviour turnOverBehaviour;
         private IEnumerator waitAfterDropIngredient;
         private GameObject performedIngredient;
 
@@ -30,15 +32,18 @@ namespace Ginox.BlackCauldron.Alchemy.Views.Tools
         private void Start ()
         {
             spawner = GetComponent<IngredientSpawner>();
+            turnOverBehaviour = GetComponent<TurnOverBehaviour>();
 
             Controller.HangedIngredientChanged += OnHangedIngredientChanged;
             Controller.PerformedIngredientChanged += OnPerformedIngredientChanged;
+            turnOverBehaviour.TurnOverStateChanged += OnTurnOverStateChanged;
         }
 
         private void OnDestroy()
         {
             Controller.HangedIngredientChanged -= OnHangedIngredientChanged;
             Controller.PerformedIngredientChanged -= OnPerformedIngredientChanged;
+            turnOverBehaviour.TurnOverStateChanged -= OnTurnOverStateChanged;
         }
 
         private void OnPerformedIngredientChanged(Models.AIngredient ingredient)
@@ -75,11 +80,9 @@ namespace Ginox.BlackCauldron.Alchemy.Views.Tools
             ingredientView.transform.localRotation = Quaternion.identity;
         }
 
-        private void Update()
+        private void OnTurnOverStateChanged(bool state)
         {
-            var angle = 180 - Vector3.Angle(transform.up, Vector3.down);
-
-            if (angle >= MAX_ANGLE_FOR_CONTAIN)
+            if (state)
                 Drop();
         }
 

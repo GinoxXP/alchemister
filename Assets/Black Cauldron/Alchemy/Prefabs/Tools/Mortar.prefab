@@ -67,6 +67,7 @@ GameObject:
   - component: {fileID: 1816895103561494934}
   - component: {fileID: 1372181229625377210}
   - component: {fileID: 2797260678719135572}
+  - component: {fileID: 1527593175024804050}
   m_Layer: 0
   m_Name: Mortar
   m_TagString: Untagged
@@ -296,6 +297,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3279acec36797de4284329e99d984595, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1527593175024804050
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 488663932242967450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b3546bb228dd2d44a4429bba8bd485d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  angleForActivation: 30
 --- !u!1 &851532519187374659
 GameObject:
   m_ObjectHideFlags: 0

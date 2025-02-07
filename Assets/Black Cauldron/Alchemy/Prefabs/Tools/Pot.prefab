@@ -45,6 +45,7 @@ GameObject:
   - component: {fileID: 3058515624749223425}
   - component: {fileID: 1441078933296040889}
   - component: {fileID: 7469511735128713347}
+  - component: {fileID: 5079148724302620568}
   m_Layer: 0
   m_Name: Pot
   m_TagString: Untagged
@@ -276,6 +277,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waterSurface: {fileID: 4628122141262108454}
   waterFlowVFX: {fileID: 810856065934922518}
+--- !u!114 &5079148724302620568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5103262146934651485}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b3546bb228dd2d44a4429bba8bd485d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  angleForActivation: 30
 --- !u!1 &8036213650545707056
 GameObject:
   m_ObjectHideFlags: 0

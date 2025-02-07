@@ -1,18 +1,21 @@
-﻿using UnityEngine;
+﻿using Ginox.BlackCauldron.Core;
+using UnityEngine;
 using UnityEngine.VFX;
 
 namespace Ginox.BlackCauldron.Alchemy.Views.Tools
 {
+    [RequireComponent(typeof(TurnOverBehaviour))]
     public class PotView : MonoBehaviour, IPourCauldron
     {
         private const string START_FLOW = "OnStartFlow";
         private const string STOP_FLOW = "OnStopFlow";
-        private const float MAX_ANGLE_FOR_CONTAIN_WATER = 30f;
 
         [SerializeField]
         private GameObject waterSurface;
         [SerializeField]
         private VisualEffect waterFlowVFX;
+
+        private TurnOverBehaviour turnOverBehaviour;
 
         private bool isFilled;
 
@@ -30,17 +33,26 @@ namespace Ginox.BlackCauldron.Alchemy.Views.Tools
             waterSurface.SetActive(false);
         }
 
-        private void Update()
+        private void Start()
+        {
+            turnOverBehaviour = GetComponent<TurnOverBehaviour>();
+            turnOverBehaviour.TurnOverStateChanged += OnTurnOverStateChanged;
+        }
+
+        private void OnTurnOverStateChanged(bool state)
         {
             if (!IsFilled)
                 return;
 
-            var angle = 180 - Vector3.Angle(transform.up, Vector3.down);
-
-            if (angle >= MAX_ANGLE_FOR_CONTAIN_WATER)
+            if (state)
                 Drain();
             else
                 waterFlowVFX.SendEvent(STOP_FLOW);
+        }
+
+        private void OnDestroy()
+        {
+            turnOverBehaviour.TurnOverStateChanged -= OnTurnOverStateChanged;
         }
 
         public void Fill()
