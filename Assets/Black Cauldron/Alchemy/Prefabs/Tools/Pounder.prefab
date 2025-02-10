@@ -44,6 +44,7 @@ GameObject:
   - component: {fileID: 9212388141725938649}
   - component: {fileID: 7977795469564753296}
   - component: {fileID: 5759813051810993330}
+  - component: {fileID: 2561592145558734734}
   m_Layer: 0
   m_Name: Pounder
   m_TagString: Untagged
@@ -250,6 +251,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89a7b4a08859db54a97b366d8068f05c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2561592145558734734
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4442898353113360613}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4780b32ce72be0e4f8141af661594c6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activationLevel: 3
 --- !u!1 &8731753982501391475
 GameObject:
   m_ObjectHideFlags: 0
