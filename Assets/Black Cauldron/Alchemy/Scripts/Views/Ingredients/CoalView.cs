@@ -6,7 +6,7 @@ using Zenject;
 
 namespace Ginox.BlackCauldron.Alchemy.Views.Ingredients
 {
-    public class CoalView : AIngredientView, IMortarInteractable
+    public class CoalView : AIngredientView, IMortarInteractable, IAlembicFirepitInteract
     {
         [Inject]
         private void Init(CoalController controller)
@@ -17,6 +17,12 @@ namespace Ginox.BlackCauldron.Alchemy.Views.Ingredients
         public void Interact(MortarController controller)
         {
             controller.PutIn(this);
+        }
+
+        public void Interact(AlembicController alembicController)
+        {
+            if (alembicController.TryAddFuel())
+                Destroy(gameObject);
         }
     }
 }

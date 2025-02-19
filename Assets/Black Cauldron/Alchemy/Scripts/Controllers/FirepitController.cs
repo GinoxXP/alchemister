@@ -15,7 +15,7 @@ namespace Ginox.BlackCauldron.Alchemy.Controllers
         public int FuelCount
         {
             get => fuelCount;
-            set
+            private set
             {
                 fuelCount = value;
                 FuelChanged?.Invoke(fuelCount);
@@ -25,7 +25,7 @@ namespace Ginox.BlackCauldron.Alchemy.Controllers
         public bool IsBurn
         {
             get => isBurn;
-            set
+            private set
             {
                 isBurn = value;
                 BurnChanged?.Invoke(isBurn);

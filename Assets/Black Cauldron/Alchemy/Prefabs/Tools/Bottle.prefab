@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6353881270331373582}
   - component: {fileID: 4990218818898876952}
-  - component: {fileID: 2836285287842698524}
   - component: {fileID: 6947047793000982913}
   m_Layer: 6
   m_Name: Bottle
@@ -62,7 +61,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &2836285287842698524
+--- !u!114 &6947047793000982913
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -71,7 +70,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5951818125932470985}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ad34abafad169848a38072baa96cdb2, type: 3}
+  m_Script: {fileID: 11500000, guid: 9612046bf35739742b535e176297a408, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_InteractionManager: {fileID: 0}
@@ -149,12 +148,12 @@ MonoBehaviour:
   m_AngularVelocityScale: 1
   m_TrackPosition: 1
   m_SmoothPosition: 0
-  m_SmoothPositionAmount: 5
-  m_TightenPosition: 0.5
+  m_SmoothPositionAmount: 8
+  m_TightenPosition: 0.1
   m_TrackRotation: 1
   m_SmoothRotation: 0
-  m_SmoothRotationAmount: 5
-  m_TightenRotation: 0.5
+  m_SmoothRotationAmount: 8
+  m_TightenRotation: 0.1
   m_TrackScale: 1
   m_SmoothScale: 0
   m_SmoothScaleAmount: 8
@@ -184,18 +183,6 @@ MonoBehaviour:
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
   m_FarAttachMode: 0
---- !u!114 &6947047793000982913
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5951818125932470985}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9612046bf35739742b535e176297a408, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
   fillingMaterial: {fileID: 9012274761484987600}
 --- !u!1001 &6710184894348334240
 PrefabInstance:

@@ -96,6 +96,7 @@ public class AlchemyInstaller : MonoInstaller
         Container.Bind<CauldronController>().AsSingle();
         Container.Bind<BrewingService>().AsSingle();
         Container.Bind<MortarService>().AsSingle();
+        Container.Bind<AlembicService>().AsSingle();
         Container.BindInterfacesAndSelfTo<FirepitController>().AsSingle();
 
         InstallTools();
@@ -107,7 +108,8 @@ public class AlchemyInstaller : MonoInstaller
     private void InstallTools()
     {
         Container.Bind<BottleController>().AsTransient();
-        Container.Bind<MortarController>().AsTransient();
+        Container.Bind<MortarController>().AsSingle();
+        Container.BindInterfacesAndSelfTo<AlembicController>().AsSingle();
 
         Container.BindFactory<BottleView, BottleView.Factory<BottleView>>().FromComponentInNewPrefab(bottle);
         Container.BindFactory<FirelogView, FirelogView.Factory<FirelogView>>().FromComponentInNewPrefab(firelog);
