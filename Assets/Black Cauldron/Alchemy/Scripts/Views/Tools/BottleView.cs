@@ -15,6 +15,8 @@ namespace Ginox.BlackCauldron.Alchemy.Views.Tools
         private BottleController bottleController;
         private Rigidbody rigidbody;
 
+        private Transform bottleHandlerAlembic;
+
         public BottleController BottleController => bottleController;
 
         [Inject]
@@ -51,29 +53,40 @@ namespace Ginox.BlackCauldron.Alchemy.Views.Tools
                 Destroy(gameObject);
         }
 
-        public void Subscribe(Transform transform)
+        public void PlugIn(Transform transform)
         {
-            firstFocusEntered.AddListener(x => FirstFocusEnter(x, transform));
-            lastFocusExited.AddListener(LastFocusExit);
+            bottleHandlerAlembic = transform;
+
+            firstSelectEntered.AddListener(FirstFocusEnter);
+            lastSelectExited.AddListener(LastFocusExit);
+
+            if (!isSelected)
+                PutBottleToAlembic();
         }
 
-        public void Unsubscribe()
+        public void PlugOut()
         {
-            firstFocusEntered.RemoveListener(x => FirstFocusEnter(x, null));
-            lastFocusExited.RemoveListener(LastFocusExit);
+            firstSelectEntered.RemoveListener(FirstFocusEnter);
+            lastSelectExited.RemoveListener(LastFocusExit);
         }
 
-        private void LastFocusExit(FocusExitEventArgs args)
+        private void LastFocusExit(SelectExitEventArgs args)
+        {
+            PutBottleToAlembic();
+        }
+
+        private void PutBottleToAlembic()
         {
             SetMovingState(false);
+
+
+            transform.position = bottleHandlerAlembic.position;
+            transform.rotation = bottleHandlerAlembic.rotation;
         }
 
-        private void FirstFocusEnter(FocusEnterEventArgs args, Transform transform)
+        private void FirstFocusEnter(SelectEnterEventArgs args)
         {
             SetMovingState(true);
-
-            this.transform.position = transform.position;
-            this.transform.rotation = transform.rotation;
         }
 
         private void SetMovingState(bool state)

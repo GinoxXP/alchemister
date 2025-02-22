@@ -77,6 +77,15 @@ namespace Ginox.BlackCauldron.Alchemy.Controllers.Tools
             return true;
         }
 
+        public bool TryRemoveBottle()
+        {
+            if (!HasBottle)
+                return false;
+
+            HasBottle = false;
+            return true;
+        }
+
         public void Tick()
         {
             if (!IsBurn)
