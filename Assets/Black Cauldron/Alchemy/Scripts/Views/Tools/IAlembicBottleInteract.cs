@@ -4,8 +4,8 @@ namespace Ginox.BlackCauldron.Alchemy.Views.Tools
 {
     public interface IAlembicBottleInteract
     {
-        public void PlugIn(Transform transform);
+        public void PlugIn(AlembicBottleHolderView view);
 
-        public void PlugOut();
+        public void PlugOut(AlembicBottleHolderView view);
     }
 }

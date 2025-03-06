@@ -13,9 +13,7 @@ namespace Ginox.BlackCauldron.Alchemy.Views.Tools
         private MeshRenderer fillingMaterial;
 
         private BottleController bottleController;
-        private Rigidbody rigidbody;
-
-        private Transform bottleHandlerAlembic;
+        private new Rigidbody rigidbody;
 
         public BottleController BottleController => bottleController;
 
@@ -53,45 +51,19 @@ namespace Ginox.BlackCauldron.Alchemy.Views.Tools
                 Destroy(gameObject);
         }
 
-        public void PlugIn(Transform transform)
+        public void PlugIn(AlembicBottleHolderView view)
         {
-            bottleHandlerAlembic = transform;
-
-            firstSelectEntered.AddListener(FirstFocusEnter);
-            lastSelectExited.AddListener(LastFocusExit);
-
-            if (!isSelected)
-                PutBottleToAlembic();
+            //view.PlugIn(this);
         }
 
-        public void PlugOut()
+        public void PlugOut(AlembicBottleHolderView view)
         {
-            firstSelectEntered.RemoveListener(FirstFocusEnter);
-            lastSelectExited.RemoveListener(LastFocusExit);
+            //view.PlugOut(this);
         }
 
-        private void LastFocusExit(SelectExitEventArgs args)
+        public void SetMovingState(bool state)
         {
-            PutBottleToAlembic();
-        }
-
-        private void PutBottleToAlembic()
-        {
-            SetMovingState(false);
-
-
-            transform.position = bottleHandlerAlembic.position;
-            transform.rotation = bottleHandlerAlembic.rotation;
-        }
-
-        private void FirstFocusEnter(SelectEnterEventArgs args)
-        {
-            SetMovingState(true);
-        }
-
-        private void SetMovingState(bool state)
-        {
-            rigidbody.isKinematic = !state;
+            //rigidbody.isKinematic = !state;
             rigidbody.useGravity = state;
         }
 

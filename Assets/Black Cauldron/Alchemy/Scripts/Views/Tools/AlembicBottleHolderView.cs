@@ -1,13 +1,14 @@
 ﻿using Ginox.BlackCauldron.Alchemy.Controllers.Tools;
-using System.Linq;
-using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit;
+using UnityEngine.XR.Interaction.Toolkit.Interactors;
 using Zenject;
 
 namespace Ginox.BlackCauldron.Alchemy.Views.Tools
 {
-    public class AlembicBottleHolderView : MonoBehaviour
+    public class AlembicBottleHolderView : XRSocketInteractor
     {
         private AlembicController controller;
+        private BottleView bottle;
 
         [Inject]
         private void Inject(AlembicController controller)
@@ -15,24 +16,14 @@ namespace Ginox.BlackCauldron.Alchemy.Views.Tools
             this.controller = controller;
         }
 
-        private void OnTriggerEnter(Collider other)
+        public void SelectEnter(SelectEnterEventArgs args)
         {
-            var interactable = other.GetComponentsInParent<MonoBehaviour>().OfType<IAlembicBottleInteract>().FirstOrDefault();
-
-            if (interactable == null)
-                return;
-
-            interactable.PlugIn(transform);
+            // Add bottle
         }
-
-        private void OnTriggerExit(Collider other)
+        
+        public void SelectExit(SelectExitEventArgs args)
         {
-            var interactable = other.GetComponentsInParent<MonoBehaviour>().OfType<IAlembicBottleInteract>().FirstOrDefault();
-
-            if (interactable == null)
-                return;
-
-            interactable.PlugOut();
+            // Remove bottle
         }
     }
 }
