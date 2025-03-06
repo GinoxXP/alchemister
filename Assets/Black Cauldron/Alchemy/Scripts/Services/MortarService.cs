@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Ginox.BlackCauldron.Alchemy.Services
 {
-    public class MortarService
+    public class MortarService : IMortarService
     {
         public List<IngredientTransformation> Transformations { get; private set; } = new();
 

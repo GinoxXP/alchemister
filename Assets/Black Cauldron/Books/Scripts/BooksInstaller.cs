@@ -11,7 +11,7 @@ namespace Ginox.BlackCauldron.Books
         {
             Container.Bind<BeginerBookController>().AsSingle();
 
-            var brewingService = Container.Resolve<BrewingService>();
+            var brewingService = Container.Resolve<IBrewingService>();
 
             var blueUselessPotion = brewingService.GetRecipe(Container.Resolve<BlueUselessPotion>());
             var cyanStrangePotion = brewingService.GetRecipe(Container.Resolve<CyanStrangePotion>());

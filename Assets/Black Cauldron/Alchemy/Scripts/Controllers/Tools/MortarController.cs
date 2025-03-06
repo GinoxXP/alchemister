@@ -10,11 +10,11 @@ namespace Ginox.BlackCauldron.Alchemy.Controllers.Tools
         private static readonly int PERFORM_MAX_RANDOM_RANGE = 5;
 
         private Random random;
-        private MortarService mortarService;
+        private IMortarService mortarService;
         private AIngredientView hangedIngredient;
         private AIngredient performedIngredient;
 
-        public MortarController(MortarService mortarService)
+        public MortarController(IMortarService mortarService)
         {
             this.mortarService = mortarService;
             random = new Random();

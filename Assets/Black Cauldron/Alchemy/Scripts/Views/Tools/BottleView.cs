@@ -1,13 +1,12 @@
 ﻿using Ginox.BlackCauldron.Alchemy.Controllers.Tools;
 using UnityEngine;
-using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
 using Zenject;
 
 namespace Ginox.BlackCauldron.Alchemy.Views.Tools
 {
     [RequireComponent(typeof(Rigidbody))]
-    public class BottleView : XRGrabInteractable, IScoopCauldron, IAlembicBottleInteract
+    public class BottleView : XRGrabInteractable, IScoopCauldron
     {
         [SerializeField]
         private MeshRenderer fillingMaterial;
@@ -49,22 +48,6 @@ namespace Ginox.BlackCauldron.Alchemy.Views.Tools
 
             if (alembicController.TryAddBottle())
                 Destroy(gameObject);
-        }
-
-        public void PlugIn(AlembicBottleHolderView view)
-        {
-            //view.PlugIn(this);
-        }
-
-        public void PlugOut(AlembicBottleHolderView view)
-        {
-            //view.PlugOut(this);
-        }
-
-        public void SetMovingState(bool state)
-        {
-            //rigidbody.isKinematic = !state;
-            rigidbody.useGravity = state;
         }
 
         public class Factory<T> : PlaceholderFactory<T>

@@ -8,7 +8,6 @@ namespace Ginox.BlackCauldron.Alchemy.Views.Tools
     public class AlembicBottleHolderView : XRSocketInteractor
     {
         private AlembicController controller;
-        private BottleView bottle;
 
         [Inject]
         private void Inject(AlembicController controller)
@@ -18,12 +17,14 @@ namespace Ginox.BlackCauldron.Alchemy.Views.Tools
 
         public void SelectEnter(SelectEnterEventArgs args)
         {
-            // Add bottle
+            var bottleView = args.interactableObject.transform.GetComponent<BottleView>();
+            controller.TryAddBottle();
         }
         
         public void SelectExit(SelectExitEventArgs args)
         {
-            // Remove bottle
+            var bottleView = args.interactableObject.transform.GetComponent<BottleView>();
+            controller.TryRemoveBottle();
         }
     }
 }

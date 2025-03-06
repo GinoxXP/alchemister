@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace Ginox.BlackCauldron.Alchemy.Services
 {
-    public class BrewingService 
+    public class BrewingService : IBrewingService
     {
         private static readonly Root root = new();
 
@@ -42,6 +42,11 @@ namespace Ginox.BlackCauldron.Alchemy.Services
             }
         }
 
+        public void FinishBrew()
+        {
+            Reset();
+        }
+
         private void Reset()
         {
             // TODO Something
@@ -53,11 +58,6 @@ namespace Ginox.BlackCauldron.Alchemy.Services
         {
             // TODO Something
             CompleatedPotion = potion;
-        }
-
-        public void FinishBrew()
-        {
-            Reset();
         }
 
         private void CreateGraph(Recipe recipe)

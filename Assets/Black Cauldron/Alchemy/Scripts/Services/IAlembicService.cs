@@ -1,7 +1,6 @@
 ﻿namespace Ginox.BlackCauldron.Alchemy.Services
 {
-    public class AlembicService : IAlembicService
+    public interface IAlembicService
     {
-
     }
 }

@@ -93,10 +93,9 @@ public class AlchemyInstaller : MonoInstaller
 
     public override void InstallBindings()
     {
-        Container.Bind<CauldronController>().AsSingle();
-        Container.Bind<BrewingService>().AsSingle();
-        Container.Bind<MortarService>().AsSingle();
-        Container.Bind<AlembicService>().AsSingle();
+        Container.Bind<IBrewingService>().To<BrewingService>().AsSingle();
+        Container.Bind<IMortarService>().To<MortarService>().AsSingle();
+        Container.Bind<IAlembicService>().To<AlembicService>().AsSingle();
         Container.BindInterfacesAndSelfTo<FirepitController>().AsSingle();
 
         InstallTools();
@@ -107,6 +106,7 @@ public class AlchemyInstaller : MonoInstaller
 
     private void InstallTools()
     {
+        Container.Bind<CauldronController>().AsSingle();
         Container.Bind<BottleController>().AsTransient();
         Container.Bind<MortarController>().AsSingle();
         Container.BindInterfacesAndSelfTo<AlembicController>().AsSingle();
@@ -191,7 +191,7 @@ public class AlchemyInstaller : MonoInstaller
 
     private void InstallPotions()
     {
-        var brewingService = Container.Resolve<BrewingService>();
+        var brewingService = Container.Resolve<IBrewingService>();
 
         var ash = Container.Resolve<Ash>();
         var bayLeafs = Container.Resolve<BayLeafs>();
@@ -302,7 +302,7 @@ public class AlchemyInstaller : MonoInstaller
 
     private void InstallMortarTransformation()
     {
-        var mortarService = Container.Resolve<MortarService>();
+        var mortarService = Container.Resolve<IMortarService>();
 
         #region Ingredients
         var coal = Container.Resolve<Coal>();

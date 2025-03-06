@@ -5,9 +5,9 @@ namespace Ginox.BlackCauldron.Alchemy.Controllers
 {
     public class CauldronController
     {
-        private BrewingService brewingService;
+        private IBrewingService brewingService;
 
-        public CauldronController(BrewingService brewingService)
+        public CauldronController(IBrewingService brewingService)
         {
             this.brewingService = brewingService;
         }
