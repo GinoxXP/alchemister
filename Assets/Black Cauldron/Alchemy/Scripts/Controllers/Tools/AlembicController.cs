@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Ginox.BlackCauldron.Alchemy.Models;
+using Ginox.BlackCauldron.Alchemy.Services;
+using Ginox.BlackCauldron.Alchemy.Views.Tools;
+using System;
 using UnityEngine;
 using Zenject;
 
@@ -12,6 +15,17 @@ namespace Ginox.BlackCauldron.Alchemy.Controllers.Tools
         private bool isBurn;
         private bool hasFuel;
         private bool hasBottle;
+        private bool hasPotion;
+
+        private BottleView handledBottleView;
+        private APotion inputPotion;
+
+        private IAlembicService alembicService;
+
+        public AlembicController(IAlembicService alembicService)
+        {
+            this.alembicService = alembicService;
+        }
 
         public bool IsBurn
         {
@@ -43,12 +57,25 @@ namespace Ginox.BlackCauldron.Alchemy.Controllers.Tools
             }
         }
 
-        public event Action<bool> HasFuelChanged;
+        public bool HasPotion
+        {
+            get => hasPotion;
+            private set
+            {
+                hasPotion = value;
+                HasPotionChanged?.Invoke(hasPotion);
+            }
+        }
 
+        public event Action<bool> HasFuelChanged;
 
         public event Action<bool> BurnChanged;
 
         public event Action<bool> HasBottleChanged;
+
+        public event Action<bool> HasPotionChanged;
+
+        public event Action<APotion> PotionPerformed;
 
 
         public bool TryAddFuel()
@@ -66,14 +93,23 @@ namespace Ginox.BlackCauldron.Alchemy.Controllers.Tools
                 return;
 
             IsBurn = true;
+
+            TryPerformTransformation();
         }
 
-        public bool TryAddBottle()
+        public bool TryAddBottle(BottleView bottleView)
         {
             if (HasBottle)
                 return false;
 
+            if (bottleView.BottleController.Potion != null)
+                return false;
+
             HasBottle = true;
+            handledBottleView = bottleView;
+
+            TryPerformTransformation();
+
             return true;
         }
 
@@ -83,6 +119,19 @@ namespace Ginox.BlackCauldron.Alchemy.Controllers.Tools
                 return false;
 
             HasBottle = false;
+            return true;
+        }
+
+        public bool TryAddPotion(APotion potion)
+        {
+            if (HasPotion)
+                return false;
+
+            HasPotion = true;
+            inputPotion = potion;
+
+            TryPerformTransformation();
+
             return true;
         }
 
@@ -99,6 +148,29 @@ namespace Ginox.BlackCauldron.Alchemy.Controllers.Tools
                 HasFuel = false;
                 time = 0;
             }
+        }
+
+        private void TryPerformTransformation()
+        {
+            if (!IsBurn || !HasBottle || !HasPotion)
+                return;
+
+            var outputPotion = alembicService.Transform(inputPotion);
+            if (outputPotion != null)
+                PotionTransformationSuccess(outputPotion);
+
+            ClearInputPotion();
+        }
+
+        private void ClearInputPotion()
+        {
+            HasPotion = false;
+            inputPotion = null;
+        }
+
+        private void PotionTransformationSuccess(APotion potion)
+        {
+            PotionPerformed?.Invoke(potion);
         }
     }
 }

@@ -7,8 +7,18 @@ namespace Ginox.BlackCauldron.Core
     {
         [SerializeField]
         private float angleForActivation = 30;
+        [SerializeField]
+        private Transform offset;
 
         private bool isTurnedOver;
+
+        public Transform Offset => offset;
+
+        private void Start()
+        {
+            if (offset == null)
+                offset = transform;
+        }
 
         public bool IsTurnedOver
         {

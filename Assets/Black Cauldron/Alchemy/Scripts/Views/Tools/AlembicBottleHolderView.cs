@@ -10,7 +10,7 @@ namespace Ginox.BlackCauldron.Alchemy.Views.Tools
         private AlembicController controller;
 
         [Inject]
-        private void Inject(AlembicController controller)
+        private void Init(AlembicController controller)
         {
             this.controller = controller;
         }
@@ -18,12 +18,11 @@ namespace Ginox.BlackCauldron.Alchemy.Views.Tools
         public void SelectEnter(SelectEnterEventArgs args)
         {
             var bottleView = args.interactableObject.transform.GetComponent<BottleView>();
-            controller.TryAddBottle();
+            controller.TryAddBottle(bottleView);
         }
         
         public void SelectExit(SelectExitEventArgs args)
         {
-            var bottleView = args.interactableObject.transform.GetComponent<BottleView>();
             controller.TryRemoveBottle();
         }
     }

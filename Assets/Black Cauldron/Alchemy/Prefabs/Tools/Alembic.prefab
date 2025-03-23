@@ -378,6 +378,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6701170482211564577}
   - component: {fileID: 738885369393187003}
+  - component: {fileID: 7819987623168193306}
   m_Layer: 0
   m_Name: Bottleneck
   m_TagString: Untagged
@@ -394,7 +395,7 @@ Transform:
   m_GameObject: {fileID: 8731472972337185825}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.2549, z: 0}
+  m_LocalPosition: {x: 0, y: 0.27, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -421,6 +422,18 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.05, y: 0.05, z: 0.05}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &7819987623168193306
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8731472972337185825}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62d8c1bcd727d7548a9f8dd31c6f7927, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8879880406573385708
 GameObject:
   m_ObjectHideFlags: 0

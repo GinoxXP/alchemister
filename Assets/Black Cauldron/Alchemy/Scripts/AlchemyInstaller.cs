@@ -102,6 +102,7 @@ public class AlchemyInstaller : MonoInstaller
         InstallIngredients();
         InstallPotions();
         InstallMortarTransformation();
+        InstallAlembicTransformation();
     }
 
     private void InstallTools()
@@ -334,5 +335,30 @@ public class AlchemyInstaller : MonoInstaller
         mortarService.RegisterTransformation(new IngredientTransformation(licoriceRoot, groundLicoriceRoot));
         mortarService.RegisterTransformation(new IngredientTransformation(mint, groundMint));
         mortarService.RegisterTransformation(new IngredientTransformation(pineCone, groundPineCone));
+    }
+
+    private void InstallAlembicTransformation()
+    {
+        var alembicService = Container.Resolve<IAlembicService>();
+
+        #region InputPotions
+        var blueUselessPotion = Container.Resolve<BlueUselessPotion>();
+        var cyanStrangePotion = Container.Resolve<CyanStrangePotion>();
+        var greenSweetPotion = Container.Resolve<GreenSweetPotion>();
+        var orangeSaltyPotion = Container.Resolve<OrangeSaltyPotion>();
+        var yellowFoulSmellingPotion = Container.Resolve<YellowFoulSmellingPotion>();
+
+        var coughSyrup = Container.Resolve<CoughSyrup>();
+        var tinctureForRunnyNose = Container.Resolve<TinctureForRunnyNose>();
+        var antiBaldnessLotion = Container.Resolve<AntiBaldnessLotion>();
+        var thickHairPotion = Container.Resolve<ThickHairPotion>();
+        var ointmentForRestoringLostFingers = Container.Resolve<OintmentForRestoringLostFingers>();
+        #endregion
+
+        alembicService.RegisterTransformation(new PotionTransformation(blueUselessPotion, coughSyrup));
+        alembicService.RegisterTransformation(new PotionTransformation(cyanStrangePotion, tinctureForRunnyNose));
+        alembicService.RegisterTransformation(new PotionTransformation(greenSweetPotion, antiBaldnessLotion));
+        alembicService.RegisterTransformation(new PotionTransformation(orangeSaltyPotion, thickHairPotion));
+        alembicService.RegisterTransformation(new PotionTransformation(yellowFoulSmellingPotion, ointmentForRestoringLostFingers));
     }
 }

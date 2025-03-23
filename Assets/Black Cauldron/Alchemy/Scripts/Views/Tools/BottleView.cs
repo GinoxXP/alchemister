@@ -1,4 +1,5 @@
 ﻿using Ginox.BlackCauldron.Alchemy.Controllers.Tools;
+using Ginox.BlackCauldron.Core;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
 using Zenject;
@@ -6,13 +7,13 @@ using Zenject;
 namespace Ginox.BlackCauldron.Alchemy.Views.Tools
 {
     [RequireComponent(typeof(Rigidbody))]
-    public class BottleView : XRGrabInteractable, IScoopCauldron
+    public class BottleView : XRGrabInteractable, IScoopCauldron, IPourAlembic
     {
         [SerializeField]
         private MeshRenderer fillingMaterial;
 
         private BottleController bottleController;
-        private new Rigidbody rigidbody;
+        private TurnOverBehaviour turnOverBehaviour;
 
         public BottleController BottleController => bottleController;
 
@@ -24,7 +25,8 @@ namespace Ginox.BlackCauldron.Alchemy.Views.Tools
 
         private void Start()
         {
-            rigidbody = GetComponent<Rigidbody>();
+            turnOverBehaviour = GetComponent<TurnOverBehaviour>();
+            turnOverBehaviour.TurnOverStateChanged += OnTurnOverStateChanged;
         }
 
         public void Scoop(CauldronView cauldronView)
@@ -41,13 +43,32 @@ namespace Ginox.BlackCauldron.Alchemy.Views.Tools
             fillingMaterial.material = potion.Material;
         }
 
-        public void Interact(AlembicController alembicController)
+        public void Pour(AlembicController alembicController)
         {
-            if (BottleController.Potion != null)
+            if (BottleController.Potion == null)
                 return;
 
-            if (alembicController.TryAddBottle())
-                Destroy(gameObject);
+            alembicController.TryAddPotion(BottleController.Potion);
+            BottleController.Potion = null;
+        }
+
+        private void OnTurnOverStateChanged(bool state)
+        {
+            if (BottleController.Potion == null)
+                return;
+
+            if (state)
+                Drain();
+        }
+
+        private void Drain()
+        {
+            var castExists = Physics.Raycast(transform.position, Vector3.down, out var hit);
+            if (!castExists || !hit.collider.TryGetComponent<AlembicBottleNeckView>(out var alembicBottleNeck))
+                return;
+
+            alembicBottleNeck.Pour(this);
+
         }
 
         public class Factory<T> : PlaceholderFactory<T>
