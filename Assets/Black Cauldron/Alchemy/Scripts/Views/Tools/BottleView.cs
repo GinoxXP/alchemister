@@ -10,8 +10,6 @@ namespace Ginox.BlackCauldron.Alchemy.Views.Tools
     [RequireComponent(typeof(Rigidbody))]
     public class BottleView : XRGrabInteractable, IScoopCauldron, IPourAlembic
     {
-        private Material emptyMaterial;
-
         [SerializeField]
         private MeshRenderer fillingMaterial;
 
@@ -30,8 +28,6 @@ namespace Ginox.BlackCauldron.Alchemy.Views.Tools
         {
             turnOverBehaviour = GetComponent<TurnOverBehaviour>();
             turnOverBehaviour.TurnOverStateChanged += OnTurnOverStateChanged;
-
-            emptyMaterial = fillingMaterial.material;
         }
 
         public void Scoop(CauldronView cauldronView)
@@ -44,8 +40,7 @@ namespace Ginox.BlackCauldron.Alchemy.Views.Tools
                 return;
             }
 
-            bottleController.Potion = potion;
-            fillingMaterial.material = potion.Material;
+            SetPotion(potion);
         }
 
         public void Pour(AlembicController alembicController)
@@ -55,13 +50,14 @@ namespace Ginox.BlackCauldron.Alchemy.Views.Tools
 
             alembicController.TryAddPotion(BottleController.Potion);
             BottleController.Potion = null;
-            fillingMaterial.material = emptyMaterial;
+            fillingMaterial.gameObject.SetActive(false);
         }
 
         public void SetPotion(APotion potion)
         {
             BottleController.Potion = potion;
             fillingMaterial.material = potion.Material;
+            fillingMaterial.gameObject.SetActive(true);
         }
 
         private void OnTurnOverStateChanged(bool state)
