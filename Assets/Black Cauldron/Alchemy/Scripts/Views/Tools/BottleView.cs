@@ -1,4 +1,5 @@
 ﻿using Ginox.BlackCauldron.Alchemy.Controllers.Tools;
+using Ginox.BlackCauldron.Alchemy.Models;
 using Ginox.BlackCauldron.Core;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
@@ -9,6 +10,8 @@ namespace Ginox.BlackCauldron.Alchemy.Views.Tools
     [RequireComponent(typeof(Rigidbody))]
     public class BottleView : XRGrabInteractable, IScoopCauldron, IPourAlembic
     {
+        private Material emptyMaterial;
+
         [SerializeField]
         private MeshRenderer fillingMaterial;
 
@@ -27,6 +30,8 @@ namespace Ginox.BlackCauldron.Alchemy.Views.Tools
         {
             turnOverBehaviour = GetComponent<TurnOverBehaviour>();
             turnOverBehaviour.TurnOverStateChanged += OnTurnOverStateChanged;
+
+            emptyMaterial = fillingMaterial.material;
         }
 
         public void Scoop(CauldronView cauldronView)
@@ -50,6 +55,13 @@ namespace Ginox.BlackCauldron.Alchemy.Views.Tools
 
             alembicController.TryAddPotion(BottleController.Potion);
             BottleController.Potion = null;
+            fillingMaterial.material = emptyMaterial;
+        }
+
+        public void SetPotion(APotion potion)
+        {
+            BottleController.Potion = potion;
+            fillingMaterial.material = potion.Material;
         }
 
         private void OnTurnOverStateChanged(bool state)
@@ -63,12 +75,11 @@ namespace Ginox.BlackCauldron.Alchemy.Views.Tools
 
         private void Drain()
         {
-            var castExists = Physics.Raycast(transform.position, Vector3.down, out var hit);
+            var castExists = Physics.Raycast(turnOverBehaviour.Offset.position, Vector3.down, out var hit);
             if (!castExists || !hit.collider.TryGetComponent<AlembicBottleNeckView>(out var alembicBottleNeck))
                 return;
 
             alembicBottleNeck.Pour(this);
-
         }
 
         public class Factory<T> : PlaceholderFactory<T>

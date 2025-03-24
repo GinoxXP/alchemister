@@ -171,6 +171,7 @@ namespace Ginox.BlackCauldron.Alchemy.Controllers.Tools
         private void PotionTransformationSuccess(APotion potion)
         {
             PotionPerformed?.Invoke(potion);
+            handledBottleView.SetPotion(potion);
         }
     }
 }

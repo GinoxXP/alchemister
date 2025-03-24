@@ -23,7 +23,6 @@ namespace Ginox.BlackCauldron.Views.Tools
         {
             controller.HasFuelChanged += OnFuelChanged;
             controller.BurnChanged += OnBurnChanged;
-            controller.HasBottleChanged += OnHasBottleChanged;
 
             coalPile.SetActive(false);
             firelight.SetActive(false);
@@ -33,18 +32,12 @@ namespace Ginox.BlackCauldron.Views.Tools
         {
             controller.HasFuelChanged -= OnFuelChanged;
             controller.BurnChanged -= OnBurnChanged;
-            controller.HasBottleChanged -= OnHasBottleChanged;
         }
 
         private void OnFuelChanged(bool state)
             => coalPile.SetActive(state);
 
         private void OnBurnChanged(bool state)
-            => firelight.SetActive(state);
-
-        private void OnHasBottleChanged(bool state)
-        {
-
-        }    
+            => firelight.SetActive(state);   
     }
 }

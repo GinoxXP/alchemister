@@ -198,7 +198,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b3546bb228dd2d44a4429bba8bd485d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  angleForActivation: 30
+  angleForActivation: 70
   offset: {fileID: 6098101044931435423}
 --- !u!1 &7293207225789292837
 GameObject:
