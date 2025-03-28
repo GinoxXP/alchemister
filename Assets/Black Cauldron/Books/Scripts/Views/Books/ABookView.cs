@@ -3,12 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using TMPro;
 using UnityEngine;
-using UnityEngine.Events;
 using UnityEngine.Localization;
 using UnityEngine.Localization.Settings;
 using UnityEngine.UI;
-using UnityEngine.XR.Interaction.Toolkit;
-using static UnityEditor.Profiling.HierarchyFrameDataView;
 
 namespace Ginox.BlackCauldron.Books.Views
 {
