@@ -1,6 +1,7 @@
 using Ginox.BlackCauldron.Alchemy.Models.Potions;
 using Ginox.BlackCauldron.Alchemy.Services;
-using Ginox.BlackCauldron.Books.Controllers.Books;
+using Ginox.BlackCauldron.Books.Models;
+using Ginox.BlackCauldron.Books.ViewModels;
 using Zenject;
 
 namespace Ginox.BlackCauldron.Books
@@ -9,7 +10,11 @@ namespace Ginox.BlackCauldron.Books
     {
         public override void InstallBindings()
         {
-            Container.Bind<BeginerBookController>().AsSingle();
+            Container.Bind<ABookModel>().To<BookModel>().AsTransient();
+
+            #region BeginerBook
+
+            Container.Bind<BeginerBookViewModel>().AsSingle();
 
             var brewingService = Container.Resolve<IBrewingService>();
 
@@ -21,7 +26,7 @@ namespace Ginox.BlackCauldron.Books
             var redCommonPotion = brewingService.GetRecipe(Container.Resolve<RedCommonPotion>());
             var yellowFoulSmellingPotion = brewingService.GetRecipe(Container.Resolve<YellowFoulSmellingPotion>());
 
-            var beginerBookViewModel = Container.Resolve<BeginerBookController>();
+            var beginerBookViewModel = Container.Resolve<BeginerBookViewModel>();
             beginerBookViewModel.RegisterRecipe(blueUselessPotion);
             beginerBookViewModel.RegisterRecipe(cyanStrangePotion);
             beginerBookViewModel.RegisterRecipe(greenSweetPotion);
@@ -30,7 +35,11 @@ namespace Ginox.BlackCauldron.Books
             beginerBookViewModel.RegisterRecipe(redCommonPotion);
             beginerBookViewModel.RegisterRecipe(yellowFoulSmellingPotion);
 
-            Container.Bind<VillageDoctorsRecipeBookController>().AsSingle();
+            #endregion
+
+            #region VillageDoctorBook
+
+            Container.Bind<VillageDoctorsRecipeBookViewModel>().AsSingle();
 
             var coughSyrup = brewingService.GetRecipe(Container.Resolve<CoughSyrup>());
             var tinctureForRunnyNose = brewingService.GetRecipe(Container.Resolve<TinctureForRunnyNose>());
@@ -38,12 +47,14 @@ namespace Ginox.BlackCauldron.Books
             var thickHairPotion = brewingService.GetRecipe(Container.Resolve<ThickHairPotion>());
             var ointmentForRestoringLostFingers = brewingService.GetRecipe(Container.Resolve<OintmentForRestoringLostFingers>());
 
-            var villageDoctorsRecipeBookController = Container.Resolve<VillageDoctorsRecipeBookController>();
+            var villageDoctorsRecipeBookController = Container.Resolve<VillageDoctorsRecipeBookViewModel>();
             villageDoctorsRecipeBookController.RegisterRecipe(coughSyrup);
             villageDoctorsRecipeBookController.RegisterRecipe(tinctureForRunnyNose);
             villageDoctorsRecipeBookController.RegisterRecipe(antiBaldnessLotion);
             villageDoctorsRecipeBookController.RegisterRecipe(thickHairPotion);
             villageDoctorsRecipeBookController.RegisterRecipe(ointmentForRestoringLostFingers);
+
+            #endregion
         }
     }
 }

@@ -1,4 +1,4 @@
-using Ginox.BlackCauldron.Books.Controllers.Books;
+using Ginox.BlackCauldron.Books.ViewModels;
 using System.Collections.Generic;
 using System.Linq;
 using TMPro;
@@ -25,7 +25,7 @@ namespace Ginox.BlackCauldron.Books.Views
         [SerializeField]
         private Button nextButton;
 
-        private ABookController viewModel;
+        private ABookViewModel viewModel;
         private Animator animator;
         private Camera mainCamera;
 
@@ -33,7 +33,7 @@ namespace Ginox.BlackCauldron.Books.Views
         private bool isGrabed;
         private bool isGrabStateChanged;
 
-        protected void Init(ABookController viewModel)
+        protected void Init(ABookViewModel viewModel)
         {
             this.viewModel = viewModel;
         }
