@@ -188,6 +188,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Coal
       objectReference: {fileID: 0}
+    - target: {fileID: 371412119509471495, guid: 8892c9da95654f6488e457ffc03e344b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7192324095162833929, guid: 8892c9da95654f6488e457ffc03e344b, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.8038074
@@ -358,6 +362,10 @@ PrefabInstance:
     - target: {fileID: 371412119509471495, guid: 8892c9da95654f6488e457ffc03e344b, type: 3}
       propertyPath: m_Name
       value: Coal (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 371412119509471495, guid: 8892c9da95654f6488e457ffc03e344b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7192324095162833929, guid: 8892c9da95654f6488e457ffc03e344b, type: 3}
       propertyPath: m_LocalPosition.x

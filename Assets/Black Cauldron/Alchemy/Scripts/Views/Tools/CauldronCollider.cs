@@ -5,16 +5,16 @@ namespace Ginox.BlackCauldron.Alchemy.Views
 {
     public class CauldronCollider : MonoBehaviour
     {
-        public CauldronView Cauldron { get; private set; }
+        private CauldronView cauldron;
 
         private void Start()
         {
-            Cauldron = GetComponentInParent<CauldronView>();
+            cauldron = GetComponentInParent<CauldronView>();
         }
 
         public void Pour(IPourCauldron pourCauldron)
         {
-            pourCauldron.Pour(Cauldron);
+            pourCauldron.Pour(cauldron);
         }
 
         private void OnTriggerEnter(Collider other)
@@ -22,7 +22,7 @@ namespace Ginox.BlackCauldron.Alchemy.Views
             var scoopable = other.GetComponentsInParent<MonoBehaviour>().OfType<IScoopCauldron>().FirstOrDefault();
 
             if (scoopable != null)
-                scoopable.Scoop(Cauldron);
+                scoopable.Scoop(cauldron);
         }
     }
 }

@@ -205,6 +205,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1090461277075261754}
   - component: {fileID: 2613137063769462867}
+  - component: {fileID: 3916770612646637145}
   m_Layer: 0
   m_Name: Alembic
   m_TagString: Untagged
@@ -247,6 +248,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coalPile: {fileID: 2319817639350434541}
   firelight: {fileID: 6833208952692672118}
+--- !u!114 &3916770612646637145
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5803887442715555976}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4780b32ce72be0e4f8141af661594c6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activationLevel: 4
 --- !u!1 &6833208952692672118
 GameObject:
   m_ObjectHideFlags: 0

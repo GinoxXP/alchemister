@@ -310,7 +310,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b3546bb228dd2d44a4429bba8bd485d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  angleForActivation: 30
+  angleForActivation: 60
+  offset: {fileID: 0}
 --- !u!114 &4843689751022025779
 MonoBehaviour:
   m_ObjectHideFlags: 0
