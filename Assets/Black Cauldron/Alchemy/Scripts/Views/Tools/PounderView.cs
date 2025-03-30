@@ -1,4 +1,4 @@
-﻿using Ginox.BlackCauldron.Alchemy.Controllers.Tools;
+﻿using Ginox.BlackCauldron.Alchemy.ViewModels.Tools;
 using System.Collections;
 using UnityEngine;
 
@@ -11,7 +11,7 @@ namespace Ginox.BlackCauldron.Alchemy.Views.Tools
         private bool isCanInteract = true;
         private IEnumerator waitAfterInteract;
 
-        public void Interact(MortarController controller)
+        public void Interact(MortarViewModel controller)
         {
             if (!isCanInteract)
                 return;

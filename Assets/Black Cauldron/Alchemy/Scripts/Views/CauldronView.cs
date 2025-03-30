@@ -1,5 +1,5 @@
 using Ginox.BlackCauldron.Alchemy.Models;
-using Ginox.BlackCauldron.Alchemy.Controllers;
+using Ginox.BlackCauldron.Alchemy.ViewModels;
 using UnityEngine;
 using Zenject;
 using UnityEngine.VFX;
@@ -23,9 +23,9 @@ namespace Ginox.BlackCauldron.Alchemy.Views
         [SerializeField]
         private FirepitView firepitView;
 
-        private CauldronController cauldronController;
+        private CauldronViewModel cauldronController;
         private Animator animator;
-        private FirepitController firepitController;
+        private FirepitViewModel firepitController;
 
         private bool isBoiling;
         private bool isFilled;
@@ -44,7 +44,7 @@ namespace Ginox.BlackCauldron.Alchemy.Views
         }
 
         [Inject]
-        private void Init(CauldronController cauldronViewModel)
+        private void Init(CauldronViewModel cauldronViewModel)
         {
             this.cauldronController = cauldronViewModel;
         }
@@ -71,7 +71,7 @@ namespace Ginox.BlackCauldron.Alchemy.Views
             isHasFire = count > 0;
         }
 
-        public void PutIn(AIngredientController ingredient)
+        public void PutIn(AIngredientViewModel ingredient)
         {
             PutIn(ingredient.Model);
             ingredient.Destroy();

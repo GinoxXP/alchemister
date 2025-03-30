@@ -1,4 +1,4 @@
-using Ginox.BlackCauldron.Alchemy.Controllers.Ingredients;
+using Ginox.BlackCauldron.Alchemy.ViewModels.Ingredients;
 using Zenject;
 
 namespace Ginox.BlackCauldron.Alchemy.Views.Ingredients
@@ -6,7 +6,7 @@ namespace Ginox.BlackCauldron.Alchemy.Views.Ingredients
     public class SaltView : AIngredientView
     {
         [Inject]
-        private void Init(SaltController viewModel)
+        private void Init(SaltViewModel viewModel)
         {
             base.Init(viewModel);
         }

@@ -1,4 +1,4 @@
-﻿using Ginox.BlackCauldron.Alchemy.Controllers.Tools;
+﻿using Ginox.BlackCauldron.Alchemy.ViewModels.Tools;
 using UnityEngine;
 using Zenject;
 
@@ -6,10 +6,10 @@ namespace Ginox.BlackCauldron.Alchemy.Views.Tools
 {
     public class AlembicBottleNeckView : MonoBehaviour
     {
-        private AlembicController alembicController;
+        private AlembicViewModel alembicController;
 
         [Inject]
-        private void Init(AlembicController alembicController)
+        private void Init(AlembicViewModel alembicController)
         {
             this.alembicController = alembicController;
         }

@@ -1,4 +1,4 @@
-﻿using Ginox.BlackCauldron.Alchemy.Controllers.Tools;
+﻿using Ginox.BlackCauldron.Alchemy.ViewModels.Tools;
 using Ginox.BlackCauldron.Alchemy.Models;
 using Ginox.BlackCauldron.Core;
 using UnityEngine;
@@ -13,13 +13,13 @@ namespace Ginox.BlackCauldron.Alchemy.Views.Tools
         [SerializeField]
         private MeshRenderer fillingMaterial;
 
-        private BottleController bottleController;
+        private BottleViewModel bottleController;
         private TurnOverBehaviour turnOverBehaviour;
 
-        public BottleController BottleController => bottleController;
+        public BottleViewModel BottleController => bottleController;
 
         [Inject]
-        private void Init(BottleController bottleViewModel)
+        private void Init(BottleViewModel bottleViewModel)
         {
             this.bottleController = bottleViewModel;
         }
@@ -43,7 +43,7 @@ namespace Ginox.BlackCauldron.Alchemy.Views.Tools
             SetPotion(potion);
         }
 
-        public void Pour(AlembicController alembicController)
+        public void Pour(AlembicViewModel alembicController)
         {
             if (BottleController.Potion == null)
                 return;

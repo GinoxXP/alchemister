@@ -1,4 +1,4 @@
-﻿using Ginox.BlackCauldron.Alchemy.Controllers.Tools;
+﻿using Ginox.BlackCauldron.Alchemy.ViewModels.Tools;
 using Ginox.BlackCauldron.Core;
 using System.Collections;
 using System.Linq;
@@ -21,10 +21,10 @@ namespace Ginox.BlackCauldron.Alchemy.Views.Tools
         private IEnumerator waitAfterDropIngredient;
         private GameObject performedIngredient;
 
-        public MortarController Controller { get; private set; }
+        public MortarViewModel Controller { get; private set; }
 
         [Inject]
-        private void Init(MortarController controller)
+        private void Init(MortarViewModel controller)
         {
             Controller = controller;
         }

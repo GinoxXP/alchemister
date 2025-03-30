@@ -1,9 +1,9 @@
-﻿using Ginox.BlackCauldron.Alchemy.Controllers;
+﻿using Ginox.BlackCauldron.Alchemy.ViewModels;
 
 namespace Ginox.BlackCauldron.Alchemy.Views
 {
     public interface IFirepitInteractable
     {
-        public void Interact(FirepitController controller);
+        public void Interact(FirepitViewModel controller);
     }
 }

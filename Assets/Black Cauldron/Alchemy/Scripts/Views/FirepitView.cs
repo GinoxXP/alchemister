@@ -1,4 +1,4 @@
-using Ginox.BlackCauldron.Alchemy.Controllers;
+using Ginox.BlackCauldron.Alchemy.ViewModels;
 using Ginox.BlackCauldron.Alchemy.Views;
 using System.Linq;
 using UnityEngine;
@@ -13,11 +13,11 @@ namespace Ginox.BlackCauldron.Alchemy
         [SerializeField]
         private GameObject[] firelogs;
 
-        public FirepitController Controller { get; private set; }
+        public FirepitViewModel Controller { get; private set; }
 
 
         [Inject]
-        private void Init(FirepitController firepitController)
+        private void Init(FirepitViewModel firepitController)
         {
             Controller = firepitController;
         }

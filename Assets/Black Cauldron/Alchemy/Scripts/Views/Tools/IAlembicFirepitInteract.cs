@@ -1,9 +1,9 @@
-﻿using Ginox.BlackCauldron.Alchemy.Controllers.Tools;
+﻿using Ginox.BlackCauldron.Alchemy.ViewModels.Tools;
 
 namespace Ginox.BlackCauldron.Alchemy.Views.Tools
 {
     public interface IAlembicFirepitInteract
     {
-        public void Interact(AlembicController alembicController);
+        public void Interact(AlembicViewModel alembicController);
     }
 }

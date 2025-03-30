@@ -1,4 +1,4 @@
-using Ginox.BlackCauldron.Alchemy.Controllers;
+using Ginox.BlackCauldron.Alchemy.ViewModels;
 using UnityEngine;
 using UnityEngine.Localization;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
@@ -10,10 +10,10 @@ namespace Ginox.BlackCauldron.Alchemy.Views
     {
         private LocalizedString localizedName;
 
-        public AIngredientController Controller { get; protected set; }
+        public AIngredientViewModel Controller { get; protected set; }
         public string Name { get; private set; }
 
-        protected void Init(AIngredientController controller)
+        protected void Init(AIngredientViewModel controller)
         {
             Controller = controller;
             Controller.Destroyed += OnDestroyed;

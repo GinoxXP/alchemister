@@ -1,4 +1,4 @@
-﻿using Ginox.BlackCauldron.Alchemy.Controllers.Tools;
+﻿using Ginox.BlackCauldron.Alchemy.ViewModels.Tools;
 using System.Linq;
 using UnityEngine;
 using Zenject;
@@ -7,10 +7,10 @@ namespace Ginox.BlackCauldron.Alchemy.Views.Tools
 {
     public class AlembicFirepitView : MonoBehaviour
     {
-        private AlembicController controller;
+        private AlembicViewModel controller;
 
         [Inject]
-        private void Init(AlembicController Controller)
+        private void Init(AlembicViewModel Controller)
         {
             this.controller = Controller;
         }
