@@ -1,6 +1,6 @@
 ﻿using Ginox.BlackCauldron.Alchemy.Models;
+using Ginox.BlackCauldron.Alchemy.Models.Tools;
 using Ginox.BlackCauldron.Core;
-using UnityEngine;
 using Zenject;
 
 namespace Ginox.BlackCauldron.Alchemy.ViewModels

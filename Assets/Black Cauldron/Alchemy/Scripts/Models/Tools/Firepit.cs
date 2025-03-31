@@ -1,4 +1,4 @@
-﻿namespace Ginox.BlackCauldron.Alchemy.Models
+﻿namespace Ginox.BlackCauldron.Alchemy.Models.Tools
 {
     public class Firepit
     {

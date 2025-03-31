@@ -23,9 +23,9 @@ namespace Ginox.BlackCauldron.Alchemy.Views
         [SerializeField]
         private FirepitView firepitView;
 
-        private CauldronViewModel cauldronController;
+        private CauldronViewModel cauldronViewModel;
         private Animator animator;
-        private FirepitViewModel firepitController;
+        private FirepitViewModel firepitViewModel;
 
         private bool isBoiling;
         private bool isFilled;
@@ -46,7 +46,7 @@ namespace Ginox.BlackCauldron.Alchemy.Views
         [Inject]
         private void Init(CauldronViewModel cauldronViewModel)
         {
-            this.cauldronController = cauldronViewModel;
+            this.cauldronViewModel = cauldronViewModel;
         }
 
         private void Awake()
@@ -57,13 +57,25 @@ namespace Ginox.BlackCauldron.Alchemy.Views
         private void Start()
         {
             animator = GetComponent<Animator>();
-            firepitController = firepitView.Controller;
-            firepitController.FuelChanged += OnFuelChanged;
+            firepitViewModel = firepitView.viewModel;
+            firepitViewModel.PropertyChanged += OnPropertyChanged;
+
+            OnFuelChanged(firepitViewModel.FuelCount);
         }
 
         private void OnDestroy()
         {
-            firepitController.FuelChanged -= OnFuelChanged;
+            firepitViewModel.PropertyChanged -= OnPropertyChanged;
+        }
+
+        private void OnPropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
+        {
+            switch (e.PropertyName)
+            {
+                case nameof(firepitViewModel.FuelCount):
+                    OnFuelChanged(firepitViewModel.FuelCount);
+                    break;
+            }
         }
 
         private void OnFuelChanged(int count)
@@ -88,9 +100,9 @@ namespace Ginox.BlackCauldron.Alchemy.Views
                 isBoiling = true;
             }
 
-            cauldronController.PutIn(ingredient);
+            cauldronViewModel.PutIn(ingredient);
 
-            var potion = cauldronController.GetPotion();
+            var potion = cauldronViewModel.CompleatedPotion;
 
             if (potion == null)
                 SetMaterialPotionInProcess();
@@ -100,10 +112,10 @@ namespace Ginox.BlackCauldron.Alchemy.Views
 
         public APotion Finish()
         {
-            var potion = cauldronController.GetPotion();
+            var potion = cauldronViewModel.CompleatedPotion;
 
             SetMaterialClearWater();
-            cauldronController.Finish();
+            cauldronViewModel.Finish();
 
             visualEffect.SendEvent(STOP_BOILING_EVENT);
             isBoiling = false;

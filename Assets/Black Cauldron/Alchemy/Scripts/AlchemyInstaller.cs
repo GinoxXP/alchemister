@@ -10,6 +10,7 @@ using Ginox.BlackCauldron.Alchemy.Views.Ingredients;
 using Ginox.BlackCauldron.Alchemy.Views.Tools;
 using UnityEngine;
 using Zenject;
+using Ginox.BlackCauldron.Alchemy.Models.Tools;
 
 public class AlchemyInstaller : MonoInstaller
 {
@@ -96,7 +97,6 @@ public class AlchemyInstaller : MonoInstaller
         Container.Bind<IBrewingService>().To<BrewingService>().AsSingle();
         Container.Bind<IMortarService>().To<MortarService>().AsSingle();
         Container.Bind<IAlembicService>().To<AlembicService>().AsSingle();
-        Container.BindInterfacesAndSelfTo<FirepitViewModel>().AsSingle();
 
         InstallTools();
         InstallIngredients();
@@ -107,6 +107,13 @@ public class AlchemyInstaller : MonoInstaller
 
     private void InstallTools()
     {
+        Container.Bind<Firepit>().AsTransient();
+        Container.Bind<Cauldron>().AsTransient();
+        Container.Bind<Bottle>().AsTransient();
+        Container.Bind<Mortar>().AsTransient();
+        Container.Bind<Alembic>().AsTransient();
+
+        Container.BindInterfacesAndSelfTo<FirepitViewModel>().AsSingle();
         Container.Bind<CauldronViewModel>().AsSingle();
         Container.Bind<BottleViewModel>().AsTransient();
         Container.Bind<MortarViewModel>().AsSingle();

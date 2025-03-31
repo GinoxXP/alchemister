@@ -1,6 +1,6 @@
 ﻿using Ginox.BlackCauldron.Alchemy.Views;
 
-namespace Ginox.BlackCauldron.Alchemy.Models
+namespace Ginox.BlackCauldron.Alchemy.Models.Tools
 {
     public class Mortar
     {

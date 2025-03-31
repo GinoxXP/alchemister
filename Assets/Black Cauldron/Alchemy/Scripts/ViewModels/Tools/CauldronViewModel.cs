@@ -1,4 +1,5 @@
 using Ginox.BlackCauldron.Alchemy.Models;
+using Ginox.BlackCauldron.Alchemy.Models.Tools;
 using Ginox.BlackCauldron.Alchemy.Services;
 using Ginox.BlackCauldron.Core;
 

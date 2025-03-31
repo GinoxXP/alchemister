@@ -13,28 +13,40 @@ namespace Ginox.BlackCauldron.Alchemy
         [SerializeField]
         private GameObject[] firelogs;
 
-        public FirepitViewModel Controller { get; private set; }
+        public FirepitViewModel viewModel { get; private set; }
 
 
         [Inject]
         private void Init(FirepitViewModel firepitController)
         {
-            Controller = firepitController;
+            viewModel = firepitController;
         }
 
         private void Start()
         {
-            Controller.BurnChanged += OnBurnChanged;
-            Controller.FuelChanged += OnFuelChanged;
+            viewModel.PropertyChanged += OnPropertyChanged;
 
-            OnBurnChanged(Controller.IsBurn);
-            OnFuelChanged(Controller.FuelCount);
+            OnBurnChanged(viewModel.IsBurn);
+            OnFuelChanged(viewModel.FuelCount);
         }
 
         private void OnDestroy()
         {
-            Controller.BurnChanged -= OnBurnChanged;
-            Controller.FuelChanged -= OnFuelChanged;
+            viewModel.PropertyChanged -= OnPropertyChanged;
+        }
+
+        private void OnPropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
+        {
+            switch (e.PropertyName)
+            {
+                case nameof(viewModel.IsBurn):
+                    OnBurnChanged(viewModel.IsBurn);
+                    break;
+
+                case nameof(viewModel.FuelCount):
+                    OnFuelChanged(viewModel.FuelCount);
+                    break;
+            }
         }
 
         private void OnFuelChanged(int fuelCount)
@@ -59,7 +71,7 @@ namespace Ginox.BlackCauldron.Alchemy
             var interactable = other.GetComponentsInParent<MonoBehaviour>().OfType<IFirepitInteractable>().FirstOrDefault();
 
             if (interactable != null)
-                interactable.Interact(Controller);
+                interactable.Interact(viewModel);
         }
     }
 }
