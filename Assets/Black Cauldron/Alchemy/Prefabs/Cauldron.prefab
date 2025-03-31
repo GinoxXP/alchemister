@@ -17,7 +17,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1534340942608780218
 Transform:
   m_ObjectHideFlags: 0
@@ -234,6 +234,7 @@ MonoBehaviour:
   liquidSurface: {fileID: 1125155646568142418}
   prepotionMaterial: {fileID: 2100000, guid: 589e8e6779a71aa4383e95acc83f5a9d, type: 2}
   visualEffect: {fileID: 5657611256336023699}
+  firepitView: {fileID: 0}
 --- !u!95 &2506341265336448763
 Animator:
   serializedVersion: 7

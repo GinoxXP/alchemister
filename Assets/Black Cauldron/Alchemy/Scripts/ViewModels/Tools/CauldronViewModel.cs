@@ -61,6 +61,7 @@ namespace Ginox.BlackCauldron.Alchemy.ViewModels
         {
             Drain();
 
+            brewingService.FinishBrew();
             return CompleatedPotion;
         }
 
