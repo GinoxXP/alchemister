@@ -1,4 +1,4 @@
-﻿using Ginox.BlackCauldron.Alchemy.Views;
+﻿using Ginox.BlackCauldron.Alchemy.Views.Ingredients;
 using System.Linq;
 using UnityEngine;
 

@@ -1,43 +1,43 @@
 using Ginox.BlackCauldron.Alchemy.ViewModels;
+using Ginox.BlackCauldron.Core;
 using UnityEngine;
 using UnityEngine.Localization;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
 using Zenject;
 
-namespace Ginox.BlackCauldron.Alchemy.Views
+namespace Ginox.BlackCauldron.Alchemy.Views.Ingredients
 {
-    public abstract class AIngredientView : MonoBehaviour, IScoopCauldron
+    public abstract class AIngredientView : MonoBehaviour, IScoopCauldron, IPokeIndicatorDisplay
     {
         private LocalizedString localizedName;
 
-        public AIngredientViewModel Controller { get; protected set; }
-        public string Name { get; private set; }
+        public AIngredientViewModel ViewModel { get; protected set; }
+
+        public string DisplayableText { get; private set; }
 
         protected void Init(AIngredientViewModel controller)
         {
-            Controller = controller;
-            Controller.Destroyed += OnDestroyed;
+            ViewModel = controller;
+            ViewModel.Destroyed += OnDestroyed;
         }
 
         private void Start()
         {
-            localizedName = new LocalizedString("Alchemy", Controller.Model.NameKey);
+            localizedName = new LocalizedString("Ingredients", ViewModel.Model.NameKey);
             localizedName.StringChanged += OnStringChanged;
-            Name = localizedName.GetLocalizedString();
         }
+
         private void OnStringChanged(string value)
-        {
-            Name = value;
-        }
+            => DisplayableText = value;
 
         public void Scoop(CauldronView cauldronView)
         {
-            cauldronView.PutIn(Controller);
+            cauldronView.PutIn(ViewModel);
         }
 
         private void OnDestroy()
         {
-            Controller.Destroyed -= OnDestroyed;
+            ViewModel.Destroyed -= OnDestroyed;
         }
 
         private void OnDestroyed()

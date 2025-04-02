@@ -1,4 +1,5 @@
 ﻿using Ginox.BlackCauldron.Alchemy.ViewModels.Tools;
+using Ginox.BlackCauldron.Alchemy.Views.Ingredients;
 using Ginox.BlackCauldron.Core;
 using System.Collections;
 using System.Linq;

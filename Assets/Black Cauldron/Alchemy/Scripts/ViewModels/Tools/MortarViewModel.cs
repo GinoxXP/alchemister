@@ -1,6 +1,6 @@
 ﻿using Ginox.BlackCauldron.Alchemy.Models;
 using Ginox.BlackCauldron.Alchemy.Services;
-using Ginox.BlackCauldron.Alchemy.Views;
+using Ginox.BlackCauldron.Alchemy.Views.Ingredients;
 using System;
 
 namespace Ginox.BlackCauldron.Alchemy.ViewModels.Tools
@@ -60,8 +60,8 @@ namespace Ginox.BlackCauldron.Alchemy.ViewModels.Tools
             if (hangedIngredient == null)
                 return;
 
-            performedIngredient = mortarService.Transform(hangedIngredient.Controller.Model);
-            hangedIngredient.Controller.Destroy();
+            performedIngredient = mortarService.Transform(hangedIngredient.ViewModel.Model);
+            hangedIngredient.ViewModel.Destroy();
             hangedIngredient = null;
 
             HangedIngredientChanged?.Invoke(null);
