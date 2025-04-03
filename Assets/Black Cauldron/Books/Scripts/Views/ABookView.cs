@@ -1,4 +1,5 @@
 using Ginox.BlackCauldron.Books.ViewModels;
+using Ginox.BlackCauldron.Core;
 using System.Collections.Generic;
 using System.Linq;
 using TMPro;
@@ -9,11 +10,13 @@ using UnityEngine.UI;
 
 namespace Ginox.BlackCauldron.Books.Views
 {
-    public class ABookView : MonoBehaviour
+    public class ABookView : MonoBehaviour, IPokeIndicatorDisplay
     {
         private static readonly string OPEN_BOOK_TRIGGER = "OpenTrigger";
         private static readonly string CLOSE_BOOK_TRIGGER = "CloseTrigger";
 
+        [SerializeField]
+        private TMP_Text title;
         [SerializeField]
         private TMP_Text leftContent;
         [SerializeField]
@@ -32,6 +35,19 @@ namespace Ginox.BlackCauldron.Books.Views
         private int page;
         private bool isGrabed;
         private bool isGrabStateChanged;
+        private string displayableText;
+
+        private LocalizedString localizedName;
+
+        public string DisplayableText 
+        {
+            get => displayableText;
+            private set
+            {
+                displayableText = value;
+                title.text = value;
+            }
+        }
 
         protected void Init(ABookViewModel viewModel)
         {
@@ -45,8 +61,15 @@ namespace Ginox.BlackCauldron.Books.Views
             mainCamera = Camera.main;
 
             LocalizationSettings.Instance.OnSelectedLocaleChanged += OnSelectedLocaleChanged;
+
+            localizedName = new LocalizedString("Books", viewModel.Model.NameKey);
+            localizedName.StringChanged += OnStringChanged;
+
             RenderPage();
         }
+
+        private void OnStringChanged(string value)
+            => DisplayableText = value;
 
         private void OnDestroy()
         {

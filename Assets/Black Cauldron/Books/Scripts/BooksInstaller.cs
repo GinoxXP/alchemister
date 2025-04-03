@@ -10,9 +10,9 @@ namespace Ginox.BlackCauldron.Books
     {
         public override void InstallBindings()
         {
-            Container.Bind<ABookModel>().To<BookModel>().AsTransient();
-
             #region BeginerBook
+
+            Container.Bind<BeginerBook>().AsSingle();
 
             Container.Bind<BeginerBookViewModel>().AsSingle();
 
@@ -38,6 +38,8 @@ namespace Ginox.BlackCauldron.Books
             #endregion
 
             #region VillageDoctorBook
+
+            Container.Bind<VillageDoctorsRecipeBook>().AsSingle();
 
             Container.Bind<VillageDoctorsRecipeBookViewModel>().AsSingle();
 

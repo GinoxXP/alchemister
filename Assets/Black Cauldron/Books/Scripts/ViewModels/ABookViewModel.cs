@@ -7,7 +7,7 @@ namespace Ginox.BlackCauldron.Books.ViewModels
 {
     public abstract class ABookViewModel : ViewModel
     {
-        public ABookModel Model { get; protected set; }
+        public ABook Model { get; protected set; }
 
         public List<Recipe> Recipes => Model.Recipes;
 

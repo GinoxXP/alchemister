@@ -1260,6 +1260,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edda4b3fc1015f64596c88f848a20ceb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  title: {fileID: 6193797831370864829}
   leftContent: {fileID: 2271243062528174524}
   rightContent: {fileID: 725335406784118985}
   pageIndex: {fileID: 5327259288828952001}

@@ -3,8 +3,10 @@ using System.Collections.Generic;
 
 namespace Ginox.BlackCauldron.Books.Models
 {
-    public abstract class ABookModel
+    public abstract class ABook
     {
-        public List<Recipe> Recipes { get; private set; } = new();
+        public abstract string NameKey { get; }
+
+        public abstract List<Recipe> Recipes { get; }
     }
 }

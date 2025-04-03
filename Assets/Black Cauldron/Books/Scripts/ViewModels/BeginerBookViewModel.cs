@@ -4,7 +4,7 @@ namespace Ginox.BlackCauldron.Books.ViewModels
 {
     public class BeginerBookViewModel : ABookViewModel
     {
-        public BeginerBookViewModel(ABookModel model)
+        public BeginerBookViewModel(BeginerBook model)
         {
             Model = model;
         }

@@ -5,7 +5,7 @@ namespace Ginox.BlackCauldron.Books.ViewModels
 {
     public class VillageDoctorsRecipeBookViewModel : ABookViewModel
     {
-        public VillageDoctorsRecipeBookViewModel(ABookModel model)
+        public VillageDoctorsRecipeBookViewModel(VillageDoctorsRecipeBook model)
         {
             Model = model;
         }
