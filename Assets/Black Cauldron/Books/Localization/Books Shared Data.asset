@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
   m_Name: Books Shared Data
   m_EditorClassIdentifier: 
-  m_TableCollectionName: Book
+  m_TableCollectionName: Books
   m_TableCollectionNameGuidString: b30c41b3713406147a720329b22e3631
   m_Entries:
   - m_Id: 5292920832

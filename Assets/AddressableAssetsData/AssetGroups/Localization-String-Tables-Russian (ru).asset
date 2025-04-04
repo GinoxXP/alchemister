@@ -28,7 +28,7 @@ MonoBehaviour:
     - Locale-ru
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: a17c32e7a166f6a4ea9050a9723b10f0
-    m_Address: Book_ru
+    m_Address: Books_ru
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-ru

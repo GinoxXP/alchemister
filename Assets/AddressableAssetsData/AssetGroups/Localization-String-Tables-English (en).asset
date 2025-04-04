@@ -22,7 +22,7 @@ MonoBehaviour:
     - Locale-en
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 4959559bc6e726745b8bc654d8104664
-    m_Address: Book_en
+    m_Address: Books_en
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-en
