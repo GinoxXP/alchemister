@@ -102,7 +102,7 @@ namespace Ginox.BlackCauldron.Alchemy.ViewModels.Tools
             if (HasBottle)
                 return false;
 
-            if (bottleView.BottleController.Potion != null)
+            if (bottleView.ContainedPotion != null)
                 return false;
 
             HasBottle = true;

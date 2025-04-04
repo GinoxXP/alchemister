@@ -38,7 +38,6 @@ namespace Ginox.BlackCauldron.Alchemy.Views.Ingredients
         private void OnDestroy()
         {
             ViewModel.Destroyed -= OnDestroyed;
-            localizedName.StringChanged -= OnStringChanged;
         }
 
         private void OnDestroyed()

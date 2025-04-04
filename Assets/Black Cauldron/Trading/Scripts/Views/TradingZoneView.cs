@@ -20,7 +20,7 @@ namespace Ginox.BlackCauldron.Trading.Views
             var bottle = other.GetComponentInParent<BottleView>();
             if (bottle != null)
             {
-                if (bottle.BottleController.Potion.ToString() == tradingServices.RequirmentPotion.ToString())
+                if (bottle.ContainedPotion.ToString() == tradingServices.RequirmentPotion.ToString())
                 {
                     tradingServices.Trade();
                     Destroy(bottle.gameObject);
