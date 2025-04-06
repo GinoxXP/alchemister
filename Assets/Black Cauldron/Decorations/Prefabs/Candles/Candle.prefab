@@ -124,8 +124,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5611357758538197425}
   - component: {fileID: 3192197217538961186}
-  - component: {fileID: 6354001660802134849}
   - component: {fileID: 2716631917132080338}
+  - component: {fileID: 496059313576923409}
   m_Layer: 0
   m_Name: Candle
   m_TagString: Untagged
@@ -177,7 +177,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &6354001660802134849
+--- !u!114 &2716631917132080338
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -186,7 +186,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 3190053606135083172}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ad34abafad169848a38072baa96cdb2, type: 3}
+  m_Script: {fileID: 11500000, guid: 94c49be4d9a0dbc4bbc74ea299e2f8f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minLightIntencity: 0.1
+  maxLightIntencity: 0.15
+  minLightRange: 1.8
+  maxLightRange: 2.2
+  speedDifferential: 1
+  light: {fileID: 3440228189473409475}
+--- !u!114 &496059313576923409
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3190053606135083172}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31cd29d8e460ebb44977921a79305577, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_InteractionManager: {fileID: 0}
@@ -264,13 +282,13 @@ MonoBehaviour:
   m_AngularVelocityScale: 1
   m_TrackPosition: 1
   m_SmoothPosition: 0
-  m_SmoothPositionAmount: 5
-  m_TightenPosition: 0.5
+  m_SmoothPositionAmount: 8
+  m_TightenPosition: 0.1
   m_TrackRotation: 1
   m_SmoothRotation: 0
-  m_SmoothRotationAmount: 5
-  m_TightenRotation: 0.5
-  m_TrackScale: 1
+  m_SmoothRotationAmount: 8
+  m_TightenRotation: 0.1
+  m_TrackScale: 0
   m_SmoothScale: 0
   m_SmoothScaleAmount: 8
   m_TightenScale: 0.1
@@ -299,24 +317,8 @@ MonoBehaviour:
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
   m_FarAttachMode: 0
---- !u!114 &2716631917132080338
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3190053606135083172}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 94c49be4d9a0dbc4bbc74ea299e2f8f0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  minLightIntencity: 0.1
-  maxLightIntencity: 0.15
-  minLightRange: 1.8
-  maxLightRange: 2.2
-  speedDifferential: 1
-  light: {fileID: 3440228189473409475}
+  velocityTrashold: 2
+  jumpAngleDegree: 60
 --- !u!1 &8741487418814120625
 GameObject:
   m_ObjectHideFlags: 0

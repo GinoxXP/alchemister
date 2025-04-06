@@ -9,7 +9,7 @@ using UnityEngine.Localization;
 namespace Ginox.BlackCauldron.Alchemy.Views.Tools
 {
     [RequireComponent(typeof(Rigidbody))]
-    public class BottleView : XRGrabInteractable, IScoopCauldron, IPourAlembic, IPokeIndicatorDisplay
+    public class BottleView : MonoBehaviour, IScoopCauldron, IPourAlembic, IPokeIndicatorDisplay
     {
         [SerializeField]
         private MeshRenderer fillingMaterial;
@@ -43,10 +43,8 @@ namespace Ginox.BlackCauldron.Alchemy.Views.Tools
             localizedName.StringChanged += OnStringChanged;
         }
 
-        private new void OnDestroy()
+        private void OnDestroy()
         {
-            base.OnDestroy();
-
             localizedName.StringChanged -= OnStringChanged;
         }
 

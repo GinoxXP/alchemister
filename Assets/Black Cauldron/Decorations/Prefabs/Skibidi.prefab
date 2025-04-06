@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 3380995620442895321}
   - component: {fileID: 5326993224790754755}
   - component: {fileID: 7605930539737378501}
-  - component: {fileID: 349424326193513495}
   - component: {fileID: 4801000812545174298}
+  - component: {fileID: 4797140196671328379}
   m_Layer: 0
   m_Name: Skibidi
   m_TagString: Untagged
@@ -205,7 +205,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.04, y: 0.04, z: 0.08}
   m_Center: {x: 0, y: 0.02, z: 0}
---- !u!114 &349424326193513495
+--- !u!114 &4801000812545174298
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -214,7 +214,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 1977178240135218492}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ad34abafad169848a38072baa96cdb2, type: 3}
+  m_Script: {fileID: 11500000, guid: 46cc661a848408e439a0374436837760, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4797140196671328379
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1977178240135218492}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31cd29d8e460ebb44977921a79305577, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_InteractionManager: {fileID: 0}
@@ -222,7 +234,7 @@ MonoBehaviour:
   m_InteractionLayers:
     m_Bits: 1
   m_DistanceCalculationMode: 1
-  m_SelectMode: 1
+  m_SelectMode: 0
   m_FocusMode: 1
   m_CustomReticle: {fileID: 0}
   m_AllowGazeInteraction: 0
@@ -324,7 +336,7 @@ MonoBehaviour:
   m_SmoothRotation: 0
   m_SmoothRotationAmount: 8
   m_TightenRotation: 0.1
-  m_TrackScale: 1
+  m_TrackScale: 0
   m_SmoothScale: 0
   m_SmoothScaleAmount: 8
   m_TightenScale: 0.1
@@ -353,18 +365,8 @@ MonoBehaviour:
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
   m_FarAttachMode: 0
---- !u!114 &4801000812545174298
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1977178240135218492}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 46cc661a848408e439a0374436837760, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  velocityTrashold: 2
+  jumpAngleDegree: 60
 --- !u!1001 &708363228285365813
 PrefabInstance:
   m_ObjectHideFlags: 0

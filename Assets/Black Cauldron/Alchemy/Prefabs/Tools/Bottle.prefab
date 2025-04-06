@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4990218818898876952}
   - component: {fileID: 6947047793000982913}
   - component: {fileID: 9137832448256118258}
+  - component: {fileID: 6054583271217707605}
   m_Layer: 6
   m_Name: Bottle
   m_TagString: Untagged
@@ -75,10 +76,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9612046bf35739742b535e176297a408, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fillingMaterial: {fileID: 9012274761484987600}
+--- !u!114 &9137832448256118258
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5951818125932470985}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b3546bb228dd2d44a4429bba8bd485d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  angleForActivation: 70
+  offset: {fileID: 6098101044931435423}
+--- !u!114 &6054583271217707605
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5951818125932470985}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31cd29d8e460ebb44977921a79305577, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_InteractionManager: {fileID: 0}
   m_Colliders: []
   m_InteractionLayers:
-    m_Bits: 3
+    m_Bits: 1
   m_DistanceCalculationMode: 1
   m_SelectMode: 0
   m_FocusMode: 1
@@ -156,7 +184,7 @@ MonoBehaviour:
   m_SmoothRotation: 0
   m_SmoothRotationAmount: 8
   m_TightenRotation: 0.1
-  m_TrackScale: 1
+  m_TrackScale: 0
   m_SmoothScale: 0
   m_SmoothScaleAmount: 8
   m_TightenScale: 0.1
@@ -185,21 +213,8 @@ MonoBehaviour:
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
   m_FarAttachMode: 0
-  fillingMaterial: {fileID: 9012274761484987600}
---- !u!114 &9137832448256118258
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5951818125932470985}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b3546bb228dd2d44a4429bba8bd485d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  angleForActivation: 70
-  offset: {fileID: 6098101044931435423}
+  velocityTrashold: 2
+  jumpAngleDegree: 60
 --- !u!1 &7293207225789292837
 GameObject:
   m_ObjectHideFlags: 0

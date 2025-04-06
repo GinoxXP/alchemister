@@ -65,10 +65,10 @@ GameObject:
   - component: {fileID: 5161948659168418309}
   - component: {fileID: 8588866168246523736}
   - component: {fileID: 1816895103561494934}
-  - component: {fileID: 1372181229625377210}
   - component: {fileID: 2797260678719135572}
   - component: {fileID: 1527593175024804050}
   - component: {fileID: 4843689751022025779}
+  - component: {fileID: 5424398188223640147}
   m_Layer: 0
   m_Name: Mortar
   m_TagString: Untagged
@@ -155,7 +155,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &1372181229625377210
+--- !u!114 &2797260678719135572
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -164,20 +164,50 @@ MonoBehaviour:
   m_GameObject: {fileID: 488663932242967450}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ad34abafad169848a38072baa96cdb2, type: 3}
+  m_Script: {fileID: 11500000, guid: 3279acec36797de4284329e99d984595, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1527593175024804050
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 488663932242967450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b3546bb228dd2d44a4429bba8bd485d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  angleForActivation: 60
+  offset: {fileID: 0}
+--- !u!114 &4843689751022025779
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 488663932242967450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4780b32ce72be0e4f8141af661594c6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activationLevel: 3
+--- !u!114 &5424398188223640147
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 488663932242967450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31cd29d8e460ebb44977921a79305577, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_InteractionManager: {fileID: 0}
-  m_Colliders:
-  - {fileID: 4841900447195618792}
-  - {fileID: 4389033825003188470}
-  - {fileID: 2137490251901152934}
-  - {fileID: 4503395328108436579}
-  - {fileID: 129155728237803082}
-  - {fileID: 3504061550480683022}
-  - {fileID: 1864671879000360244}
-  - {fileID: 4339918482051193298}
-  - {fileID: 6824092489430996292}
+  m_Colliders: []
   m_InteractionLayers:
     m_Bits: 1
   m_DistanceCalculationMode: 1
@@ -236,7 +266,7 @@ MonoBehaviour:
   m_StartingHoverFilters: []
   m_StartingSelectFilters: []
   m_StartingInteractionStrengthFilters: []
-  m_AttachTransform: {fileID: 1022577586004410773}
+  m_AttachTransform: {fileID: 0}
   m_SecondaryAttachTransform: {fileID: 0}
   m_UseDynamicAttach: 0
   m_MatchAttachPosition: 1
@@ -257,7 +287,7 @@ MonoBehaviour:
   m_SmoothRotation: 0
   m_SmoothRotationAmount: 8
   m_TightenRotation: 0.1
-  m_TrackScale: 1
+  m_TrackScale: 0
   m_SmoothScale: 0
   m_SmoothScaleAmount: 8
   m_TightenScale: 0.1
@@ -286,45 +316,8 @@ MonoBehaviour:
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
   m_FarAttachMode: 0
---- !u!114 &2797260678719135572
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 488663932242967450}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3279acec36797de4284329e99d984595, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1527593175024804050
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 488663932242967450}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b3546bb228dd2d44a4429bba8bd485d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  angleForActivation: 60
-  offset: {fileID: 0}
---- !u!114 &4843689751022025779
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 488663932242967450}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4780b32ce72be0e4f8141af661594c6c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  activationLevel: 3
+  velocityTrashold: 2
+  jumpAngleDegree: 60
 --- !u!1 &851532519187374659
 GameObject:
   m_ObjectHideFlags: 0
