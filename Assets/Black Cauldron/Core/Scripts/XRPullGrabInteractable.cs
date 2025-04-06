@@ -64,7 +64,7 @@ namespace Ginox.BlackCauldron.Core
             var diffXZLength = diffXZ.magnitude;
             var diffYLength = diff.y;
 
-            var angleRadian = jumpAngleDegree * Mathf.Deg2Rad;
+            var angleRadian = Mathf.Clamp(diff.normalized.y * 90, jumpAngleDegree, 90) * Mathf.Deg2Rad;
             var jumpSpeed = Mathf.Sqrt(-Physics.gravity.y * Mathf.Pow(diffXZLength, 2) / (2 * Mathf.Cos(angleRadian) * Mathf.Cos(angleRadian) * (diffXZ.magnitude * Mathf.Tan(angleRadian) - diffYLength)));
 
             var jumpVelocityVector = diffXZ.normalized * Mathf.Cos(angleRadian) * jumpSpeed + Vector3.up * Mathf.Sin(angleRadian) * jumpSpeed;
