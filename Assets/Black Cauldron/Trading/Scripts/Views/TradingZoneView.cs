@@ -18,7 +18,7 @@ namespace Ginox.BlackCauldron.Trading.Views
         private void OnTriggerEnter(Collider other)
         {
             var bottle = other.GetComponentInParent<BottleView>();
-            if (bottle != null)
+            if (bottle != null || bottle.ContainedPotion == null)
             {
                 if (bottle.ContainedPotion.ToString() == tradingServices.RequirmentPotion.ToString())
                 {
