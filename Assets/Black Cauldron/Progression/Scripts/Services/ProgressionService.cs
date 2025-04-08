@@ -11,11 +11,25 @@ namespace Ginox.BlackCauldron.Progression.Services
         private readonly TradingService tradingService;
         private readonly List<Level> levels = new List<Level>();
 
+        private int xp;
+
         public int Level { get; private set; } = 1;
 
-        public int XP { get; private set; }
+        public int XP
+        {
+            get => xp;
+            private set
+            {
+                xp = value;
+                XpChanged?.Invoke(xp, PassXP);
+            }
+        }
+
+        public int PassXP => levels[Level - 1].PassExperience;
 
         public event Action<int> NewLevelAllowed;
+
+        public event Action<int, int> XpChanged;
 
         public ProgressionService(TradingService tradingService)
         {

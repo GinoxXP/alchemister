@@ -7,8 +7,12 @@ namespace Ginox.BlackCauldron.Progression.Views
 {
     public class MagicBallView : MonoBehaviour
     {
+        private readonly string progressionFormat = "{0} / {1}";
+
         [SerializeField]
-        private TMP_Text indicatorText;
+        private TMP_Text currentLevelIndicator;
+        [SerializeField]
+        private TMP_Text progressIndicator;
         [SerializeField]
         private GameObject indicator;
 
@@ -24,12 +28,14 @@ namespace Ginox.BlackCauldron.Progression.Views
         private void Awake()
         {
             indicator.SetActive(false);
-            ChangeIndicator(viewModel.CurrentLevel);
+
+            ChangeCurrentLevelIndicator(viewModel.CurrentLevel);
+            ChangeProgressIndicator(viewModel.XP, viewModel.PassXP);
         }
 
-        private void Start()
+        private void OnDestroy()
         {
-            //ChangeIndicator(viewModel.CurrentLevel);
+            viewModel.PropertyChanged -= OnPropertyChanged;
         }
 
         private void OnPropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
@@ -37,14 +43,24 @@ namespace Ginox.BlackCauldron.Progression.Views
             switch (e.PropertyName)
             {
                 case nameof(viewModel.CurrentLevel):
-                    ChangeIndicator(viewModel.CurrentLevel);
+                    ChangeCurrentLevelIndicator(viewModel.CurrentLevel);
+                    break;
+
+                case nameof(viewModel.XP):
+                case nameof(viewModel.PassXP):
+                    ChangeProgressIndicator(viewModel.XP, viewModel.PassXP);
                     break;
             }
         }
 
-        private void ChangeIndicator(int level)
+        private void ChangeCurrentLevelIndicator(int level)
         {
-            indicatorText.text = level.ToString();
+            currentLevelIndicator.text = level.ToString();
+        }
+
+        private void ChangeProgressIndicator(int xp, int passXp)
+        {
+            progressIndicator.text = string.Format(progressionFormat, xp, passXp);
         }
 
         public void ShowIndicator()

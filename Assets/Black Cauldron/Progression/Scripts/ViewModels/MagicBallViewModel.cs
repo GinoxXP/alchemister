@@ -19,6 +19,26 @@ namespace Ginox.BlackCauldron.Progression.ViewModels
             }
         }
 
+        public int XP
+        {
+            get => model.XP;
+            private set
+            {
+                model.XP = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public int PassXP
+        {
+            get => model.PassXP;
+            private set
+            {
+                model.PassXP = value;
+                OnPropertyChanged();
+            }
+        }
+
         public MagicBallViewModel(
             MagicBall model,
             ProgressionService service)
@@ -27,7 +47,16 @@ namespace Ginox.BlackCauldron.Progression.ViewModels
             this.service = service;
 
             service.NewLevelAllowed += OnNewLevelAllowed;
+            service.XpChanged += OnXpChanged;
+
             OnNewLevelAllowed(service.Level);
+            OnXpChanged(service.XP, service.PassXP);
+        }
+
+        private void OnXpChanged(int xp, int passXp)
+        {
+            XP = xp;
+            PassXP = passXp;
         }
 
         private void OnNewLevelAllowed(int level)

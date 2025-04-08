@@ -20,8 +20,9 @@ namespace Ginox.BlackCauldron.Progression
                 var progressionService = new ProgressionService(tradingService);
 
                 progressionService
+                    .AddLevel(new Level(2))
                     .AddLevel(new Level(3))
-                    .AddLevel(new Level(4));
+                    .AddLevel(new Level(5));
 
                 return progressionService;
             }).AsSingle();
