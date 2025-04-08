@@ -11,7 +11,7 @@ namespace Ginox.BlackCauldron.Progression.Services
         private readonly TradingService tradingService;
         private readonly List<Level> levels = new List<Level>();
 
-        public int Level { get; private set; }
+        public int Level { get; private set; } = 1;
 
         public int XP { get; private set; }
 
@@ -31,7 +31,7 @@ namespace Ginox.BlackCauldron.Progression.Services
 
         private void CheckNewLevel()
         {
-            var currentLevel = levels.ElementAt(Level);
+            var currentLevel = levels.ElementAt(Level - 1);
 
             if (currentLevel.PassExperience <= XP)
             {

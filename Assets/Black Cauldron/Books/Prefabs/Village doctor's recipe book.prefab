@@ -176,7 +176,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4780b32ce72be0e4f8141af661594c6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activationLevel: 1
+  activationLevel: 2
 --- !u!114 &4860168252063949989 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 725335406784118985, guid: 41e1728b7d0b6a44f850fec7df79ebb4, type: 3}

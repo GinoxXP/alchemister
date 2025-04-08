@@ -1,5 +1,6 @@
 using Ginox.BlackCauldron.Progression.Models;
 using Ginox.BlackCauldron.Progression.Services;
+using Ginox.BlackCauldron.Progression.ViewModels;
 using Ginox.BlackCauldron.Trading.Services;
 using Zenject;
 
@@ -9,6 +10,9 @@ namespace Ginox.BlackCauldron.Progression
     {
         public override void InstallBindings()
         {
+            Container.Bind<MagicBall>().AsSingle();
+            Container.Bind<MagicBallViewModel>().AsSingle();
+
             Container.Bind<ProgressionService>().FromMethod(x =>
             {
                 var tradingService = Container.Resolve<TradingService>();
@@ -17,7 +21,7 @@ namespace Ginox.BlackCauldron.Progression
 
                 progressionService
                     .AddLevel(new Level(3))
-                    .AddLevel(new Level(5));
+                    .AddLevel(new Level(4));
 
                 return progressionService;
             }).AsSingle();

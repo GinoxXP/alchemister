@@ -3,7 +3,9 @@
     "rootNamespace": "Ginox.BlackCauldron.Progression",
     "references": [
         "GUID:0d8beb7f090555447a6cf5ce9e54dbb4",
-        "GUID:c45b4596e7864ed45828c9ecbc667154"
+        "GUID:c45b4596e7864ed45828c9ecbc667154",
+        "GUID:8045761d132da844f832bde0982cf7c5",
+        "GUID:6055be8ebefd69e48b49212b09b47b2f"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
