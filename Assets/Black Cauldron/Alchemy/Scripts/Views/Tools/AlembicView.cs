@@ -9,7 +9,7 @@ namespace Ginox.BlackCauldron.Views.Tools
         [SerializeField]
         private GameObject coalPile;
         [SerializeField]
-        private GameObject firelight;
+        private GameObject fireParticles;
 
         private AlembicViewModel controller;
 
@@ -25,7 +25,7 @@ namespace Ginox.BlackCauldron.Views.Tools
             controller.BurnChanged += OnBurnChanged;
 
             coalPile.SetActive(false);
-            firelight.SetActive(false);
+            fireParticles.SetActive(false);
         }
 
         private void OnDestroy()
@@ -38,6 +38,6 @@ namespace Ginox.BlackCauldron.Views.Tools
             => coalPile.SetActive(state);
 
         private void OnBurnChanged(bool state)
-            => firelight.SetActive(state);   
+            => fireParticles.SetActive(state);   
     }
 }

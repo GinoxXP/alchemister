@@ -86,6 +86,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 734689521728226457, guid: cb8ac4849c665a048af31aafa083d6e9, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.1219
+      objectReference: {fileID: 0}
     - target: {fileID: 3190053606135083172, guid: cb8ac4849c665a048af31aafa083d6e9, type: 3}
       propertyPath: m_Name
       value: Candle 3

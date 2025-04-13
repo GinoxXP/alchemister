@@ -9,7 +9,7 @@ namespace Ginox.BlackCauldron.Alchemy
     public class FirepitView : MonoBehaviour
     {
         [SerializeField]
-        private new GameObject light;
+        private GameObject[] fireParticles;
         [SerializeField]
         private GameObject[] firelogs;
 
@@ -63,7 +63,8 @@ namespace Ginox.BlackCauldron.Alchemy
 
         private void SetFireActive(bool state)
         {
-            light.SetActive(state);
+            foreach (var fire in fireParticles)
+                fire.SetActive(state);
         }
 
         private void OnTriggerEnter(Collider other)
