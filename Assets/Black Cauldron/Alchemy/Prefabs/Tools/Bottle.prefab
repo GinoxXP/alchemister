@@ -64,7 +64,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 2
 --- !u!114 &6947047793000982913
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -235,10 +235,6 @@ MonoBehaviour:
   - {fileID: 8640271678643862837}
   - {fileID: 7400022367634209747}
   - {fileID: 3325580864541381471}
-  wholeObjects:
-  - {fileID: 1464081245595086724}
-  - {fileID: 5632807166667225876}
-  - {fileID: 147671623247724488}
 --- !u!1 &7293207225789292837
 GameObject:
   m_ObjectHideFlags: 0
@@ -467,11 +463,6 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1304591641185336307}
   m_SourcePrefab: {fileID: 100100000, guid: 17f5ebc0978b2f940be9660fdad856d4, type: 3}
---- !u!1 &147671623247724488 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6851099923480767336, guid: 17f5ebc0978b2f940be9660fdad856d4, type: 3}
-  m_PrefabInstance: {fileID: 6710184894348334240}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1464081245595086724 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -3941164549346772188, guid: 17f5ebc0978b2f940be9660fdad856d4, type: 3}
@@ -855,11 +846,6 @@ MonoBehaviour:
   m_FarAttachMode: 0
   velocityTrashold: 2
   jumpAngleDegree: 60
---- !u!1 &5632807166667225876 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1383904561473417140, guid: 17f5ebc0978b2f940be9660fdad856d4, type: 3}
-  m_PrefabInstance: {fileID: 6710184894348334240}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6527374913625289547 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 17f5ebc0978b2f940be9660fdad856d4, type: 3}
