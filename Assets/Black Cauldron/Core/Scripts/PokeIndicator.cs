@@ -9,11 +9,6 @@ namespace Ginox.BlackCauldron.Core
         [SerializeField]
         private TMP_Text indicator;
 
-        private void Awake()
-        {
-            indicator.text = string.Empty;
-        }
-
         public void OnHoverEntered(HoverEnterEventArgs args)
         {
             if (!args.interactableObject.transform.TryGetComponent<IPokeIndicatorDisplay>(out var pokeIndicatorDisplay))
