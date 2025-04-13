@@ -18,7 +18,6 @@ namespace Ginox.BlackCauldron.Core
         {
             var impulse = collision.impulse.magnitude / Time.fixedDeltaTime;
             impulse /= 100f; // kg * m / s
-            Debug.Log($"Impulse detected: {impulse}");
             Impacted?.Invoke(impulse);
         }
 
