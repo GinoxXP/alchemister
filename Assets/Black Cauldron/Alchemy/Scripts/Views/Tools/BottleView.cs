@@ -2,7 +2,6 @@
 using Ginox.BlackCauldron.Alchemy.Models;
 using Ginox.BlackCauldron.Core;
 using UnityEngine;
-using UnityEngine.XR.Interaction.Toolkit.Interactables;
 using Zenject;
 using UnityEngine.Localization;
 
@@ -16,6 +15,7 @@ namespace Ginox.BlackCauldron.Alchemy.Views.Tools
 
         private BottleViewModel bottleViewModel;
         private TurnOverBehaviour turnOverBehaviour;
+        private ImpactBehaviour impactBehaviour;
         private LocalizedString localizedName;
 
         public BottleViewModel BottleViewModel => bottleViewModel;
@@ -34,6 +34,9 @@ namespace Ginox.BlackCauldron.Alchemy.Views.Tools
         {
             turnOverBehaviour = GetComponent<TurnOverBehaviour>();
             turnOverBehaviour.TurnOverStateChanged += OnTurnOverStateChanged;
+
+            impactBehaviour = GetComponent<ImpactBehaviour>();
+            impactBehaviour.Impacted += OnImpacted;
 
             if (BottleViewModel.Potion != null)
                 localizedName = new LocalizedString("Potions", BottleViewModel.Potion.NameKey);
@@ -93,6 +96,20 @@ namespace Ginox.BlackCauldron.Alchemy.Views.Tools
 
             if (state)
                 Drain();
+        }
+
+        private void OnImpacted(float impulse)
+        {
+            if (impulse <= impactBehaviour.Fragility)
+                return;
+
+            Destruct();
+        }
+
+        private void Destruct()
+        {
+            impactBehaviour.Fracture();
+            Destroy(gameObject);
         }
 
         private void Drain()
