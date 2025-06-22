@@ -95,6 +95,30 @@ MonoBehaviour:
   antiBaldnessLotionMaterial: {fileID: 2100000, guid: 52f1d293a67cfff429bcb9a6ae44c56c, type: 2}
   thickHairPotionMaterial: {fileID: 2100000, guid: 4dce6ac7f5cb2d341b6861e0b1b9a8f9, type: 2}
   ointmentForRestoringLostFingersMaterial: {fileID: 2100000, guid: 5a69c2e2b478efc4aa8ffae435187690, type: 2}
+  abbrassionOintmentMaterial: {fileID: 2100000, guid: 58c8e3d042838dd4696a6d9e3355bcdf, type: 2}
+  beeCatalystMaterial: {fileID: 2100000, guid: b9780b4f0e6a70a498b766b1a3771472, type: 2}
+  fertilizerMaterial: {fileID: 2100000, guid: d173f858dd11fed4b90bd694c29e0c51, type: 2}
+  healingPotionMaterial: {fileID: 2100000, guid: ceae7af372e564044baadd5acda57bfb, type: 2}
+  staminaPotionMaterial: {fileID: 2100000, guid: 8ab2c62651b85c14ca5cbcbc61dbd20b, type: 2}
+  inspirationPotionMaterial: {fileID: 2100000, guid: 432c8225750143147b90802a1825a06d, type: 2}
+  masteryPotionMaterial: {fileID: 2100000, guid: 18bd98a057b4f3c4c9c248299a5c14fd, type: 2}
+  mindfullnessPotionMaterial: {fileID: 2100000, guid: dced6e3284c41fd4ba86b96f621a7114, type: 2}
+  defencePotionMaterial: {fileID: 2100000, guid: 8e4c55e48a3d2b647ba4fac1bf9ea1b1, type: 2}
+  perseverancePotionMaterial: {fileID: 2100000, guid: 23a96ea3fca873a40a23c6f5de0c3265, type: 2}
+  strengthPotionMaterial: {fileID: 2100000, guid: 5cde0cd3f51549e4e84fc0d84428304d, type: 2}
+  charismaPotionMaterial: {fileID: 2100000, guid: 83641371f769002459e37c5e13cf4ae0, type: 2}
+  deceptionProtectionPotionMaterial: {fileID: 2100000, guid: 65964fff0eb2e694b98e907506683a6b, type: 2}
+  stealthPotionMaterial: {fileID: 2100000, guid: 86162b481636733469794efcf723b363, type: 2}
+  calmingPotionMaterial: {fileID: 2100000, guid: ad06b71466b5b474fa13f226b5846a86, type: 2}
+  mentalClarityPotionMaterial: {fileID: 2100000, guid: 31e857ae26541ea409365c0769f111c3, type: 2}
+  spiritStrengthPotionMaterial: {fileID: 2100000, guid: 489a740d39b00e64faf87c3f88b99075, type: 2}
+  charmPotionMaterial: {fileID: 2100000, guid: 53b64ea7d6d5c164e9b21c59af0537b1, type: 2}
+  memoryPotionMaterial: {fileID: 2100000, guid: 84babea391f5ab64babbcacfb42de8c9, type: 2}
+  rejuvenationPotionMaterial: {fileID: 2100000, guid: fb5985056627133479c0d4158345bff4, type: 2}
+  wisdomPotionMaterial: {fileID: 2100000, guid: 8505c93e723805d488071acd58dde51c, type: 2}
+  invisibilityPotionMaterial: {fileID: 2100000, guid: b64fb16bad5e96f49af6b2de73002877, type: 2}
+  oblivionPotionMaterial: {fileID: 2100000, guid: 75593eae21a02ec46922b0ec50be8fc5, type: 2}
+  temporaryInvulnerabilityPotionMaterial: {fileID: 2100000, guid: 969a30952dfbdfd4eb194e3fb6ed69c5, type: 2}
   ash: {fileID: 4669268222328994004, guid: 05bbbc6b7b08561418ae7886ff565323, type: 3}
   bayLeafs: {fileID: 2617457135415251914, guid: 18f861ff4aa9fb0438fb9dcc173ee09d, type: 3}
   cattailCob: {fileID: 4046488857747730717, guid: 70cd56d8ff56c5a4eb22e6e6fa7fa09e, type: 3}

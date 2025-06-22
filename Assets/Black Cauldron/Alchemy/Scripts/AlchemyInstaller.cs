@@ -5,7 +5,6 @@ using Ginox.BlackCauldron.Alchemy.Models;
 using Ginox.BlackCauldron.Alchemy.Models.Potions;
 using Ginox.BlackCauldron.Alchemy.Models.Ingredients;
 using Ginox.BlackCauldron.Alchemy.Services;
-using Ginox.BlackCauldron.Alchemy.Views;
 using Ginox.BlackCauldron.Alchemy.Views.Ingredients;
 using Ginox.BlackCauldron.Alchemy.Views.Tools;
 using UnityEngine;
@@ -15,31 +14,78 @@ using Ginox.BlackCauldron.Alchemy.Models.Tools;
 public class AlchemyInstaller : MonoInstaller
 {
     #region PotionMaterials
+
+    #region Level1
     [SerializeField]
-    private Material blueUselessPotionMaterial;
+    private Material abrassionOintmentMaterial;
     [SerializeField]
-    private Material cyanStrangePotionMaterial;
+    private Material beeCatalystMaterial;
     [SerializeField]
-    private Material greenSweetPotionMaterial;
+    private Material fertilizerMaterial;
     [SerializeField]
-    private Material orangeSaltyPotionMaterial;
+    private Material healingPotionMaterial;
     [SerializeField]
-    private Material pinkMysteryPotionMaterial;
-    [SerializeField]
-    private Material redCommonPotionMaterial;
-    [SerializeField]
-    private Material yellowFoulSmellingPotionMaterial;
-    [SerializeField]
-    private Material coughSyrupMaterial;
-    [SerializeField]
-    private Material tinctureForRunnyNoseMaterial;
-    [SerializeField]
-    private Material antiBaldnessLotionMaterial;
-    [SerializeField]
-    private Material thickHairPotionMaterial;
-    [SerializeField]
-    private Material ointmentForRestoringLostFingersMaterial;
+    private Material staminaPotionMaterial;
     #endregion
+    
+    #region Level2
+    [SerializeField]
+    private Material inspirationPotionMaterial;
+    [SerializeField]
+    private Material masteryPotionMaterial;
+    [SerializeField]
+    private Material mindfullnessPotionMaterial;
+    #endregion
+    
+    #region Level3
+    [SerializeField]
+    private Material defencePotionMaterial;
+    [SerializeField]
+    private Material perseverancePotionMaterial;
+    [SerializeField]
+    private Material strengthPotionMaterial;
+    #endregion
+    
+    #region Level4
+    [SerializeField]
+    private Material charismaPotionMaterial;
+    [SerializeField]
+    private Material deceptionProtectionPotionMaterial;
+    [SerializeField]
+    private Material stealthPotionMaterial;
+    #endregion
+    
+    #region Level5
+    [SerializeField]
+    private Material calmingPotionMaterial;
+    [SerializeField]
+    private Material mentalClarityPotionMaterial;
+    [SerializeField]
+    private Material spiritStrengthPotionMaterial;
+    #endregion
+    
+    #region Level6
+    [SerializeField]
+    private Material charmPotionMaterial;
+    [SerializeField]
+    private Material memoryPotionMaterial;
+    [SerializeField]
+    private Material rejuvenationPotionMaterial;
+    [SerializeField]
+    private Material wisdomPotionMaterial;
+    #endregion
+    
+    #region Level7
+    [SerializeField]
+    private Material invisibilityPotionMaterial;
+    [SerializeField]
+    private Material oblivionPotionMaterial; 
+    [SerializeField]
+    private Material temporaryInvulnerabilityPotionMaterial;
+    #endregion
+    
+    #endregion
+
 
     #region Ingredients
     [SerializeField]
@@ -201,110 +247,196 @@ public class AlchemyInstaller : MonoInstaller
     {
         var brewingService = Container.Resolve<IBrewingService>();
 
+        #region Level1
         var ash = Container.Resolve<Ash>();
         var bayLeafs = Container.Resolve<BayLeafs>();
         var cattailCob = Container.Resolve<CattailCob>();
-        var flyAgaric = Container.Resolve<FlyAgaric>();
-        var licoriceRoot = Container.Resolve<LicoriceRoot>();
+        #endregion
+        
+        #region Level2
         var pineCone = Container.Resolve<PineCone>();
         var salt = Container.Resolve<Salt>();
-
         var paprika = Container.Resolve<Paprika>();
+        #endregion
+        
+        #region Level3
         var herringSkin = Container.Resolve<HerringSkin>();
+        var flyAgaric = Container.Resolve<FlyAgaric>();
+        var licoriceRoot = Container.Resolve<LicoriceRoot>();
+        #endregion
+        
+        #region Level4
+        var groundBayLeafs = Container.Resolve<GroundBayLeafs>();
+        var groundCattailCob = Container.Resolve<GroundCattailCob>();
+        var groundFlyAgaric = Container.Resolve<GroundFlyAgaric>();
+        var groundLicoriceRoot = Container.Resolve<GroundLicoriceRoot>();
+        var groundPineCone = Container.Resolve<GroundPineCone>();
+        var groundHerringSkin = Container.Resolve<GroundHerringSkin>();
+        #endregion
+        
+        #region Level5
         var mint = Container.Resolve<Mint>();
         var beaverTail = Container.Resolve<BeaverTail>();
         var coal = Container.Resolve<Coal>();
-
-        Container.Bind<BlueUselessPotion>().FromMethod(x => new BlueUselessPotion(blueUselessPotionMaterial)).AsTransient();
-        Container.Bind<CyanStrangePotion>().FromMethod(x => new CyanStrangePotion(cyanStrangePotionMaterial)).AsTransient();
-        Container.Bind<GreenSweetPotion>().FromMethod(x => new GreenSweetPotion(greenSweetPotionMaterial)).AsTransient();
-        Container.Bind<OrangeSaltyPotion>().FromMethod(x => new OrangeSaltyPotion(orangeSaltyPotionMaterial)).AsTransient();
-        Container.Bind<PinkMysteryPotion>().FromMethod(x => new PinkMysteryPotion(pinkMysteryPotionMaterial)).AsTransient();
-        Container.Bind<RedCommonPotion>().FromMethod(x => new RedCommonPotion(redCommonPotionMaterial)).AsTransient();
-        Container.Bind<YellowFoulSmellingPotion>().FromMethod(x => new YellowFoulSmellingPotion(yellowFoulSmellingPotionMaterial)).AsTransient();
-
-        Container.Bind<CoughSyrup>().FromMethod(x => new CoughSyrup(coughSyrupMaterial)).AsTransient();
-        Container.Bind<TinctureForRunnyNose>().FromMethod(x => new TinctureForRunnyNose(tinctureForRunnyNoseMaterial)).AsTransient();
-        Container.Bind<AntiBaldnessLotion>().FromMethod(x => new AntiBaldnessLotion(antiBaldnessLotionMaterial)).AsTransient();
-        Container.Bind<ThickHairPotion>().FromMethod(x => new ThickHairPotion(thickHairPotionMaterial)).AsTransient();
-        Container.Bind<OintmentForRestoringLostFingers>().FromMethod(x => new OintmentForRestoringLostFingers(ointmentForRestoringLostFingersMaterial)).AsTransient();
-
-        #region Level1
-        var blueUselessPotionRecipe = new Recipe(Container.Resolve<BlueUselessPotion>())
-            .RegisterIngredient(ash)
-            .RegisterIngredient(bayLeafs)
-            .RegisterIngredient(cattailCob);
-        var cyanStrangePotionRecipe = new Recipe(Container.Resolve<CyanStrangePotion>())
-            .RegisterIngredient(ash)
-            .RegisterIngredient(bayLeafs)
-            .RegisterIngredient(flyAgaric);
-        var greenSweetPotionRecipe = new Recipe(Container.Resolve<GreenSweetPotion>())
-            .RegisterIngredient(ash)
-            .RegisterIngredient(bayLeafs)
-            .RegisterIngredient(licoriceRoot);
-        var orangeSaltyPotionRecipe = new Recipe(Container.Resolve<OrangeSaltyPotion>())
-            .RegisterIngredient(ash)
-            .RegisterIngredient(bayLeafs)
-            .RegisterIngredient(pineCone);
-        var pinkMysteryPotionRecipe = new Recipe(Container.Resolve<PinkMysteryPotion>())
-            .RegisterIngredient(ash)
-            .RegisterIngredient(bayLeafs)
-            .RegisterIngredient(salt);
-        var redCommonPotionRecipe = new Recipe(Container.Resolve<RedCommonPotion>())
-            .RegisterIngredient(ash)
-            .RegisterIngredient(bayLeafs)
-            .RegisterIngredient(ash);
-        var yellowFoulSmellingPotionRecipe = new Recipe(Container.Resolve<YellowFoulSmellingPotion>())
-            .RegisterIngredient(ash)
-            .RegisterIngredient(bayLeafs)
-            .RegisterIngredient(bayLeafs);
-
-        brewingService.RegisterRecipe(blueUselessPotionRecipe);
-        brewingService.RegisterRecipe(cyanStrangePotionRecipe);
-        brewingService.RegisterRecipe(greenSweetPotionRecipe);
-        brewingService.RegisterRecipe(orangeSaltyPotionRecipe);
-        brewingService.RegisterRecipe(pinkMysteryPotionRecipe);
-        brewingService.RegisterRecipe(redCommonPotionRecipe);
-        brewingService.RegisterRecipe(yellowFoulSmellingPotionRecipe);
+        var groundMint = Container.Resolve<GroundMint>();
+        var coalPowder = Container.Resolve<CoalPowder>();
         #endregion
-
+        
+        #region Level1
+        Container.Bind<AbrasionsOintment>().FromMethod(x => new AbrasionsOintment(abrassionOintmentMaterial)).AsTransient();
+        Container.Bind<BeeCatalyst>().FromMethod(x => new BeeCatalyst(beeCatalystMaterial)).AsTransient();
+        Container.Bind<StrongFertilizer>().FromMethod(x => new StrongFertilizer(fertilizerMaterial)).AsTransient();
+        Container.Bind<HealingPotion>().FromMethod(x => new HealingPotion(healingPotionMaterial)).AsTransient();
+        Container.Bind<StaminaPotion>().FromMethod(x => new StaminaPotion(staminaPotionMaterial)).AsTransient();
+        
+        brewingService.RegisterRecipe(
+            new Recipe(Container.Resolve<AbrasionsOintment>())
+                .RegisterIngredient(ash)
+                .RegisterIngredient(bayLeafs));
+        brewingService.RegisterRecipe(
+            new Recipe(Container.Resolve<BeeCatalyst>())
+                .RegisterIngredient(ash)
+                .RegisterIngredient(cattailCob));
+        brewingService.RegisterRecipe(
+            new Recipe(Container.Resolve<StrongFertilizer>())
+                .RegisterIngredient(ash)
+                .RegisterIngredient(ash));
+        brewingService.RegisterRecipe(
+            new Recipe(Container.Resolve<HealingPotion>())
+                .RegisterIngredient(bayLeafs)
+                .RegisterIngredient(cattailCob));
+        brewingService.RegisterRecipe(
+            new Recipe(Container.Resolve<StaminaPotion>())
+                .RegisterIngredient(cattailCob)
+                .RegisterIngredient(cattailCob));
+        #endregion
+        
         #region Level2
-        var coughSyrupRecipe = new Recipe(Container.Resolve<CoughSyrup>())
-            .RegisterIngredient(ash)
-            .RegisterIngredient(coal)
-            .RegisterIngredient(mint)
-            .RegisterIngredient(bayLeafs)
-            .RegisterIngredient(salt);
-        var tinctureForRunnyNoseRecipe = new Recipe(Container.Resolve<TinctureForRunnyNose>())
-            .RegisterIngredient(coal)
-            .RegisterIngredient(ash)
-            .RegisterIngredient(salt)
-            .RegisterIngredient(flyAgaric)
-            .RegisterIngredient(licoriceRoot);
-        var antiBaldnessLotionRecipe = new Recipe(Container.Resolve<AntiBaldnessLotion>())
-            .RegisterIngredient(bayLeafs)
-            .RegisterIngredient(coal)
-            .RegisterIngredient(pineCone)
-            .RegisterIngredient(beaverTail)
-            .RegisterIngredient(cattailCob);
-        var thickHairPotionRecipe = new Recipe(Container.Resolve<ThickHairPotion>())
-            .RegisterIngredient(coal)
-            .RegisterIngredient(ash)
-            .RegisterIngredient(flyAgaric)
-            .RegisterIngredient(ash)
-            .RegisterIngredient(coal);
-        var ointmentForRestoringLostFingersRecipe = new Recipe(Container.Resolve<OintmentForRestoringLostFingers>())
-            .RegisterIngredient(flyAgaric)
-            .RegisterIngredient(coal)
-            .RegisterIngredient(beaverTail)
-            .RegisterIngredient(licoriceRoot)
-            .RegisterIngredient(bayLeafs);
-
-        brewingService.RegisterRecipe(coughSyrupRecipe);
-        brewingService.RegisterRecipe(tinctureForRunnyNoseRecipe);
-        brewingService.RegisterRecipe(antiBaldnessLotionRecipe);
-        brewingService.RegisterRecipe(thickHairPotionRecipe);
-        brewingService.RegisterRecipe(ointmentForRestoringLostFingersRecipe);
+        Container.Bind<InspirationPotion>().FromMethod(x => new InspirationPotion(inspirationPotionMaterial)).AsTransient();
+        Container.Bind<MasteryPotion>().FromMethod(x => new MasteryPotion(masteryPotionMaterial)).AsTransient();
+        Container.Bind<MindfulnessPotion>().FromMethod(x => new MindfulnessPotion(mindfullnessPotionMaterial)).AsTransient();
+        
+        brewingService.RegisterRecipe(
+            new Recipe(Container.Resolve<InspirationPotion>())
+                .RegisterIngredient(pineCone)
+                .RegisterIngredient(ash)
+                .RegisterIngredient(cattailCob));
+        brewingService.RegisterRecipe(
+            new Recipe(Container.Resolve<MasteryPotion>())
+                .RegisterIngredient(salt)
+                .RegisterIngredient(paprika)
+                .RegisterIngredient(salt));
+        brewingService.RegisterRecipe(
+            new Recipe(Container.Resolve<MasteryPotion>())
+                .RegisterIngredient(paprika)
+                .RegisterIngredient(salt)
+                .RegisterIngredient(cattailCob));
+        #endregion
+        
+        #region Level3
+        Container.Bind<DefencePotion>().FromMethod(x => new DefencePotion(defencePotionMaterial)).AsTransient();
+        Container.Bind<PerseverancePotion>().FromMethod(x => new PerseverancePotion(perseverancePotionMaterial)).AsTransient();
+        Container.Bind<StrengthPotion>().FromMethod(x => new StrengthPotion(strengthPotionMaterial)).AsTransient();
+        
+        brewingService.RegisterRecipe(
+            new Recipe(Container.Resolve<DefencePotion>())
+                .RegisterIngredient(herringSkin)
+                .RegisterIngredient(ash)
+                .RegisterIngredient(paprika)
+                .RegisterIngredient(salt));
+        brewingService.RegisterRecipe(
+            new Recipe(Container.Resolve<PerseverancePotion>())
+                .RegisterIngredient(flyAgaric)
+                .RegisterIngredient(salt)
+                .RegisterIngredient(licoriceRoot)
+                .RegisterIngredient(cattailCob));
+        #endregion
+        
+        #region Level4
+        Container.Bind<CharismaPotion>().FromMethod(x => new CharismaPotion(charismaPotionMaterial)).AsTransient();
+        Container.Bind<DeceptionProtectionPotion>().FromMethod(x => new DeceptionProtectionPotion(deceptionProtectionPotionMaterial)).AsTransient();
+        Container.Bind<StealthPotion>().FromMethod(x => new StealthPotion(stealthPotionMaterial)).AsTransient();
+        
+        brewingService.RegisterRecipe(
+            new Recipe(Container.Resolve<CharismaPotion>())
+                .RegisterIngredient(groundBayLeafs)
+                .RegisterIngredient(ash)
+                .RegisterIngredient(licoriceRoot)
+                .RegisterIngredient(salt)
+                .RegisterIngredient(groundCattailCob)
+                .RegisterIngredient(flyAgaric)
+                .RegisterIngredient(paprika));
+        brewingService.RegisterRecipe(
+            new Recipe(Container.Resolve<DeceptionProtectionPotion>())
+                .RegisterIngredient(groundFlyAgaric)
+                .RegisterIngredient(groundHerringSkin)
+                .RegisterIngredient(groundLicoriceRoot)
+                .RegisterIngredient(cattailCob)
+                .RegisterIngredient(salt)
+                .RegisterIngredient(pineCone)
+                .RegisterIngredient(groundBayLeafs));
+        brewingService.RegisterRecipe(
+            new Recipe(Container.Resolve<StealthPotion>())
+                .RegisterIngredient(groundPineCone)
+                .RegisterIngredient(paprika)
+                .RegisterIngredient(licoriceRoot)
+                .RegisterIngredient(ash)
+                .RegisterIngredient(flyAgaric)
+                .RegisterIngredient(herringSkin)
+                .RegisterIngredient(salt));
+        #endregion
+        
+        #region Level5
+        Container.Bind<CalmingPotion>().FromMethod(x => new CalmingPotion(calmingPotionMaterial)).AsTransient();
+        Container.Bind<MentalClarityPotion>().FromMethod(x => new MentalClarityPotion(mentalClarityPotionMaterial)).AsTransient();
+        Container.Bind<SpiritStrengtheningPotion>().FromMethod(x => new SpiritStrengtheningPotion(spiritStrengthPotionMaterial)).AsTransient();
+        
+        brewingService.RegisterRecipe(
+            new Recipe(Container.Resolve<CalmingPotion>())
+                .RegisterIngredient(mint)
+                .RegisterIngredient(flyAgaric)
+                .RegisterIngredient(groundBayLeafs)
+                .RegisterIngredient(coal)
+                .RegisterIngredient(coalPowder)
+                .RegisterIngredient(pineCone)
+                .RegisterIngredient(ash)
+                .RegisterIngredient(cattailCob)
+                .RegisterIngredient(paprika));
+        brewingService.RegisterRecipe(
+            new Recipe(Container.Resolve<MentalClarityPotion>())
+                .RegisterIngredient(beaverTail)
+                .RegisterIngredient(coal)
+                .RegisterIngredient(pineCone)
+                .RegisterIngredient(mint)
+                .RegisterIngredient(groundBayLeafs)
+                .RegisterIngredient(groundLicoriceRoot)
+                .RegisterIngredient(salt)
+                .RegisterIngredient(paprika)
+                .RegisterIngredient(herringSkin));
+        brewingService.RegisterRecipe(
+            new Recipe(Container.Resolve<SpiritStrengtheningPotion>())
+                .RegisterIngredient(groundMint)
+                .RegisterIngredient(groundBayLeafs)
+                .RegisterIngredient(herringSkin)
+                .RegisterIngredient(salt)
+                .RegisterIngredient(ash)
+                .RegisterIngredient(beaverTail)
+                .RegisterIngredient(groundCattailCob)
+                .RegisterIngredient(pineCone)
+                .RegisterIngredient(groundFlyAgaric));
+        #endregion
+        
+        #region Level6
+        Container.Bind<CharmPotion>().FromMethod(x => new CharmPotion(charmPotionMaterial)).AsTransient();
+        Container.Bind<MemoryPotion>().FromMethod(x => new MemoryPotion(memoryPotionMaterial)).AsTransient();
+        Container.Bind<RejuvenationPotion>().FromMethod(x => new RejuvenationPotion(rejuvenationPotionMaterial)).AsTransient();
+        Container.Bind<WisdomPotion>().FromMethod(x => new WisdomPotion(wisdomPotionMaterial)).AsTransient();
+        #endregion
+        
+        #region Level7
+        Container.Bind<InvisibilityPotion>().FromMethod(x => new InvisibilityPotion(invisibilityPotionMaterial)).AsTransient();
+        Container.Bind<OblivionPotion>().FromMethod(x => new OblivionPotion(oblivionPotionMaterial)).AsTransient();
+        Container.Bind<TemporaryInvulnerabilityPotion>().FromMethod(x => new TemporaryInvulnerabilityPotion(temporaryInvulnerabilityPotionMaterial)).AsTransient();
         #endregion
     }
 
@@ -348,24 +480,27 @@ public class AlchemyInstaller : MonoInstaller
     {
         var alembicService = Container.Resolve<IAlembicService>();
 
-        #region InputPotions
-        var blueUselessPotion = Container.Resolve<BlueUselessPotion>();
-        var cyanStrangePotion = Container.Resolve<CyanStrangePotion>();
-        var greenSweetPotion = Container.Resolve<GreenSweetPotion>();
-        var orangeSaltyPotion = Container.Resolve<OrangeSaltyPotion>();
-        var yellowFoulSmellingPotion = Container.Resolve<YellowFoulSmellingPotion>();
+        var spiritStrengtheningPotion = Container.Resolve<SpiritStrengtheningPotion>();
+        var mentalClarityPotion = Container.Resolve<MentalClarityPotion>();
+        var stealthPotion = Container.Resolve<StealthPotion>();
+        var healingPotion = Container.Resolve<HealingPotion>();
+        
+        var charmPotion = Container.Resolve<CharmPotion>();
+        var memoryPotion = Container.Resolve<MemoryPotion>();
+        var rejuvenationPotion = Container.Resolve<RejuvenationPotion>();
+        var wisdomPotion = Container.Resolve<WisdomPotion>();
+        
+        var invisibilityPotion = Container.Resolve<InvisibilityPotion>();
+        var oblivionPotion = Container.Resolve<OblivionPotion>();
+        var temporaryInvulnerabilityPotion = Container.Resolve<TemporaryInvulnerabilityPotion>();
 
-        var coughSyrup = Container.Resolve<CoughSyrup>();
-        var tinctureForRunnyNose = Container.Resolve<TinctureForRunnyNose>();
-        var antiBaldnessLotion = Container.Resolve<AntiBaldnessLotion>();
-        var thickHairPotion = Container.Resolve<ThickHairPotion>();
-        var ointmentForRestoringLostFingers = Container.Resolve<OintmentForRestoringLostFingers>();
-        #endregion
-
-        alembicService.RegisterTransformation(new PotionTransformation(blueUselessPotion, coughSyrup));
-        alembicService.RegisterTransformation(new PotionTransformation(cyanStrangePotion, tinctureForRunnyNose));
-        alembicService.RegisterTransformation(new PotionTransformation(greenSweetPotion, antiBaldnessLotion));
-        alembicService.RegisterTransformation(new PotionTransformation(orangeSaltyPotion, thickHairPotion));
-        alembicService.RegisterTransformation(new PotionTransformation(yellowFoulSmellingPotion, ointmentForRestoringLostFingers));
+        alembicService.RegisterTransformation(new PotionTransformation(mentalClarityPotion, charmPotion));
+        alembicService.RegisterTransformation(new PotionTransformation(spiritStrengtheningPotion, memoryPotion));
+        alembicService.RegisterTransformation(new PotionTransformation(healingPotion, rejuvenationPotion));
+        alembicService.RegisterTransformation(new PotionTransformation(memoryPotion, wisdomPotion));
+        
+        alembicService.RegisterTransformation(new PotionTransformation(stealthPotion, invisibilityPotion));
+        alembicService.RegisterTransformation(new PotionTransformation(wisdomPotion, oblivionPotion));
+        alembicService.RegisterTransformation(new PotionTransformation(rejuvenationPotion, temporaryInvulnerabilityPotion));
     }
 }

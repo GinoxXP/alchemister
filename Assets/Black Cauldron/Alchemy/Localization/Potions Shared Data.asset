@@ -63,6 +63,102 @@ MonoBehaviour:
     m_Key: OintmentForRestoringLostFingers
     m_Metadata:
       m_Items: []
+  - m_Id: 102501074027122688
+    m_Key: AbrasionsOintment
+    m_Metadata:
+      m_Items: []
+  - m_Id: 102501354953216000
+    m_Key: BeeCatalyst
+    m_Metadata:
+      m_Items: []
+  - m_Id: 102501608935100416
+    m_Key: CalmingPotion
+    m_Metadata:
+      m_Items: []
+  - m_Id: 102501775159562240
+    m_Key: CharismaPotion
+    m_Metadata:
+      m_Items: []
+  - m_Id: 102501920135680000
+    m_Key: CharmPotion
+    m_Metadata:
+      m_Items: []
+  - m_Id: 102502131029479424
+    m_Key: DeceptionProtectionPotion
+    m_Metadata:
+      m_Items: []
+  - m_Id: 102502303000137728
+    m_Key: DefencePotion
+    m_Metadata:
+      m_Items: []
+  - m_Id: 102502365080031232
+    m_Key: HealingPotion
+    m_Metadata:
+      m_Items: []
+  - m_Id: 102502462962503680
+    m_Key: InspirationPotion
+    m_Metadata:
+      m_Items: []
+  - m_Id: 102502708434145280
+    m_Key: InvisibilityPotion
+    m_Metadata:
+      m_Items: []
+  - m_Id: 102502821650993152
+    m_Key: MasteryPotion
+    m_Metadata:
+      m_Items: []
+  - m_Id: 102502913103597568
+    m_Key: MemoryPotion
+    m_Metadata:
+      m_Items: []
+  - m_Id: 102503017919254528
+    m_Key: MentalClarityPotion
+    m_Metadata:
+      m_Items: []
+  - m_Id: 102503247649673216
+    m_Key: MindfulnessPotion
+    m_Metadata:
+      m_Items: []
+  - m_Id: 102503326527754240
+    m_Key: OblivionPotion
+    m_Metadata:
+      m_Items: []
+  - m_Id: 102503407100334080
+    m_Key: PerseverancePotion
+    m_Metadata:
+      m_Items: []
+  - m_Id: 102503583152050176
+    m_Key: RejuvenationPotion
+    m_Metadata:
+      m_Items: []
+  - m_Id: 102503773103689728
+    m_Key: SpiritStrengtheningPotion
+    m_Metadata:
+      m_Items: []
+  - m_Id: 102503883007037440
+    m_Key: StaminaPotion
+    m_Metadata:
+      m_Items: []
+  - m_Id: 102504082924343296
+    m_Key: StealthPotion
+    m_Metadata:
+      m_Items: []
+  - m_Id: 102504211853053952
+    m_Key: StrengthPotion
+    m_Metadata:
+      m_Items: []
+  - m_Id: 102504387707637760
+    m_Key: StrongFertilizer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 102504475800604672
+    m_Key: TemporaryInvulnerabilityPotion
+    m_Metadata:
+      m_Items: []
+  - m_Id: 102504588136648704
+    m_Key: WisdomPotion
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

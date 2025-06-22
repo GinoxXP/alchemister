@@ -22,7 +22,10 @@ namespace Ginox.BlackCauldron.Progression
                 progressionService
                     .AddLevel(new Level(2))
                     .AddLevel(new Level(3))
-                    .AddLevel(new Level(5));
+                    .AddLevel(new Level(5))
+                    .AddLevel(new Level(7))
+                    .AddLevel(new Level(10))
+                    .AddLevel(new Level(15));
 
                 return progressionService;
             }).AsSingle();

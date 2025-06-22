@@ -66,6 +66,102 @@ MonoBehaviour:
     m_Localized: Ointment for restoring lost fingers
     m_Metadata:
       m_Items: []
+  - m_Id: 102501074027122688
+    m_Localized: Ointment for abrasions
+    m_Metadata:
+      m_Items: []
+  - m_Id: 102501354953216000
+    m_Localized: "Bee \u0441atalyst"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 102501608935100416
+    m_Localized: Potion of calming
+    m_Metadata:
+      m_Items: []
+  - m_Id: 102501775159562240
+    m_Localized: Potion of charisma
+    m_Metadata:
+      m_Items: []
+  - m_Id: 102501920135680000
+    m_Localized: Potion of charm
+    m_Metadata:
+      m_Items: []
+  - m_Id: 102502131029479424
+    m_Localized: Potion of deception protection
+    m_Metadata:
+      m_Items: []
+  - m_Id: 102502303000137728
+    m_Localized: Potion of defence
+    m_Metadata:
+      m_Items: []
+  - m_Id: 102502365080031232
+    m_Localized: Potion of healing
+    m_Metadata:
+      m_Items: []
+  - m_Id: 102502462962503680
+    m_Localized: Potion of inspiration
+    m_Metadata:
+      m_Items: []
+  - m_Id: 102502708434145280
+    m_Localized: Potion of invisibility
+    m_Metadata:
+      m_Items: []
+  - m_Id: 102502821650993152
+    m_Localized: Potion of mastery
+    m_Metadata:
+      m_Items: []
+  - m_Id: 102502913103597568
+    m_Localized: Potion of memory
+    m_Metadata:
+      m_Items: []
+  - m_Id: 102503017919254528
+    m_Localized: Potion of mental clarity
+    m_Metadata:
+      m_Items: []
+  - m_Id: 102503247649673216
+    m_Localized: Potion of mindfulness
+    m_Metadata:
+      m_Items: []
+  - m_Id: 102503326527754240
+    m_Localized: Potion of oblivion
+    m_Metadata:
+      m_Items: []
+  - m_Id: 102503407100334080
+    m_Localized: Potion of perseverance
+    m_Metadata:
+      m_Items: []
+  - m_Id: 102503583152050176
+    m_Localized: Potion of rejuvenation
+    m_Metadata:
+      m_Items: []
+  - m_Id: 102503773103689728
+    m_Localized: Potion of spirit strengthening
+    m_Metadata:
+      m_Items: []
+  - m_Id: 102503883007037440
+    m_Localized: Potion of stamina
+    m_Metadata:
+      m_Items: []
+  - m_Id: 102504082924343296
+    m_Localized: Potion of stealth
+    m_Metadata:
+      m_Items: []
+  - m_Id: 102504211853053952
+    m_Localized: Potion of strength
+    m_Metadata:
+      m_Items: []
+  - m_Id: 102504387707637760
+    m_Localized: Strong fertilizer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 102504475800604672
+    m_Localized: Potion of temporary invulnerability
+    m_Metadata:
+      m_Items: []
+  - m_Id: 102504588136648704
+    m_Localized: Potion of wisdom
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

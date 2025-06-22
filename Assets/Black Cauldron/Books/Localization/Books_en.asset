@@ -18,12 +18,32 @@ MonoBehaviour:
   m_Metadata:
     m_Items: []
   m_TableData:
-  - m_Id: 5292920832
-    m_Localized: The beginer's alchemist's recipe book
+  - m_Id: 110855634214948864
+    m_Localized: A Guide to Basic Herbs and Simple Remedies
     m_Metadata:
       m_Items: []
-  - m_Id: 22002881502351360
-    m_Localized: Village doctor's recipe book
+  - m_Id: 110858580096946176
+    m_Localized: 'Practice alchemy: The Basics of Mixing and Proportions'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 110859633097936896
+    m_Localized: Tactics of using potions in combat
+    m_Metadata:
+      m_Items: []
+  - m_Id: 110859978830221312
+    m_Localized: 'Potions for trade: Increase profits and protect goods'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 110860294619369472
+    m_Localized: Sacred rituals and alchemical practices
+    m_Metadata:
+      m_Items: []
+  - m_Id: 110860537377296384
+    m_Localized: 'Secrets of Court Alchemy: Potions for Diplomacy and Power'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 110860988013318144
+    m_Localized: 'Alchemy of the Gods: Search for Lost Knowledge'
     m_Metadata:
       m_Items: []
   references:

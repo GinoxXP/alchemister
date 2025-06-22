@@ -15,12 +15,32 @@ MonoBehaviour:
   m_TableCollectionName: Books
   m_TableCollectionNameGuidString: b30c41b3713406147a720329b22e3631
   m_Entries:
-  - m_Id: 5292920832
-    m_Key: BeginerBook
+  - m_Id: 110855634214948864
+    m_Key: BasicHerbsSimpleRemediesGuide
     m_Metadata:
       m_Items: []
-  - m_Id: 22002881502351360
-    m_Key: VillageDoctorsRecipeBook
+  - m_Id: 110858580096946176
+    m_Key: PracticeAlchemy
+    m_Metadata:
+      m_Items: []
+  - m_Id: 110859633097936896
+    m_Key: CombatPotions
+    m_Metadata:
+      m_Items: []
+  - m_Id: 110859978830221312
+    m_Key: TradePotions
+    m_Metadata:
+      m_Items: []
+  - m_Id: 110860294619369472
+    m_Key: SacredPotions
+    m_Metadata:
+      m_Items: []
+  - m_Id: 110860537377296384
+    m_Key: CourtAlchemySecrets
+    m_Metadata:
+      m_Items: []
+  - m_Id: 110860988013318144
+    m_Key: GodsAlchemy
     m_Metadata:
       m_Items: []
   m_Metadata:

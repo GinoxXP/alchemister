@@ -10,52 +10,124 @@ namespace Ginox.BlackCauldron.Books
     {
         public override void InstallBindings()
         {
-            #region BeginerBook
-
-            Container.Bind<BeginerBook>().AsSingle();
-
-            Container.Bind<BeginerBookViewModel>().AsSingle();
-
             var brewingService = Container.Resolve<IBrewingService>();
 
-            var blueUselessPotion = brewingService.GetRecipe(Container.Resolve<BlueUselessPotion>());
-            var cyanStrangePotion = brewingService.GetRecipe(Container.Resolve<CyanStrangePotion>());
-            var greenSweetPotion = brewingService.GetRecipe(Container.Resolve<GreenSweetPotion>());
-            var orangeSaltyPotion = brewingService.GetRecipe(Container.Resolve<OrangeSaltyPotion>());
-            var pinkMysteryPotion = brewingService.GetRecipe(Container.Resolve<PinkMysteryPotion>());
-            var redCommonPotion = brewingService.GetRecipe(Container.Resolve<RedCommonPotion>());
-            var yellowFoulSmellingPotion = brewingService.GetRecipe(Container.Resolve<YellowFoulSmellingPotion>());
+            #region Level1
 
-            var beginerBookViewModel = Container.Resolve<BeginerBookViewModel>();
-            beginerBookViewModel.RegisterRecipe(blueUselessPotion);
-            beginerBookViewModel.RegisterRecipe(cyanStrangePotion);
-            beginerBookViewModel.RegisterRecipe(greenSweetPotion);
-            beginerBookViewModel.RegisterRecipe(orangeSaltyPotion);
-            beginerBookViewModel.RegisterRecipe(pinkMysteryPotion);
-            beginerBookViewModel.RegisterRecipe(redCommonPotion);
-            beginerBookViewModel.RegisterRecipe(yellowFoulSmellingPotion);
+            Container.Bind<BasicHerbsSimpleRemediesGuide>().AsSingle();
+            Container.Bind<BasicHerbsSimpleRemediesGuideViewModel>().AsSingle();
+            
+            var abrasionsOintment = brewingService.GetRecipe(Container.Resolve<AbrasionsOintment>());
+            var beeCatalyst = brewingService.GetRecipe(Container.Resolve<BeeCatalyst>());
+            var strongFertilizer = brewingService.GetRecipe(Container.Resolve<StrongFertilizer>());
+            var healingPotion = brewingService.GetRecipe(Container.Resolve<HealingPotion>());
+            var staminaPotion = brewingService.GetRecipe(Container.Resolve<StaminaPotion>());
+            
+            var basicHerbsSimpleRemediesGuideViewModel = Container.Resolve<BasicHerbsSimpleRemediesGuideViewModel>();
+            basicHerbsSimpleRemediesGuideViewModel.RegisterRecipe(abrasionsOintment);
+            basicHerbsSimpleRemediesGuideViewModel.RegisterRecipe(beeCatalyst);
+            basicHerbsSimpleRemediesGuideViewModel.RegisterRecipe(strongFertilizer);
+            basicHerbsSimpleRemediesGuideViewModel.RegisterRecipe(healingPotion);
+            basicHerbsSimpleRemediesGuideViewModel.RegisterRecipe(staminaPotion);
 
             #endregion
 
-            #region VillageDoctorBook
+            #region Level2
 
-            Container.Bind<VillageDoctorsRecipeBook>().AsSingle();
+            Container.Bind<PracticeAlchemy>().AsSingle();
+            Container.Bind<PracticeAlchemyViewModel>().AsSingle();
+            
+            var inspirationPotion = brewingService.GetRecipe(Container.Resolve<InspirationPotion>());
+            var masteryPotion = brewingService.GetRecipe(Container.Resolve<MasteryPotion>());
+            var mindfulnessPotion = brewingService.GetRecipe(Container.Resolve<MindfulnessPotion>());
+            
+            var practiceAlchemyViewModel = Container.Resolve<PracticeAlchemyViewModel>();
+            practiceAlchemyViewModel.RegisterRecipe(inspirationPotion);
+            practiceAlchemyViewModel.RegisterRecipe(masteryPotion);
+            practiceAlchemyViewModel.RegisterRecipe(mindfulnessPotion);
 
-            Container.Bind<VillageDoctorsRecipeBookViewModel>().AsSingle();
-
-            var coughSyrup = brewingService.GetRecipe(Container.Resolve<CoughSyrup>());
-            var tinctureForRunnyNose = brewingService.GetRecipe(Container.Resolve<TinctureForRunnyNose>());
-            var antiBaldnessLotion = brewingService.GetRecipe(Container.Resolve<AntiBaldnessLotion>());
-            var thickHairPotion = brewingService.GetRecipe(Container.Resolve<ThickHairPotion>());
-            var ointmentForRestoringLostFingers = brewingService.GetRecipe(Container.Resolve<OintmentForRestoringLostFingers>());
-
-            var villageDoctorsRecipeBookController = Container.Resolve<VillageDoctorsRecipeBookViewModel>();
-            villageDoctorsRecipeBookController.RegisterRecipe(coughSyrup);
-            villageDoctorsRecipeBookController.RegisterRecipe(tinctureForRunnyNose);
-            villageDoctorsRecipeBookController.RegisterRecipe(antiBaldnessLotion);
-            villageDoctorsRecipeBookController.RegisterRecipe(thickHairPotion);
-            villageDoctorsRecipeBookController.RegisterRecipe(ointmentForRestoringLostFingers);
-
+            #endregion
+            
+            #region Level3
+            
+            Container.Bind<CombatPotions>().AsSingle();
+            Container.Bind<CombatPotionsViewModel>().AsSingle();
+            
+            var defencePotion = brewingService.GetRecipe(Container.Resolve<DefencePotion>());
+            var perseverancePotion = brewingService.GetRecipe(Container.Resolve<PerseverancePotion>());
+            var strengthPotion = brewingService.GetRecipe(Container.Resolve<StrengthPotion>());
+            
+            var combatPotionsViewModel = Container.Resolve<CombatPotionsViewModel>();
+            combatPotionsViewModel.RegisterRecipe(defencePotion);
+            combatPotionsViewModel.RegisterRecipe(perseverancePotion);
+            combatPotionsViewModel.RegisterRecipe(strengthPotion);
+            
+            #endregion
+            
+            #region Level4
+            
+            Container.Bind<TradePotions>().AsSingle();
+            Container.Bind<TradePotionsViewModel>().AsSingle();
+            
+            var charismaPotion = brewingService.GetRecipe(Container.Resolve<CharismaPotion>());
+            var deceptionProtectionPotion = brewingService.GetRecipe(Container.Resolve<DeceptionProtectionPotion>());
+            var stealthPotion = brewingService.GetRecipe(Container.Resolve<StealthPotion>());
+            
+            var tradePotionsViewModel = Container.Resolve<TradePotionsViewModel>();
+            tradePotionsViewModel.RegisterRecipe(charismaPotion);
+            tradePotionsViewModel.RegisterRecipe(deceptionProtectionPotion);
+            tradePotionsViewModel.RegisterRecipe(stealthPotion);
+            
+            #endregion
+            
+            #region Level5
+            
+            Container.Bind<SacredPotions>().AsSingle();
+            Container.Bind<SacredPotionsViewModel>().AsSingle();
+            
+            var calmingPotion = brewingService.GetRecipe(Container.Resolve<CalmingPotion>());
+            var mentalClarityPotion = brewingService.GetRecipe(Container.Resolve<MentalClarityPotion>());
+            var spiritStrengtheningPotion = brewingService.GetRecipe(Container.Resolve<SpiritStrengtheningPotion>());
+            
+            var sacredPotionsViewModel = Container.Resolve<SacredPotionsViewModel>();
+            sacredPotionsViewModel.RegisterRecipe(calmingPotion);
+            sacredPotionsViewModel.RegisterRecipe(mentalClarityPotion);
+            sacredPotionsViewModel.RegisterRecipe(spiritStrengtheningPotion);
+            
+            #endregion
+            
+            #region Level6
+            
+            Container.Bind<CourtAlchemySecrets>().AsSingle();
+            Container.Bind<CourtAlchemySecretsViewModel>().AsSingle();
+            
+            var charmPotion = brewingService.GetRecipe(Container.Resolve<CharmPotion>());
+            var memoryPotion = brewingService.GetRecipe(Container.Resolve<MemoryPotion>());
+            var rejuvenationPotion = brewingService.GetRecipe(Container.Resolve<RejuvenationPotion>());
+            var wisdomPotion = brewingService.GetRecipe(Container.Resolve<WisdomPotion>());
+            
+            var courtAlchemySecretsViewModel = Container.Resolve<CourtAlchemySecretsViewModel>();
+            courtAlchemySecretsViewModel.RegisterRecipe(charmPotion);
+            courtAlchemySecretsViewModel.RegisterRecipe(memoryPotion);
+            courtAlchemySecretsViewModel.RegisterRecipe(rejuvenationPotion);
+            courtAlchemySecretsViewModel.RegisterRecipe(wisdomPotion);
+            
+            #endregion
+            
+            #region Level7
+            
+            Container.Bind<GodsAlchemy>().AsSingle();
+            Container.Bind<GodsAlchemyViewModel>().AsSingle();
+            
+            var invisibilityPotion  = brewingService.GetRecipe(Container.Resolve<InvisibilityPotion>());
+            var oblivionPotion  = brewingService.GetRecipe(Container.Resolve<OblivionPotion>());
+            var temporaryInvulnerabilityPotion  = brewingService.GetRecipe(Container.Resolve<TemporaryInvulnerabilityPotion>());
+            
+            var godsAlchemyViewModel = Container.Resolve<GodsAlchemyViewModel>();
+            godsAlchemyViewModel.RegisterRecipe(invisibilityPotion);
+            godsAlchemyViewModel.RegisterRecipe(oblivionPotion);
+            godsAlchemyViewModel.RegisterRecipe(temporaryInvulnerabilityPotion);
+            
             #endregion
         }
     }
