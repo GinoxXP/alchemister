@@ -66,6 +66,9 @@ namespace Ginox.BlackCauldron.Books.Views
             localizedName.StringChanged += OnStringChanged;
 
             RenderPage();
+            
+            nextButton.onClick.AddListener(OnNextPage);
+            prevButton.onClick.AddListener(OnPreviousPage);
         }
 
         private void OnStringChanged(string value)
@@ -74,6 +77,9 @@ namespace Ginox.BlackCauldron.Books.Views
         private void OnDestroy()
         {
             LocalizationSettings.Instance.OnSelectedLocaleChanged -= OnSelectedLocaleChanged;
+            
+            nextButton.onClick.RemoveListener(OnNextPage);
+            prevButton.onClick.RemoveListener(OnPreviousPage);
         }
 
         private void Update()
@@ -89,18 +95,6 @@ namespace Ginox.BlackCauldron.Books.Views
             }
         }
 
-        public void OnNextPage()
-        {
-            page++;
-            RenderPage();
-        }
-
-        public void OnPreviousPage()
-        {
-            page--;
-            RenderPage();
-        }
-
         public void Activated()
         {
             isGrabStateChanged = !isGrabed;
@@ -111,6 +105,18 @@ namespace Ginox.BlackCauldron.Books.Views
         {
             isGrabStateChanged = isGrabed;
             isGrabed = false;
+        }
+        
+        private void OnNextPage()
+        {
+            page++;
+            RenderPage();
+        }
+
+        private void OnPreviousPage()
+        {
+            page--;
+            RenderPage();
         }
 
         private void SetState()

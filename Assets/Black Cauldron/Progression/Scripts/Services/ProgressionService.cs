@@ -56,6 +56,7 @@ namespace Ginox.BlackCauldron.Progression.Services
                 Level++;
 
                 NewLevelAllowed?.Invoke(Level);
+                tradingService.SetLevel(Level-1);
                 CheckNewLevel();
             }
         }

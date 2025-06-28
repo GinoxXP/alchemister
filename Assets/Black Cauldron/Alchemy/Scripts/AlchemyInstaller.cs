@@ -327,7 +327,7 @@ public class AlchemyInstaller : MonoInstaller
                 .RegisterIngredient(paprika)
                 .RegisterIngredient(salt));
         brewingService.RegisterRecipe(
-            new Recipe(Container.Resolve<MasteryPotion>())
+            new Recipe(Container.Resolve<MindfulnessPotion>())
                 .RegisterIngredient(paprika)
                 .RegisterIngredient(salt)
                 .RegisterIngredient(cattailCob));
@@ -350,6 +350,12 @@ public class AlchemyInstaller : MonoInstaller
                 .RegisterIngredient(salt)
                 .RegisterIngredient(licoriceRoot)
                 .RegisterIngredient(cattailCob));
+        brewingService.RegisterRecipe(
+            new Recipe(Container.Resolve<StrengthPotion>())
+                .RegisterIngredient(flyAgaric)
+                .RegisterIngredient(ash)
+                .RegisterIngredient(licoriceRoot)
+                .RegisterIngredient(paprika));
         #endregion
         
         #region Level4
