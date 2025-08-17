@@ -11,6 +11,7 @@ namespace Ginox.BlackCauldron.Books
         public override void InstallBindings()
         {
             var brewingService = Container.Resolve<IBrewingService>();
+            var alembicService = Container.Resolve<IAlembicService>();
 
             #region Level1
 
@@ -101,16 +102,16 @@ namespace Ginox.BlackCauldron.Books
             Container.Bind<CourtAlchemySecrets>().AsSingle();
             Container.Bind<CourtAlchemySecretsViewModel>().AsSingle();
             
-            var charmPotion = brewingService.GetRecipe(Container.Resolve<CharmPotion>());
-            var memoryPotion = brewingService.GetRecipe(Container.Resolve<MemoryPotion>());
-            var rejuvenationPotion = brewingService.GetRecipe(Container.Resolve<RejuvenationPotion>());
-            var wisdomPotion = brewingService.GetRecipe(Container.Resolve<WisdomPotion>());
+            var charmPotionTransformation = alembicService.GetTransformation(Container.Resolve<CharmPotion>());
+            var memoryPotionTransformation = alembicService.GetTransformation(Container.Resolve<MemoryPotion>());
+            var rejuvenationPotionTransformation = alembicService.GetTransformation(Container.Resolve<RejuvenationPotion>());
+            var wisdomPotionTransformation = alembicService.GetTransformation(Container.Resolve<WisdomPotion>());
             
             var courtAlchemySecretsViewModel = Container.Resolve<CourtAlchemySecretsViewModel>();
-            courtAlchemySecretsViewModel.RegisterRecipe(charmPotion);
-            courtAlchemySecretsViewModel.RegisterRecipe(memoryPotion);
-            courtAlchemySecretsViewModel.RegisterRecipe(rejuvenationPotion);
-            courtAlchemySecretsViewModel.RegisterRecipe(wisdomPotion);
+            courtAlchemySecretsViewModel.RegisterTransformation(charmPotionTransformation);
+            courtAlchemySecretsViewModel.RegisterTransformation(memoryPotionTransformation);
+            courtAlchemySecretsViewModel.RegisterTransformation(rejuvenationPotionTransformation);
+            courtAlchemySecretsViewModel.RegisterTransformation(wisdomPotionTransformation);
             
             #endregion
             
@@ -119,14 +120,14 @@ namespace Ginox.BlackCauldron.Books
             Container.Bind<GodsAlchemy>().AsSingle();
             Container.Bind<GodsAlchemyViewModel>().AsSingle();
             
-            var invisibilityPotion  = brewingService.GetRecipe(Container.Resolve<InvisibilityPotion>());
-            var oblivionPotion  = brewingService.GetRecipe(Container.Resolve<OblivionPotion>());
-            var temporaryInvulnerabilityPotion  = brewingService.GetRecipe(Container.Resolve<TemporaryInvulnerabilityPotion>());
+            var invisibilityPotionTransformation  = alembicService.GetTransformation(Container.Resolve<InvisibilityPotion>());
+            var oblivionPotionTransformation  = alembicService.GetTransformation(Container.Resolve<OblivionPotion>());
+            var temporaryInvulnerabilityPotionTransformation  = alembicService.GetTransformation(Container.Resolve<TemporaryInvulnerabilityPotion>());
             
             var godsAlchemyViewModel = Container.Resolve<GodsAlchemyViewModel>();
-            godsAlchemyViewModel.RegisterRecipe(invisibilityPotion);
-            godsAlchemyViewModel.RegisterRecipe(oblivionPotion);
-            godsAlchemyViewModel.RegisterRecipe(temporaryInvulnerabilityPotion);
+            godsAlchemyViewModel.RegisterTransformation(invisibilityPotionTransformation);
+            godsAlchemyViewModel.RegisterTransformation(oblivionPotionTransformation);
+            godsAlchemyViewModel.RegisterTransformation(temporaryInvulnerabilityPotionTransformation);
             
             #endregion
         }

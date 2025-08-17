@@ -4,7 +4,7 @@ using Zenject;
 
 namespace Ginox.BlackCauldron.Books.Views.Books
 {
-    public class PracticeAlchemyView : ABookView
+    public class PracticeAlchemyView : RecipeBookView
     {
         [Inject]
         private void Init(PracticeAlchemyViewModel viewModel)

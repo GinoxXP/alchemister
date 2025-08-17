@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace Ginox.BlackCauldron.Books.Models
 {
-    public class CombatPotions : ABook
+    public class CombatPotions : ARecipeBook
     {
         public override string NameKey { get; } = nameof(CombatPotions);
 

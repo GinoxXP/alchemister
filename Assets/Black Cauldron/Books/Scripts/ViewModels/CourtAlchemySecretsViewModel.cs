@@ -3,7 +3,7 @@ using Ginox.BlackCauldron.Books.Models;
 
 namespace Ginox.BlackCauldron.Books.ViewModels
 {
-    public class CourtAlchemySecretsViewModel : ABookViewModel
+    public class CourtAlchemySecretsViewModel : AAlembicBookViewModel
     {
         public CourtAlchemySecretsViewModel(CourtAlchemySecrets model)
         {

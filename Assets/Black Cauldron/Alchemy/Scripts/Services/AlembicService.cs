@@ -1,5 +1,6 @@
 ﻿using Ginox.BlackCauldron.Alchemy.Models;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Ginox.BlackCauldron.Alchemy.Services
 {
@@ -27,5 +28,8 @@ namespace Ginox.BlackCauldron.Alchemy.Services
 
             return outputPotion;
         }
+
+        public PotionTransformation GetTransformation(APotion inputPotion)
+            => Transformations.FirstOrDefault(x => x.OutputPotion.ToString() == inputPotion.ToString());
     }
 }

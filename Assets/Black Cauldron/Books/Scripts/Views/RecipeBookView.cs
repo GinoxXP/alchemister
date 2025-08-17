@@ -10,7 +10,7 @@ using UnityEngine.UI;
 
 namespace Ginox.BlackCauldron.Books.Views
 {
-    public class ABookView : MonoBehaviour, IPokeIndicatorDisplay
+    public class RecipeBookView : MonoBehaviour, IPokeIndicatorDisplay
     {
         private static readonly string OPEN_BOOK_TRIGGER = "OpenTrigger";
         private static readonly string CLOSE_BOOK_TRIGGER = "CloseTrigger";
@@ -28,7 +28,7 @@ namespace Ginox.BlackCauldron.Books.Views
         [SerializeField]
         private Button nextButton;
 
-        private ABookViewModel viewModel;
+        private ARecipeBookViewModel viewModel;
         private Animator animator;
         private Camera mainCamera;
 
@@ -49,7 +49,7 @@ namespace Ginox.BlackCauldron.Books.Views
             }
         }
 
-        protected void Init(ABookViewModel viewModel)
+        protected void Init(ARecipeBookViewModel viewModel)
         {
             this.viewModel = viewModel;
         }

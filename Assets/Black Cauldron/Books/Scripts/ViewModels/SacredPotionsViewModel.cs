@@ -3,7 +3,7 @@ using Ginox.BlackCauldron.Books.Models;
 
 namespace Ginox.BlackCauldron.Books.ViewModels
 {
-    public class SacredPotionsViewModel : ABookViewModel
+    public class SacredPotionsViewModel : ARecipeBookViewModel
     {
         public SacredPotionsViewModel(SacredPotions model)
         {

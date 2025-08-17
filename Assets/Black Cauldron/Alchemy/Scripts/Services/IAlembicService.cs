@@ -22,5 +22,12 @@ namespace Ginox.BlackCauldron.Alchemy.Services
         /// <param name="inputPotion">Added potion.</param>
         /// <returns>Performed potion.</returns>
         public APotion Transform(APotion inputPotion);
+        
+        /// <summary>
+        /// Get transformation for potion.
+        /// </summary>
+        /// <param name="inputPotion">Potion.</param>
+        /// <returns>Transformation potion.</returns>
+        public PotionTransformation GetTransformation(APotion inputPotion);
     }
 }

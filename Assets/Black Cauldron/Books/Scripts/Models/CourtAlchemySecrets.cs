@@ -4,10 +4,10 @@ using System.Collections.Generic;
 
 namespace Ginox.BlackCauldron.Books.Models
 {
-    public class CourtAlchemySecrets : ABook
+    public class CourtAlchemySecrets : AAlembicBook
     {
         public override string NameKey { get; } = nameof(CourtAlchemySecrets);
 
-        public override List<Recipe> Recipes { get; } = new();
+        public override List<PotionTransformation> Transformations { get; } = new();
     }
 }
