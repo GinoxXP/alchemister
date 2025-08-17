@@ -28,8 +28,8 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7580462842083942}
-  m_LocalRotation: {x: 0.50000006, y: -0.50000006, z: -0.49999997, w: 0.49999997}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0.5, y: -0.5, z: -0.5, w: 0.5}
+  m_LocalPosition: {x: 0, y: 0, z: -0.000000022351742}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -115,12 +115,12 @@ ParentConstraint:
   m_Enabled: 1
   serializedVersion: 2
   m_Weight: 1
-  m_TranslationAtRest: {x: 0.004285738, y: 0.1857143, z: 0}
-  m_RotationAtRest: {x: 0, y: -90.00001, z: -90}
+  m_TranslationAtRest: {x: 0.0042857346, y: 0.18571432, z: 0}
+  m_RotationAtRest: {x: 0, y: -90, z: -90}
   m_TranslationOffsets:
   - {x: 0.0030000284, y: 0.13000003, z: 0}
   m_RotationOffsets:
-  - {x: 0, y: -90.00001, z: -90}
+  - {x: 0, y: -90, z: -90}
   m_AffectTranslationX: 1
   m_AffectTranslationY: 1
   m_AffectTranslationZ: 1
@@ -378,8 +378,8 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2199237971966191039}
-  m_LocalRotation: {x: 0.50000006, y: 0.50000006, z: 0.49999997, w: 0.49999997}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0.50000006, y: 0.50000006, z: 0.5, w: 0.5}
+  m_LocalPosition: {x: 0, y: 0, z: -0.000000022351742}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -466,12 +466,12 @@ ParentConstraint:
   m_Enabled: 1
   serializedVersion: 2
   m_Weight: 1
-  m_TranslationAtRest: {x: -0.004285738, y: 0.1857143, z: 0}
+  m_TranslationAtRest: {x: -0.0042857346, y: 0.18571432, z: 0}
   m_RotationAtRest: {x: 0, y: 90.00001, z: 90}
   m_TranslationOffsets:
   - {x: -0.0029999986, y: 0.13000003, z: 0}
   m_RotationOffsets:
-  - {x: 0, y: 90.00001, z: 90}
+  - {x: 0, y: 90, z: 90}
   m_AffectTranslationX: 1
   m_AffectTranslationY: 1
   m_AffectTranslationZ: 1
@@ -768,7 +768,7 @@ MonoBehaviour:
   m_fontSizeBase: 0.1
   m_fontWeight: 400
   m_enableAutoSizing: 1
-  m_fontSizeMin: 0.01
+  m_fontSizeMin: 0.02
   m_fontSizeMax: 0.1
   m_fontStyle: 0
   m_HorizontalAlignment: 8
@@ -1008,7 +1008,7 @@ MonoBehaviour:
   m_fontSizeBase: 0.1
   m_fontWeight: 400
   m_enableAutoSizing: 1
-  m_fontSizeMin: 0.01
+  m_fontSizeMin: 0.02
   m_fontSizeMax: 0.1
   m_fontStyle: 0
   m_HorizontalAlignment: 2
@@ -1228,10 +1228,10 @@ Rigidbody:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7424819121308973994}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}

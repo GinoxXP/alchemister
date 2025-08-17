@@ -162,6 +162,10 @@ MonoBehaviour:
     m_Localized: Potion of wisdom
     m_Metadata:
       m_Items: []
+  - m_Id: 125671091333730304
+    m_Localized: "\rDistill"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
