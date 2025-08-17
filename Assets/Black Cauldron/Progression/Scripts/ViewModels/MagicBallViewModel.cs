@@ -19,7 +19,7 @@ namespace Ginox.BlackCauldron.Progression.ViewModels
             }
         }
 
-        public int XP
+        public int? XP
         {
             get => model.XP;
             private set
@@ -29,7 +29,7 @@ namespace Ginox.BlackCauldron.Progression.ViewModels
             }
         }
 
-        public int PassXP
+        public int? PassXP
         {
             get => model.PassXP;
             private set
@@ -53,7 +53,7 @@ namespace Ginox.BlackCauldron.Progression.ViewModels
             OnXpChanged(service.XP, service.PassXP);
         }
 
-        private void OnXpChanged(int xp, int passXp)
+        private void OnXpChanged(int xp, int? passXp)
         {
             XP = xp;
             PassXP = passXp;

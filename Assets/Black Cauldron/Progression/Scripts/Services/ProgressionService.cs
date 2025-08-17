@@ -13,7 +13,7 @@ namespace Ginox.BlackCauldron.Progression.Services
 
         private int xp;
 
-        public int Level { get; private set; } = 1;
+        public int Level { get; private set; } = 7;
 
         public int XP
         {
@@ -25,11 +25,24 @@ namespace Ginox.BlackCauldron.Progression.Services
             }
         }
 
-        public int PassXP => levels[Level - 1].PassExperience;
+        public int? PassXP
+        {
+            get
+            {
+                try
+                {
+                    return levels[Level - 1].PassExperience;
+                }
+                catch (ArgumentOutOfRangeException)
+                {
+                    return null;
+                }
+            }
+        }
 
         public event Action<int> NewLevelAllowed;
 
-        public event Action<int, int> XpChanged;
+        public event Action<int, int?> XpChanged;
 
         public ProgressionService(TradingService tradingService)
         {

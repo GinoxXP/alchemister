@@ -33,11 +33,6 @@ namespace Ginox.BlackCauldron.Progression.Views
             ChangeProgressIndicator(viewModel.XP, viewModel.PassXP);
         }
 
-        private void OnDestroy()
-        {
-            viewModel.PropertyChanged -= OnPropertyChanged;
-        }
-
         private void OnPropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
         {
             switch (e.PropertyName)
@@ -53,12 +48,12 @@ namespace Ginox.BlackCauldron.Progression.Views
             }
         }
 
-        private void ChangeCurrentLevelIndicator(int level)
+        private void ChangeCurrentLevelIndicator(int? level)
         {
             currentLevelIndicator.text = level.ToString();
         }
 
-        private void ChangeProgressIndicator(int xp, int passXp)
+        private void ChangeProgressIndicator(int? xp, int? passXp)
         {
             progressIndicator.text = string.Format(progressionFormat, xp, passXp);
         }
